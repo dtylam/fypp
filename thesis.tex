@@ -1,7 +1,7 @@
 % ******************************* PhD Thesis Template **************************
 % Please have a look at the README.md file for info on how to use the template
 
-\documentclass[a4paper,12pt,times,numbered,print,oneside]{Classes/PhDThesisPSnPDF}
+\documentclass[a4paper,12pt,times,print,oneside,authoryear]{Classes/PhDThesisPSnPDF}
 
 % ******************************************************************************
 % ******************************* Class Options ********************************
@@ -60,7 +60,7 @@
 % `numbered': (Default Option) For numbered and sorted citation e.g., [1,5,2]
 %
 % `custombib': Define your own bibliography style in the `preamble.tex' file.
-%              `\RequirePackage[square, sort, numbers, authoryear]{natbib}'.
+% \RequirePackage[square, sort, numbers, authoryear]{natbib}
 %              This can be also used to load biblatex instead of natbib
 %              (See Preamble)
 %
@@ -113,11 +113,12 @@
 
 \maketitle
 
+\begin{spacing}{1.75}
 \include{Dedication/dedication}
 \include{Abstract/abstract}
 \include{Acknowledgement/acknowledgement}
 \include{Declaration/declaration}
-
+\end{spacing}
 % *********************** Adding TOC and List of Figures ***********************
 
 \tableofcontents
@@ -129,7 +130,7 @@
 
 % ******************************** Main Matter *********************************
 \mainmatter
-
+\begin{spacing}{1.75}
 \include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
 \include{Chapter3/chapter3}
@@ -137,7 +138,7 @@
 \include{Chapter5/chapter5}
 \include{Chapter6/chapter6}
 \include{Chapter7/chapter7}
-
+\end{spacing}
 % ********************************** Back Matter *******************************
 % Backmatter should be commented out, if you are using appendices after References
 %\backmatter
