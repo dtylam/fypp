@@ -5,11 +5,11 @@
 
 \chapter{Background}
 
-\ifpdf
+% \ifpdf
     \graphicspath{{Chapter2/Figs/Raster/}{Chapter2/Figs/PDF/}{Chapter2/Figs/}}
-\else
-    \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
-\fi
+% \else
+%     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
+% \fi
 
 \section{Review of Relevant Education Research}
 
@@ -20,11 +20,14 @@ the project. This informs the scope of the project and the design of the deliver
 
 Assessment is arguably the most important process in the business of education as it "drives what 
 is learnt and taught" and "convert learning into credentials". \citep[p.160]{campbell2010digital} 
-This importance inevitably grow the tension between the teacher (or educational provider) and the 
+This importance inevitably grows the tension between the teacher (or educational provider) and the 
 learners over assessments. 
 
+
+
 % used in chapter 1 already
-% There is abundant evidence that assessors are not particularly good at making exams valid, reliable, or transparent to students.(Brown, 1999, p.62).
+% There is abundant evidence that assessors are not particularly good at making exams valid, reliable, or 
+% transparent to students.(Brown, 1999, p.62).
 
 \citet{suhre2013determinants} looked into motivation on study progress in a higher education setting by collecting data 
 from 168 first-year university students for six months. The study found three main factors that motivates academic 
@@ -36,15 +39,30 @@ exams and assessments.
   \item Academic pressure is substantially influenced by the perceived transparency of assessments.
 \end{itemize}
 
+Evidences that
+
 \subsection{Personalisation in Education}
+
+To be added if there is time to cover this area.
 
 \section{Review of Relevant e-Learning Research}
 
-El-Khatib et al. (2003) noted that “While many advances have been made in the mechanics of providing online instruction, 
-the needs for privacy and security have to-date been largely ignored. At best they have been accommodated in an ad-hoc, 
-patchwork fashion.”
+E-learning has been growing as an industry and research area, and various standards have been devised. One of the most
+useful is IEEE P1484.1/D9: the Learning Technology Systems Architecture (LTSA). It provides a valuable way of organising 
+the scope and discussion around proposed e-Learning systems, identifying four main components: learner entity, coach, 
+delivery and evaluation; and two main resources: learning resources and learner records (See figure \ref{fig:LTSA}).
 
-IEEE P1484.1/D9: the Learning Technology Systems Architecture (LTSA)
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=1.0\textwidth]{LTSA}
+    \caption[LTSA]{Learning Technology Systems Architecture, IEEE P1484.1/D9 \citep{farance1999learning}}
+    \label{fig:LTSA}
+\end{figure}
+
+The security of e-learning systems have also been a concern. For example, \citet{el2003privacy} noted that “While many 
+advances have been made in the mechanics of providing online instruction, the needs for privacy and security have to-date 
+been largely ignored. At best they have been accommodated in an ad-hoc, patchwork fashion.”
+
 
 \section{Properties of Blockchain Technologies}
 
@@ -74,6 +92,11 @@ be removed or altered
 Resilient to loss of infrastructure: records are distributed over a network of participating computers
 
 \section{Existing Efforts in Blockchain for Education}
+
+% chapter 1
+% The potential of blockchain enabled systems in education has been noted by the community, with \citet[p.62]{swan2015blockchain} 
+% proposing that “learning smart contracts could automatically confirm the completion of learning modules through standardized 
+% online tests”. Appropriate configurations in permissions and visibility can also provide improved security and privacy to e-Learning.
 
 A current blockchain in education use case: Blockcerts
 Blockcerts is an MIT backed open standard for blockchain certificates. Education providers can use it to store the records of 
