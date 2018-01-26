@@ -121,7 +121,8 @@
 \end{spacing}
 % *********************** Adding TOC and List of Figures ***********************
 
-\tableofcontents[hideallsubsections]
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}} %hide subsections
+\tableofcontents
 \listoffigures
 \listoftables
 % \printnomenclature[space] space can be set as 2em between symbol and description
