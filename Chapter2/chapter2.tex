@@ -11,6 +11,35 @@
 %     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 % \fi
 
+\section{Properties of Blockchain Technologies}
+
+The advent of cryptocurrencies brought 
+
+Impossible to collude: executed by transparent code, increase trust and enables reputation building for even new entrants to 
+the education market
+Protects learner: guaranteed records and rewards
+% Scam? Reputation building? https://books.google.co.uk/books?id=jEsRVTbukyMC&lpg=PR5&ots=DKQbVRC8Yh&dq=high%20education%20assessment%20reputation&lr&pg=PA233#v=onepage&q=high%20education%20assessment%20reputation&f=false
+Administration costs of higher education
+Smart Contract: secure and cutting the middleman
+
+Characteristics of a blockchain ledger such as Hyperledger:
+1. Shared Ledger: 
+shared across education and government authorities
+2. Smart Contract: 
+Swan (2015, p.62) proposed that “rules embedded in learning smart contracts could automatically confirm the completion of learning modules 
+through standardized online tests”.
+3. Privacy: 
+a. Appropriate Visibility
+b. Transactions are secure, authenticated and verifiable
+4. Consensus: All shared ledger parties agree to transactions
+
+Openness and transparency of online courses and online assessments is encouraged: using an interpreted language, instead of a compiled 
+one, to write the smart contract, so the actual code is visible on the blockchain and can be easily inspected
+% Trust in Education Providers can be maintained the identity of any addition or modiﬁcation to the record can be traced, records cannot 
+be removed or altered
+% Privacy of course participants is protected: events are publicly-accessible, but not publicly readable without a digital key
+Resilient to loss of infrastructure: records are distributed over a network of participating computers
+
 \section{Review of Relevant Education Research}
 
 Identifying issues in traditional higher education today that a future system can better 
@@ -34,10 +63,10 @@ is learnt and taught" and "convert learning into credentials". \citep[p.160]{cam
 continuous assessments and traditional exams, such as:
 
 \begin{enumerate}
-    \item{Assessment tasks do not increase students' want to learn, only their need to learn, promoting unhappiness;}
-    \item{Invalid and unreliable marking due to speed or fatigue of assessors, plagiarism and unwanted collaborations, etc.;}
-    \item{Sub-optimal levels of feedback after many types of assessments;}
-    \item{Students feel forced into surface learning}
+    \item Assessment tasks do not increase students' want to learn, only their need to learn, promoting unhappiness;
+    \item Invalid and unreliable marking due to speed or fatigue of assessors, plagiarism and unwanted collaborations, etc.;
+    \item Sub-optimal levels of feedback after many types of assessments;
+    \item Students feel forced into surface learning
     \citep[p.62-65]{brown1999assessment}
 \end{enumerate}
 
@@ -69,7 +98,12 @@ Cover personalisation broadly and in terms of curriculum (which modules to take,
 customised passing thresholds) which can be negotiated on the blockchain.
 To be added if there is time for the project to cover this area.
 
-\section{Review of Relevant e-Learning Research}
+\section{Literature Review in e-Learning }
+
+E-learning has been growing as an industry and research area, and various standards have been devised. 
+A review of these frameworks could provide valuable insights.
+
+\subsection{e-Learning Systems}
 
 \begin{figure}[!ht] 
     \centering    
@@ -79,86 +113,78 @@ To be added if there is time for the project to cover this area.
     \label{fig:LTSA}
 \end{figure}
 
-E-learning has been growing as an industry and research area, and various standards have been devised. One of the most
-useful is IEEE P1484.1/D9: the Learning Technology Systems Architecture (LTSA). It provides a valuable way of organising 
-the scope and discussion around proposed e-Learning systems, identifying four main components: learner entity, coach, 
+IEEE P1484.1/D9: the Learning Technology Systems Architecture (LTSA) provides a valuable way of organising 
+the scope and discussion in this project. It identified four main components: learner entity, coach, 
 delivery and evaluation; and two main resources: learning resources and learner records (See figure \ref{fig:LTSA}).
 
-Identifying what a future, blockchain based system could improve in these critical areas 
-can further enhance this project. \citet{garrison2011learning} identified several areas 
-that current e-Learning research and practices focus on:
+Identifying the properties of a blockchain-based system that could improve these components is 
+critical to this project. For example, the distributed, immutable storage of learner records could 
+provide extra security.
 
-\begin{itemize}
-    \item Enhancing the learning community and social presence
-    \item Enhancing the cognitive (practical inquiry and critical thinking) presence, 
-    especially with asynchronous (pre-recorded)
-    \item Self-regulation and motivation: a self-regulated learner achieves more
-    \item 
-\end{itemize}
+\subsection{e-Learning Research Framework}
 
-\subsection{Self-Regulation and Motivation}
+\citet{garrison2011learning} provided a framework for research and practice called the "Community 
+of Inquiry (CoI)" framework, which included three main categories:
 
-There are several dimensions of self-regulation that will help a learner stay on an 
-e-Learning course or curriculum:
+\begin{enumerate}
+    \item Enhancing the social presence, such as collaborative learning
+    \item Enhancing the cognitive presence, such as practical inquiry and critical thinking
+    \item Enhancing the teaching presence, especially with asynchronous e-Learning (eg. pre-recorded lectures)
+\end{enumerate}
 
-\begin{table}[!ht] 
-    \caption{Self-Regulation and Motivation Strategies, adapted from \citep[p.189]{o2013web}}
-    \centering
-    \label{table:Self-regulation Dimensions}
-    \begin{tabular}{l c }
-        \toprule
-        Self-regulation Dimensions & Examples of Motivation Strategies \\ 
-        \midrule
-        Motives & Setting challenging but achievable goals \\ \hline
-        Methods of Learning & Summarisation, outline-formatted notes, \\
-        & interrogation and rehearsal, etc\\ \hline
-        Time Management & Prioritizing tasks, dealing with procrastination\\ \hline
-        Physical Environment & An environment conducive to learning\\ \hline
-        Social environment & Help seeking: knowing when help is needed,\\
-        & identifying sources of help, framing help request,\\
-        & evaluating help received\\ \hline
-        Performance & Observing and reflecting upon performance\\
-        & with short-term and long-term goals\\
-        \bottomrule
-    \end{tabular}
-\end{table}
+A blockchain back-end could potentially provide experiential improvements in the above three categories as well. 
+For example, smart contracts could enhance the social and teaching presence by facilitating teacher-learner, or 
+learner-learner negotiations.
 
-An e-learning programme should equip a learner with these self-regulation skills,
-and the e-learning system should provide tools that facilitate and enable the 
-motivation strategies.
+% \subsection{Self-Regulation and Motivation}
+
+% There are several dimensions of self-regulation that will help a learner stay on an 
+% e-Learning course or curriculum:
+
+% \begin{table}[!ht] 
+%     \caption{Self-Regulation and Motivation Strategies, adapted from \citep[p.189]{o2013web}}
+%     \centering
+%     \label{table:Self-regulation Dimensions}
+%     \begin{tabular}{l c }
+%         \toprule
+%         Self-regulation Dimensions & Examples of Motivation Strategies \\ 
+%         \midrule
+%         Motives & Setting challenging but achievable goals \\ \hline
+%         Methods of Learning & Summarisation, outline-formatted notes, \\
+%         & interrogation and rehearsal, etc\\ \hline
+%         Time Management & Prioritizing tasks, dealing with procrastination\\ \hline
+%         Physical Environment & An environment conducive to learning\\ \hline
+%         Social environment & Help seeking: knowing when help is needed,\\
+%         & identifying sources of help, framing help request,\\
+%         & evaluating help received\\ \hline
+%         Performance & Observing and reflecting upon performance\\
+%         & with short-term and long-term goals\\
+%         \bottomrule
+%     \end{tabular}
+% \end{table}
+
+% An e-learning programme should equip a learner with these self-regulation skills,
+% and the e-learning system should provide tools that facilitate and enable the 
+% motivation strategies.
 
 \subsection{Security and Privacy}
 
 The security of e-learning systems have also been a concern. For example, \citet{el2003privacy} noted that “While many 
 advances have been made in the mechanics of providing online instruction, the needs for privacy and security have to-date 
-been largely ignored. At best they have been accommodated in an ad-hoc, patchwork fashion.” 
+been largely ignored. At best they have been accommodated in an ad-hoc, patchwork fashion.”
 
-\section{Properties of Blockchain Technologies}
+The consequences of cybersecurity breaches have also become more and more expensive. For example, when the General Data 
+Protection Regulation (GDPR) comes into effect across Europe in May 2018, the maximum fine for poor practices and data 
+breaches will be £17 million or 4\% of global turnover \citep{ico2017gdpr}.
 
-Impossible to collude: executed by transparent code, increase trust and enables reputation building for even new entrants to 
-the education market
-Protects learner: guaranteed records and rewards
-% Scam? Reputation building? https://books.google.co.uk/books?id=jEsRVTbukyMC&lpg=PR5&ots=DKQbVRC8Yh&dq=high%20education%20assessment%20reputation&lr&pg=PA233#v=onepage&q=high%20education%20assessment%20reputation&f=false
-Administration costs of higher education
-Smart Contract: secure and cutting the middleman
+The scale and severity of historic breaches of of internet services has been worrying. Most notably in the e-learning 
+industry, the education platform Edmodo was hacked and 77M account details were lost and on sale on the dark 
+web, endangering students, teachers and parents who are account holders \citep{opsecmonkey2017edmodo}.
 
-Characteristics of a blockchain ledger such as Hyperledger:
-1. Shared Ledger: 
-shared across education and government authorities
-2. Smart Contract: 
-Swan (2015, p.62) proposed that “rules embedded in learning smart contracts could automatically confirm the completion of learning modules 
-through standardized online tests”.
-3. Privacy: 
-a. Appropriate Visibility
-b. Transactions are secure, authenticated and verifiable
-4. Consensus: All shared ledger parties agree to transactions
-
-Openness and transparency of online courses and online assessments is encouraged: using an interpreted language, instead of a compiled 
-one, to write the smart contract, so the actual code is visible on the blockchain and can be easily inspected
-% Trust in Education Providers can be maintained the identity of any addition or modiﬁcation to the record can be traced, records cannot 
-be removed or altered
-% Privacy of course participants is protected: events are publicly-accessible, but not publicly readable without a digital key
-Resilient to loss of infrastructure: records are distributed over a network of participating computers
+The sizable threat and consequences makes a "security by design" and "privacy by design" approach for future e-Learning 
+systems very important.
+% The Information Commissioner's Office also encourages a "privacy by design approach" and 
+% https://www.ipc.on.ca/resource/privacy-by-design/
 
 \section{Existing Efforts in Blockchain for Education}
 
@@ -171,10 +197,14 @@ Resilient to loss of infrastructure: records are distributed over a network of p
 
 A current blockchain in education use case: Blockcerts
 Blockcerts is an MIT backed open standard for blockchain certificates. Education providers can use it to store the records of 
-certifications they have awarded, in a way where they are immutable and decentralised. 
+certifications they have awarded. 
 
 \subsection{OpenLearn}
 
+\section{Overview of Blockchain Development Toolkits}
+
+This project will involve the design of smart contracts for e-Learning transactions and building a demonstrator network and 
+applications. A review of the popular blockchain development toolkits on the market is necessary:
 
 % Uncomment this line, when you have siunitx package loaded.
 %The SI Units for dynamic viscosity is \si{\newton\second\per\metre\squared}.
