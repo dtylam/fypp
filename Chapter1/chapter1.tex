@@ -14,18 +14,18 @@
 The global e-Learning industry already generates US\$60 billion per year, and by 2019, over half of all courses will be taken 
 online \citep[p.17]{panto2013challenge}. This rising trend presents an opportunity to improve higher education.
 
-Some current problems in higher education are related to transparency. [TODO: what is transparency?] Tension exists between 
+Some current problems in higher education are related to transparency (more in Chapter 2.2.1). Tension exists between 
 the educational provider and the learners over assessments. "There is abundant evidence that assessors are not particularly 
 good at making exams valid, reliable, or transparent to students." \citep[p.62]{brown1999assessment}.
 
 % Accountability and transparency is important especially in higher education, which subscribes to an audit-based quality control lifecycle (Hoecht, 2006).
 % Employers have a vested interest in what is assessed and the fairness of assessments in education, because it affects the recruitment of employees (Brown, 1999, p.58).
 
-There is also a lack of curriculum personalisation for higher education learners in the UK [TODO: due to..., ref Rob] 
+There is also a lack of curriculum personalisation for higher education learners in the UK [TODO: cite interviews, other refs] 
 \citet{condie2007impact} pointed out that the personalisation of the education curriculum for learners helps "overcome 
 barriers, raising self-esteem and achievement". 
-Current web, mobile and computer technologies today can provide more personalisation of education curricula, but lacks
-[TODO: common marketplace? promise of delivery? transparency for employers?]
+% Current web, mobile and computer technologies today can provide more personalisation of education curricula, but lacks
+% [TODO: common marketplace? promise of delivery? transparency for employers?]
 
 Being able to deliver education curricula and conduct assessments in a transparent, conflict-free way would be central to 
 a future e-Learning marketplace that is open, trusted and autonomous.
@@ -36,8 +36,9 @@ or participants. Validators or operators of this ledger are trusted not to collu
 The technology enabling this distributed ledger is popularly known as a blockchain, where a block of records is chained to 
 the next with a cryptographic signature, creating immutable records through a consensus corroborated by all the operators. 
 \citep[p.17]{walport2016distributed}
-The security, immutability and verifiability of all actions on a blockchain provides the system with maximal transparency.
-[TODO: cite something]
+The security, immutability and verifiability of all actions on a blockchain makes systems inherently transparent, whereas 
+a ledger can also have permissions that enables granular transparency and privacy \citep[p.22]{walport2016distributed}, 
+which fits well in the education paradigm where personal data can be highly sensitive.
 
 Smart contracts are "contracts" that are "defined by the code and executed (or enforced) by the code" \citep[p.16]{swan2015blockchain}.
 They are logic embedded in a blockchain that defines the rules and penalties around an agreement and automatically enforce 
@@ -51,16 +52,16 @@ online tests”. Appropriate configurations in permissions and visibility can al
 %********************************** %First Section  **************************************
 \section{Aims and Objectives} %Section - 1.1 
 
-The aim of the project is to:
+The aim of the project is to design a system that fulfill educational assessments and rewards with 
+smart contracts on a blockchain, providing improvements in assessments and curriculum personalisation 
+for learners and teachers.
 
-Design a system that fulfill educational assessments and rewards with smart contracts on a blockchain,
-providing improvements in assessments and curriculum personalisation for learners and teachers.
-
-To satisfy this aim, the following three objectives were planned:
+To satisfy this aim, the following objectives were planned:
 
 \begin{enumerate}
-    \item Identify issues in e-Learning that can be improved by a blockchain based system.
-    \item Propose network data models and the smart contract logic in the proposed blockchain for e-Learning.
+    \item Identify issues in education and e-Learning that can be improved by a blockchain-based system.
+    \item Propose data models and the smart contract logic in the proposed blockchain for e-Learning.
+    \item Propose permission models for the e-Learning blockchain that balances appropriate access and privacy protection.
     \item Build a demonstrator system that includes client side applications for learners and teachers.
 \end{enumerate}
 
@@ -75,7 +76,7 @@ To satisfy this aim, the following three objectives were planned:
 \begin{enumerate}
     \item Review literature on current issues in e-Learning and education, and existing work in blockchain in education.
     \item Further gather requirements for a blockchain solution for e-Learning using interviews with stakeholders.
-    \item Design smart contract logic and data models for assets and participants in the proposed blockchain solution.
+    \item Design data models, smart contracts and permission rules for assets and participants in the proposed blockchain solution.
     \item Analyse popular blockchain development platforms that can be used to produce the desired solution.
     \item Build the distributed ledger network and client side applications for learners and teachers.
     \item Evaluate the design of the deliverables using interviews with stakeholders and relevant subject matter experts.
@@ -89,13 +90,15 @@ of the proposed solution.
 
 Chapter 3 explains how the project will be undertaken . . . etc, etc.  
 
-Chapter 4 design
+Chapter 4 requirements incl. primary data from interviews
 
-Chapter 5 implementation
+Chapter 5 design
 
-Chapter 6 evaluation
+Chapter 6 implementation
 
-Chapter 7 conclusion, future work
+Chapter 7 evaluation
+
+Chapter 8 conclusion, future work
 
 % This approach is acceptable, however it can make quite bland reading.  You might like to consider drawing a flow-chart of your 
 % project, showing how information such as background data, questionnaire data, results of studies, running computer programs, or 
