@@ -198,8 +198,9 @@ systems very important.
 \subsection{Blockcerts}
 
 Blockcerts is an open standard for blockchain certificates led by MIT’s Media Lab. Education providers can use it to store 
-the records of certifications they have awarded (See figure \ref{fig:blockcerts}). Blockcerts provide a free verification online tool for public 
-queries of these certificates. \citep{blockcerts2018}
+the records of certifications they have awarded (See figure \ref{fig:blockcerts}). One bitcoin transaction is performed for 
+every batch of certificates, with the certificates stored in the OP\_RETURN transaction field on the bitcoin blockchain. 
+This is paid for by the certificate issuer. \citep{blockcerts2018}
 
 \begin{figure}[!ht] 
     \centering    
@@ -211,7 +212,10 @@ queries of these certificates. \citep{blockcerts2018}
 
 \subsection{Sony Global Education Blockchain}% https://blockchain.sonyged.com/
 
-Based on Hyperledger
+The Sony Global Education Blockchain is based on the Hyperledger project, an open source distributed ledger 
+for businesses. It provides an application program interface (API) for developers at education institutes, 
+allowing integration with third party applications. It aims to provide tamper-proof, secure storage of 
+learning history data for institutions. \citep{sonyged2017}
 
 \begin{figure}[!ht] 
     \centering    
@@ -223,7 +227,7 @@ Based on Hyperledger
 
 \subsection{OpenLearn Blockchain}% http://blockchain.open.ac.uk/
 
-Based on Ethereum
+Based on the Ethereum
 
 \begin{figure}[!ht] 
     \centering    
@@ -237,14 +241,12 @@ All of the above notable efforts focuses on identity management and record keepi
 will aim to build on that and extend the coverage of blockchain technologies. Record keeping coverage will extend 
 to track changes on course catalogues; while smart contracts will automate assessments and personalised curricula.
 
-This extension in coverage will make education fraud even more difficult as not only is the final portfolio or 
-certificate stored on the blockchain, but the whole learner journey. This project will also enable further 
-transparency and accountability to the education provider level compared to the OpenLearn project, using smart 
-contracts to ensure that learners receive their rewards automatically.
+This will enable further transparency and accountability to the education provider level compared to the Sony 
+Global Education or the OpenLearn projects, using smart contracts to protect learners and ensure that they receive 
+their rewards automatically.
 
 This vision of this project will also be to create an e-Learning marketplace that teachers can use directly, 
-instead of a blockchain network that education providers will have to consume through application program 
-interfaces. 
+instead of a blockchain network that education providers will have to consume through APIs. 
 
 \section{Overview of Blockchain Development Toolkits}
 
