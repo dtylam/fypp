@@ -28,7 +28,7 @@ Public v. Private
 
 Permissionless v. Permissioned
 
-\citet{wust2017you} summarised  
+\citet{wust2017you} summarised  %https://eprint.iacr.org/2017/375.pdf
 
 
 Characteristics of a blockchain ledger such as Hyperledger:
@@ -209,7 +209,7 @@ the records of certifications they have awarded (See figure \ref{fig:blockcerts}
 every batch of certificates, with the certificates stored in the OP\_RETURN transaction field on the bitcoin blockchain. 
 This is paid for by the certificate issuer. \citep{blockcerts2018}
 
-\begin{figure}[!ht] 
+\begin{figure}[!h] 
     \centering    
     \includegraphics[width=0.7\textwidth]{blockcerts}
     \caption[How Blockcerts work]
@@ -224,7 +224,7 @@ for businesses. It provides an application program interface (API) for developer
 allowing integration with third party applications. It aims to provide tamper-proof, secure storage of 
 learning history data for institutions. \citep{sonyged2017}
 
-\begin{figure}[!ht] 
+\begin{figure}[!h] 
     \centering    
     \includegraphics[width=0.7\textwidth]{sonyged}
     \caption[Sony Global Education Blockchain]
@@ -234,7 +234,7 @@ learning history data for institutions. \citep{sonyged2017}
 
 \subsection{OpenLearn Blockchain}% http://blockchain.open.ac.uk/
 
-\begin{figure}[!ht] 
+\begin{figure}[!h] 
     \centering    
     \includegraphics[width=0.95\textwidth]{openlearn}
     \caption[OpenLearn Blockchain scenario]
@@ -251,9 +251,18 @@ host institution is required for the awarding of accreditation. \citep{sharples2
 
 \subsection{Novelty of the proposed project}
 
+\begin{figure}[!h] 
+    \centering    
+    \includegraphics[width=0.95\textwidth]{moocon}
+    \caption[How smart contracts automates assessments]
+        {Original diagram providing a high level view of how the project proposes automating assessments 
+        with smart contracts}
+    \label{fig:moocon_assess}
+\end{figure}
+
 All of the above three notable efforts focus on identity management and record keeping for education. 
 This project will aim to extend these efforts by proposing smart contracts that automate assessments 
-and deliver personalised curricula.
+(See figure \ref{fig:moocon_assess}) and deliver personalised curricula. 
 
 The vision of this project will also be to create an e-Learning marketplace that teachers can use directly, 
 instead of a blockchain network that education providers will have to consume through APIs. This makes for a 
@@ -265,7 +274,7 @@ This project will involve the design of smart contracts for e-Learning transacti
 network and applications. A review of the popular blockchain implementations and development toolkits on the 
 market is necessary. See table \ref{table:blockchainscomparison} for a overview and below for more commentary.
 
-\begin{table}[!ht] 
+\begin{table}[!hb] 
     \caption{Comparison of key blockchain implementations, adapted from \citet{ibm2018hyperledger} and \citet{valenta2017comparison}}
     \centering
     \label{table:blockchainscomparison}
@@ -299,4 +308,6 @@ Ethereum is famous for its Turing-complete smart contracts capabilities
 \subsection*{Hyperledger Fabric}
 
 \subsection*{R3 Corda}
+
 Built following use cases in the financial industry, 
+% http://explore-ip.com/2017_Comparison-of-Ethereum-Hyperledger-Corda.pdf
