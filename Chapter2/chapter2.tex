@@ -17,23 +17,32 @@ The advent of cryptocurrencies made blockchains an overnight darling, set to mak
 in several industries such as financial services, currency exchanges, supply chain management, retail 
 advertising and identity management \citep{forbes2017industries}.
 
-There are two types of blockchains: one being a public and permissionless blockchain, and the other 
-a private and permissioned blockchain \citep[p.1]{wust2017you}. These two 
-types of blockchain each provide varying degrees of the following properties:
+Blockchains can be classified into two types: one being a permissionless (public) blockchain which anyone can 
+use and no central authority exist to allow or ban peers; the other a permissioned blockchain (usually private)
+where a central entity assigns read/ write rights to individual peers \citep[p.1]{wust2017you}. These two types of 
+blockchain each provide varying degrees of the properties summarised in table \ref{table:permvsless}.
 
-\begin{itemize}
-    \item Public Verifiability \\
-    Permissionless blockchains provide a maximal degree of public verifiability, because every addition 
-    to the blockchain is confirmed by verifiers/ miners, and any observers can verify the state of the 
-    blockchain.\\
-    Permissioned blockchains are more centralised with an amount of trust required for a central 
-    authority that acts as an administrator for all peer servers. Additions to the blockchain is achieved 
-    by an agreed consensus mechanism.
-    \item Privacy\\
-    Permissionless blockchains provide maximal verifiability and transparency, but could 
-    \item Integrity
-    \item Redundancy\\\citep[p.2]{wust2017you}
-\end{itemize}
+%https://eprint.iacr.org/2017/375.pdf
+\begin{table}[!h] 
+    \caption{Comparison of permissioned and permissionless blockchains, adapted from \citet[p.3]{wust2017you}}
+    \centering
+    \label{table:permvsless}
+    \begin{tabularx}{\textwidth}{>{\bfseries}lXX}
+        Properties & Permissioned blockchains & Permissionless blockchains\\
+        \toprule
+        Speed & Low throughput and slow latency & high throughput and medium latency\\\midrule
+        Peers & High number of both readers and writers & High number of readers, small group of writers\\\midrule
+        Consensus & Proof of work or proof of stake by miners & BFT protocols such as PBFT\\\midrule
+        Central\\Authority & No & Yes\\\midrule
+        Privacy & Can be achieved using cryptographic techniques but typically comes at the cost of lower efficiency & 
+        Reading rights can be restricted by central authority, readers and writers can also run separated parallel blockchains that are interconnected. \\\midrule
+        Verifiability & \multicolumn{2}{c}{Observers can verify the state of the blockchain} \\\midrule
+        Redundancy & \multicolumn{2}{c}{High, provided through replication across the peers}
+        \\\bottomrule
+    \end{tabularx}
+\end{table}
+
+
 
 Impossible to collude: executed by transparent code, increase trust and enables reputation building for even new entrants to 
 the education market
@@ -42,17 +51,13 @@ Protects learner: guaranteed records and rewards
 Administration costs of higher education
 Smart Contract: secure and cutting the middleman
 
-Public v. Private 
-
-Permissionless v. Permissioned
-
-  %https://eprint.iacr.org/2017/375.pdf
+  
 
 \begin{figure}[!ht] 
     \centering    
     \includegraphics[width=1.0\textwidth]{blockchain_need}
-    \caption[Do you need a blockchain? flowchart]
-        {Do you need a blockchain? flowchart \citep[p.3]{wust2017you}}
+    \caption["Do you need a blockchain?" flowchart]
+        {"Do you need a blockchain?" flowchart \citep[p.3]{wust2017you}}
     \label{fig:LTSA}
 \end{figure}
 
