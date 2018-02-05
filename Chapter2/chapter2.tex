@@ -17,10 +17,18 @@ The advent of cryptocurrencies made blockchains an overnight darling, set to mak
 in several industries such as financial services, currency exchanges, supply chain management, retail 
 advertising and identity management \citep{forbes2017industries}.
 
+The blockchain data structure is a timestamped list of blocks, which stores data about transactions
+that occur within the blockchain network. It only allows the insertion of transactions, not the update 
+or deletion of existing transactions. Its ability to prevent tampering is known as "immutability". \citep[p.182]{xu2016blockchain}
+
 Blockchains can be classified into two types: one being a permissionless (public) blockchain which anyone can 
 use and no central authority exist to allow or ban peers; the other a permissioned blockchain (usually private)
 where a central entity assigns read/ write rights to individual peers \citep[p.1]{wust2017you}. These two types of 
 blockchain each provide varying degrees of the properties summarised in table \ref{table:permvsless}.
+
+Using blockchains as a data storage gives the system a very high degree of integrity. The public verifiability, 
+redundancy (see table \ref{table:permvsless}) and immutability of the blockchain makes it very difficult to 
+corrupt or lose the data stored.
 
 %https://eprint.iacr.org/2017/375.pdf
 \begin{table}[!h] 
@@ -42,7 +50,15 @@ blockchain each provide varying degrees of the properties summarised in table \r
     \end{tabularx}
 \end{table}
 
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=1.0\textwidth]{blockchain_need}
+    \caption["Do you need a blockchain?" flowchart]
+        {"Do you need a blockchain?" flowchart \citep[p.3]{wust2017you}}
+    \label{fig:LTSA}
+\end{figure}
 
+\subsection{Smart Contracts}
 
 Impossible to collude: executed by transparent code, increase trust and enables reputation building for even new entrants to 
 the education market
@@ -53,13 +69,7 @@ Smart Contract: secure and cutting the middleman
 
   
 
-\begin{figure}[!ht] 
-    \centering    
-    \includegraphics[width=1.0\textwidth]{blockchain_need}
-    \caption["Do you need a blockchain?" flowchart]
-        {"Do you need a blockchain?" flowchart \citep[p.3]{wust2017you}}
-    \label{fig:LTSA}
-\end{figure}
+
 
 
 Characteristics of a blockchain ledger such as Hyperledger:
