@@ -22,7 +22,7 @@ that occur within the blockchain network. It only allows the insertion of transa
 or deletion of existing transactions. Its ability to prevent tampering is known as "immutability". \citep[p.182]{xu2016blockchain}
 
 Blockchains can be classified into two types: one being a permissionless (public) blockchain which anyone can 
-use and no central authority exist to allow or ban peers; the other a permissioned blockchain (usually private)
+use and no central authority exist to allow or ban peers; the other a permissioned blockchain (can be public or private)
 where a central entity assigns read/ write rights to individual peers \citep[p.1]{wust2017you}. These two types of 
 blockchain each provide varying degrees of the properties summarised in table \ref{table:permvsless}.
 
@@ -106,9 +106,12 @@ There are three main properties of smart contracts:
     \citet[p.16]{swan2015blockchain} 
 \end{itemize}
 
+These properties ensure effective operation of the logic defined. In an e-learning context, this can potentially 
+be used to govern how teaching, evaluation and feedback take place, enhancing protection for the consumers/ learners.
+
 \section{Review of Relevant Education Research}
 
-Identifying issues in traditional higher education today that a future system can better 
+Identifying issues in traditional higher education today that a blockchain-based system can better 
 tackle is one of the objectives of this project. This informs the scope of the 
 project and the design of the deliverables.
 
@@ -339,6 +342,7 @@ market is necessary. See table \ref{table:blockchainscomparison} for a overview 
         \toprule
         & Bitcoin & Ethereum & Hyperledger Fabric & R3 Corda\\ 
         \midrule
+        Governance & developers & developers & Linux Foundation & R3 \\\hline
         Crypto- & bitcoin & ether, user-created & none, user-created & none \\ 
         currency & & cryptocurrencies & cryptocurrencies\\\hline
         Network & permissionless, & permissionless, & permissioned, & permissioned,\\ 
@@ -388,8 +392,18 @@ Built following use cases in the financial industry, Corda notably augmented sma
 with legal prose, making it a great tool for highly regulated environment. The development of 
 a cryptocurrency is not intended or supported. \citep{valenta2017comparison}
 
+Education is not a highly regulated environment and this unique selling point of Corda is not 
+immediately attractive to this project.
+
 \subsection*{Summary}
 
-Combining the recommendation from 
+Combining the recommendation for a public permissioned blockchain from the framework provided 
+by \citet{wust2017you} (See Section 2.1.1), and the brief analysis above, Hyperledger Fabric 
+stands out as the best platform which could allow for a lot of future work. Backed by the 
+Linux Foundation, Hyperledger projects have extensive documentations and a large, 
+active community. 
+
+The discussion following this chapter will now commit to using Hyperledger 
+Fabric as the blockchain platform for this project.
 
 % http://explore-ip.com/2017_Comparison-of-Ethereum-Hyperledger-Corda.pdf
