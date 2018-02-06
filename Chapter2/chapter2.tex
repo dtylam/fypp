@@ -32,7 +32,7 @@ corrupt or lose the data stored.
 
 %https://eprint.iacr.org/2017/375.pdf
 \begin{table}[!h] 
-    \caption{Comparison of permissioned and permissionless blockchains, adapted from \citet[p.3]{wust2017you}}
+    \caption{Comparison of permissioned and permissionless blockchains, modified from \citet[p.3]{wust2017you}}
     \centering
     \label{table:permvsless}
     \begin{tabularx}{\textwidth}{>{\bfseries}lXX}
@@ -50,45 +50,61 @@ corrupt or lose the data stored.
     \end{tabularx}
 \end{table}
 
+\subsection{Decision Framework for Blockchain Solutions}
+
 \begin{figure}[!ht] 
     \centering    
     \includegraphics[width=1.0\textwidth]{blockchain_need}
     \caption["Do you need a blockchain?" flowchart]
         {"Do you need a blockchain?" flowchart \citep[p.3]{wust2017you}}
-    \label{fig:LTSA}
+    \label{fig:blockchain_need}
 \end{figure}
 
-\subsection{Smart Contracts}
+\citet[p.3]{wust2017you} proposed a decision flowchart (figure \ref{fig:blockchain_need}) to determine whether a blockchain is 
+the appropriate solution for a problem, and which type of blockchain is the most appropriate. We could analyse our problem at 
+hand using these steps:
 
-Impossible to collude: executed by transparent code, increase trust and enables reputation building for even new entrants to 
-the education market
-Protects learner: guaranteed records and rewards
-% Scam? Reputation building? https://books.google.co.uk/books?id=jEsRVTbukyMC&lpg=PR5&ots=DKQbVRC8Yh&dq=high%20education%20assessment%20reputation&lr&pg=PA233#v=onepage&q=high%20education%20assessment%20reputation&f=false
-Administration costs of higher education
-Smart Contract: secure and cutting the middleman
+\begin{enumerate}
+    \item \textbf{Do you need a store state?} Yes. Records in an e-learning system require secure storage.
+    \item \textbf{Are there multiple writers?} Yes. There are many different authorities, institutions, educators and learners 
+    involved in an e-learning blockchain that demands write assess into records.
+    \item \textbf{Can you use an always online Trusted Third Party (TTP)?} \citet[p.2]{wust2017you} described two options of 
+    using a TTP: delegate write operations completely to the TTP if it is always online so that it verifies all state 
+    transitions, or use the TTP as a certificate authority in the setting of a permissioned blockchain if the TTP is usually 
+    offline.\\ 
+    In the e-learning context, a TTP could be the e-learning platform provider. However, the delegation of write operations 
+    to the platform goes against modern principles of autonomy and independence for higher education institutions. 
+    Governmental education ministries in most modern states audits and regulates higher education without writing student 
+    records or conferring degrees. An always online TTP should not be used in order to replicate the real world context. This 
+    project will answer no for this step.
+    \item \textbf{Are all writers known?} Yes. Users of the system should be registered and not be anonymous to the system 
+    administrators. [TODO: Why? Are there arguments to anonymous education?]
+    \item \textbf{Are all writers trusted?} No. Malpractices from education institutions can occur, especially in the private, 
+    for-profit sector. In a future open e-learning market, it could also be possible for anyone to start offering education 
+    services. We cannot assume that all writers are trusted.
+    \item \textbf{Is public verifiability required?} Yes. One of the objectives of this project is to boost trust in e-learning 
+    credentials by increasing public verifiability of education journeys, increasing public accountability especially for 
+    stakeholders such as employers and postgraduate studies providers.
+\end{enumerate}
 
-  
+This process led to the recommendation of a \textbf{public permissioned blockchain} for this project.
 
+\subsection{Properties of Smart Contracts}
+Again, smart contracts are logic embedded in a blockchain that defines the rules and penalties around an agreement and 
+could automatically enforce those obligations \citep{gulhane2017ibm}. The term "chaincode" is also used interchangeably 
+as a synonym for smart contracts \citep[p.6]{valenta2017comparison}.
 
+There are three main properties of smart contracts:
 
-
-Characteristics of a blockchain ledger such as Hyperledger:
-1. Shared Ledger: 
-shared across education and government authorities
-2. Smart Contract: 
-Swan (2015, p.62) proposed that “rules embedded in learning smart contracts could automatically confirm the completion of learning modules 
-through standardized online tests”.
-3. Privacy: 
-a. Appropriate Visibility
-b. Transactions are secure, authenticated and verifiable
-4. Consensus: All shared ledger parties agree to transactions
-
-Openness and transparency of online courses and online assessments is encouraged: using an interpreted language, instead of a compiled 
-one, to write the smart contract, so the actual code is visible on the blockchain and can be easily inspected
-% Trust in Education Providers can be maintained the identity of any addition or modiﬁcation to the record can be traced, records cannot 
-be removed or altered
-% Privacy of course participants is protected: events are publicly-accessible, but not publicly readable without a digital key
-Resilient to loss of infrastructure: records are distributed over a network of participating computers
+\begin{itemize}
+    \item \textbf{Autonomous}: after launching and running, no further communication is required between a smart contract 
+    and its initiating agent;
+    \item \textbf{Self-sufficient}: a smart contract should have the ability to keep itself alive when it needs to be, 
+    such as raising funds by providing services, and spending them on computing power or storage;
+    \item \textbf{Decentralised}: a smart contract does not exist on a single server, they are distributed and self-executing 
+    across all of the blockchain peers.\\ 
+    \citet[p.16]{swan2015blockchain} 
+\end{itemize}
 
 \section{Review of Relevant Education Research}
 
@@ -116,7 +132,7 @@ continuous assessments and traditional exams, such as:
     \item Assessment tasks do not increase students' want to learn, only their need to learn, promoting unhappiness;
     \item Invalid and unreliable marking due to speed or fatigue of assessors, plagiarism and unwanted collaborations, etc.;
     \item Sub-optimal levels of feedback after many types of assessments;
-    \item Students feel forced into surface learning
+    \item Students feel forced into surface learning\\
     \citep[p.62-65]{brown1999assessment}
 \end{enumerate}
 
@@ -133,7 +149,7 @@ It should be clear to learners what knowledge is required for a sufficient level
 The difference this makes was significant:
 
 \begin{itemize}
-  \item Students' perceptions of degree programme organization and transparency of exams are also 
+  \item Students' perceptions of degree programme organization and transparency of exams are 
   significantly correlated with academic performance;
   \item Academic pressure is substantially influenced by the perceived transparency of assessments.
 \end{itemize}
@@ -144,9 +160,9 @@ such as 1, 2 and 3.
 
 \subsection{Personalisation in Education}
 
-Cover personalisation broadly and in terms of curriculum (which modules to take, 
+[TODO: Cover personalisation broadly and in terms of curriculum (which modules to take, 
 customised passing thresholds) which can be negotiated on the blockchain.
-To be added if there is time for the project to cover this area.
+To be added if there is time for the project to cover this area.]
 
 \section{Literature Review in e-Learning}
 
@@ -344,11 +360,36 @@ contracts (any kind of embedded logic or programmes).
 
 \subsection*{Ethereum}
 
-Ethereum is famous for its Turing-complete smart contracts capabilities
+Ethereum is famous for its Turing-complete smart contracts capabilities, which allows entire 
+decentralised applications (dApps) to run autonomously on its blockchain. It has a build-in cryptocurrency 
+"Ether", which is used to reward miners that contribute to consensus, and to pay transaction fees. 
+Developers of dApps can also issue their own currency inside their smart contracts.
+
+\citet[p.3-4]{valenta2017comparison} noted that compared with Ethereum, which makes records accessible 
+to all participants, permissioned blockchains such as Fabric and Corda provide "more fine-grained access 
+control to records and thus enhance privacy". 
+They also achieves higher performance due to a faster consensus mechanism that does not involve mining.
+
+For this project, another crucial consideration against the adoption of the Ethereum environment is the 
+lack of a central authority, which makes it impossible for the platform to kick unscrupulous actors off 
+the blockchain.
 
 \subsection*{Hyperledger Fabric}
 
+\citet[p.7]{valenta2017comparison} described Fabric as a highly flexible "versatile toolbox". It 
+has different roles for peers within the network, where they can act as clients (end users), peers 
+(record keepers), endorsers (transaction verifiers), or orderers (transaction requester). The 
+consensus mechanism is by default a Byzantine fault-tolerant (BFT) algorithm but can be customised. 
+A cryptocurrency is not required, but could be developed with chaincode.
+
 \subsection*{R3 Corda}
 
-Built following use cases in the financial industry, 
+Built following use cases in the financial industry, Corda notably augmented smart contracts 
+with legal prose, making it a great tool for highly regulated environment. The development of 
+a cryptocurrency is not intended or supported. \citep{valenta2017comparison}
+
+\subsection*{Summary}
+
+Combining the recommendation from 
+
 % http://explore-ip.com/2017_Comparison-of-Ethereum-Hyperledger-Corda.pdf
