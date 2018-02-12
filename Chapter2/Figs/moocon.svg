@@ -36,18 +36,18 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.9"
-     inkscape:cx="110.6139"
-     inkscape:cy="344.25671"
+     inkscape:zoom="1.8"
+     inkscape:cx="201.96279"
+     inkscape:cy="304.12545"
      inkscape:document-units="mm"
-     inkscape:current-layer="g1227-9"
+     inkscape:current-layer="g879"
      showgrid="false"
      units="px"
      inkscape:snap-others="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="966"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-width="2880"
+     inkscape:window-height="1526"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
      inkscape:window-maximized="1" />
   <metadata
      id="metadata5">
@@ -57,7 +57,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -110,7 +110,7 @@
          id="rect1129"
          width="10.06321"
          height="1.3354024"
-         x="10.121155"
+         x="9.6494417"
          y="22.799259" />
       <text
          xml:space="preserve"
@@ -359,8 +359,8 @@
            y="32.186554"
            style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:Lato;-inkscape-font-specification:Lato;stroke-width:0.08320493"
            id="tspan1243"><tspan
-   style="font-weight:bold"
-   id="tspan1313">Student</tspan> </tspan><tspan
+             style="font-weight:bold"
+             id="tspan1313">Student</tspan></tspan><tspan
            sodipodi:role="line"
            x="-6.7331133"
            y="33.850655"
