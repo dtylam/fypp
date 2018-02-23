@@ -57,15 +57,22 @@ Below is a list of problem statements (PS) that were raised in interviews with E
 \\
 Questions: What are the problems with assessments in higher education today? / \\
 \\
-\textbf{PS1: Systems creating more manual work due to difficulties in customisation}\\
-Educator A: "Many of the assessment features and functions [on e-learning systems] are incompatible 
-with institutional requirements, or even national requirements"\\
-\\
+\textbf{PS1: Systems cannot be customised to fit assessment models}\\
+Many of the assessment features and functions on e-learning systems are incompatible 
+with institutional requirements, or even national requirements. Educator A found examples of staff:
+\begin{itemize}
+    \item taking assessments outside the system, then putting the results back in
+    \item creating grade mapping between points under the North American model and 
+    grades under the British model
+    \item incorporating an extra viva (oral defence) assessment step outside of e-learning systems
+    \item modifying a Scandinavian system that requires double marking for all assessments 
+    to making double marking optional
+\end{itemize}
 \textbf{PS2: Multiple systems for delivery, assessments and record keeping used in concoction without integration}\\
-Educator B: "[Teachers] have to log into all of them separately... which I find frustrating. Students find
-it frustrating as well... Blackboard Learn [a course management system] is one set of software, their 
-intranet is another, Wiseflow [an e-Assessment system] is another, another login system entirely for 
-e-Vision [a student record system]. Usability becomes a major pain point."\\
+Educator B: "[Teachers] have to log into all of them separately... which I find frustrating. Students 
+find it frustrating as well... Blackboard Learn [a course management system] is one set of software, 
+their intranet is another, Wiseflow [an e-Assessment system] is another, another login system entirely 
+for e-Vision [a student record system]. Usability becomes a major pain point."\\
 \\
 \underline{\textbf{On Curriculum Personalisation}}
 \\
@@ -99,21 +106,26 @@ What questions?
 
 Responses
 
-\section{Formal Requirements}
+\section{Functional Requirements}
 
-Table \ref{table:formal-reqs} lists out all the formal requirement statements (RS) adopted by this 
+Table \ref{table:formal-reqs} lists out all the formal functional requirement statements (FR) adopted by this 
 project going forward. They are related to at least one problem statements (PS) from the primary data 
 gathered, or related to literature reviewed in Chapter 2.
 
 \begin{table}[!h] 
-    \caption{Formal list of user requirements for this project}
+    \caption{Formal list of functional requirements for this project}
     \centering
     \label{table:formal-reqs}
     \begin{tabularx}{\textwidth}{>{\bfseries}lXl}
         & Requirement Statements & Related To\\
         \toprule
-        RS1 & The system should provide maximal configurability for grade schema & PS1\\\midrule
-        RS2 & The system should be able to handle the end to end 
-        & PS2\\\bottomrule
+        FR1 & The system would store learner records, and automate evaluation on a blockchain 
+        & Chapter 2.2.1\\\midrule
+        FR2 & The system should enforce the provision of learning outcomes, knowledge required 
+        and assessment goals at the creation or update of learning modules & Chapter 2.1.1\\\midrule
+        
+        FR3 & The system should provide flexible configurability for grade schema & PS1\\\midrule
+        FR4 & The system should provide one login for content delivery, 
+        assessment and record keeping & PS2\\\bottomrule
     \end{tabularx}
 \end{table}
