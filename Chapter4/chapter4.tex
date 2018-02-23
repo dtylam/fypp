@@ -51,16 +51,15 @@ two with education professionals and three with student representatives. See tab
 
 \subsection{Interviews with Education Professionals}
 
-Below is a list of problem statements (PS) that were raised in interviews with Educator A and B:\\
-\\
-\underline{\textbf{On Assessments}}
-\\
-Questions: What are the problems with assessments in higher education today? / \\
-\\
-\textbf{PS1: Systems cannot be customised to fit assessment models}\\
+Below is a list of problem statements (PS) that were raised in interviews with Educator A and B:\vspace{0.25cm}\\
+\underline{\textbf{On Assessments}}\\
+Questions: What are the problems with assessments in higher education today? / \vspace{0.25cm}\\
+\textbf{PS1: Systems cannot be customised to fit assessment and grading models}\\
 Many of the assessment features and functions on e-learning systems are incompatible 
-with institutional requirements, or even national requirements. Educator A found examples of staff:
+with institutional requirements, or even national requirements. Educator A pointed out how there is 
+no global standard in grade point averages, and gave examples of staff:
 \begin{itemize}
+    \setlength\itemsep{0em}
     \item taking assessments outside the system, then putting the results back in
     \item creating grade mapping between points under the North American model and 
     grades under the British model
@@ -72,25 +71,37 @@ with institutional requirements, or even national requirements. Educator A found
 Educator B: "[Teachers] have to log into all of them separately... which I find frustrating. Students 
 find it frustrating as well... Blackboard Learn [a course management system] is one set of software, 
 their intranet is another, Wiseflow [an e-Assessment system] is another, another login system entirely 
-for e-Vision [a student record system]. Usability becomes a major pain point."\\
-\\
-\underline{\textbf{On Curriculum Personalisation}}
-\\
+for e-Vision [a student record system]. Usability becomes a major pain point."\vspace{0.25cm}\\
+\textbf{PS3: Oral defence may be necessary to validate automated assessments}\\
+Educator A: "[Automated assessment] is problematic... to verify that is the viva (oral defence).
+When I talk to my group and ask what they got from that [automated] test they said they've got 100... 
+but when I ask them to explain it to me, they could not. So the final piece of validation that is needed
+before they move on from the level is to be able to question them on their answers. You can trust 
+what's in the system but whether you trust the value of what's in a system depends on the viva."\vspace{0.25cm}\\
+\underline{\textbf{On Curriculum Personalisation}}\\
 Questions: What do you think are the current road blocks to offering more multi-disciplinary, personal, 
-or even multi-institutional arrangements for higher education?
-\\\\
-\textbf{PS1: National regulations requiring programme outcomes and specifications makes movements 
+or even multi-institutional arrangements for higher education?\vspace{0.25cm}\\
+\textbf{PS: National regulations requiring programme outcomes and specifications makes movements 
 difficult}\\
-Educator A: "The [UK] academic infrastructure talk about programme outcomes and programme specifications,
-... So if you want to move from here to somewhere else and you’ve got 240 credits, the first thing I am 
-going to ask you is, have you read my level 1 and level 2 outcomes? Are you in a place where you can, 
-if you do level 3, meet the outcomes of the programme? ... whilst we have a credit model, it’s not the 
-same as the North American one, so actually movement between [institutions or programmes], despite the 
-government always saying they want this, is mitigated against by the way we conceive education, 
-which is about programmes represent programme level outcomes, what you can do when you leave a programme."
-\\\\
-\underline{\textbf{Other Notable Issues Raised}}
-\\
+The UK higher education academic infrastructure requires all degree programme to lay out 
+programme outcomes and programme specifications.\\
+Educator A: "If you want to move from [one institution] to somewhere else and you’ve got 240 credits, 
+the first thing I am going to ask you is, have you read my level 1 and level 2 outcomes? Are you 
+in a place where you can, if you do level 3, meet the outcomes of the programme? ... 
+whilst we have a credit model, it’s not the same as the North American one, so actually movement 
+between [institutions or programmes], despite the government always saying they want this, 
+is mitigated against by the way we conceive education, which is about programmes representing 
+programme level outcomes, what you can do when you leave a programme."\vspace{0.25cm}\\
+% Educator A: "You could radically liberalise it by having a set of terminal assessments that evaluate 
+% whether a student satisfy the programme outcomes"\\
+\underline{\textbf{Other Notable Issues Raised}}\vspace{0.25cm}\\
+\textbf{- Real world activities not captured in course management systems}\\
+Educator A: "There will be things that were part of the education experience that are outside of the system
+such as face to face contact."\vspace{0.25cm}\\
+\textbf{- Lack of student demand for more curriculum customisation}\\
+Educator A: "People like the idea of choice... but there is no evidence that there is an appetite 
+from students for this. If I offer the whole cohort the option to do a year in another country,
+very few of them will take it up."\vspace{0.25cm}\\
 \textbf{- Lack of support on self-regulated learning skills}\\
 Educator B: "[Students] don't realise the difference between school and university... the way they will
 be expected to learn... they have to do a lot of self-motivated learning and a lot of them find that a 
@@ -110,22 +121,38 @@ Responses
 
 Table \ref{table:formal-reqs} lists out all the formal functional requirement statements (FR) adopted by this 
 project going forward. They are related to at least one problem statements (PS) from the primary data 
-gathered, or related to literature reviewed in Chapter 2.
+gathered, or related to literature reviewed in Chapter 2. They have been ranked with the MoSCoW prioritisation
+framework, which specified four levels of priority: Must Have, Should Have, Could Have, and Won’t Have 
+this time \citep{agile2018moscow}. The MoSCoW levels are given from mainly a system engineering perspective 
+in planning the minimum viable demonstrator product for this project, and do not necessarily reflect 
+the priorities of the stakeholders.
 
 \begin{table}[!h] 
-    \caption{Formal list of functional requirements for this project}
+    \caption{Prioritised list of functional requirements for this project}
     \centering
     \label{table:formal-reqs}
-    \begin{tabularx}{\textwidth}{>{\bfseries}lXl}
-        & Requirement Statements & Related To\\
+    \begin{tabularx}{\textwidth}{>{\bfseries}lXll}
+        & Requirement Statements & Related To & MoSCoW\\
         \toprule
-        FR1 & The system would store learner records, and automate evaluation on a blockchain 
-        & Chapter 2.2.1\\\midrule
-        FR2 & The system should enforce the provision of learning outcomes, knowledge required 
-        and assessment goals at the creation or update of learning modules & Chapter 2.1.1\\\midrule
-        
-        FR3 & The system should provide flexible configurability for grade schema & PS1\\\midrule
-        FR4 & The system should provide one login for content delivery, 
-        assessment and record keeping & PS2\\\bottomrule
+        FR1 & The system would store learner records on a blockchain 
+        & Chapter 2.2.1 & Must Have\\\midrule
+        FR & The system would enforce predefined rules on assessments and evaluation with 
+        smart contracts & Chapter 2.2.1 & Must Have\\\midrule
+        FR & The system would enforce the provision of learning outcomes, knowledge required 
+        and assessment goals at the creation or update of learning modules & Chapter 2.1.1
+        & Must Have\\\midrule
+        FR & Teachers would be able to create a customised list of courses for a student's degree,
+        customising programme outcomes and specifications 
+        & Chapter 2.1.2 & Must Have\\\midrule
+        FR & Students would be able to add assessment submissions on the blockchain 
+        &  & Must Have\\\midrule
+        FR & The system would be able to generate certificates on the blockchain when a course 
+        has been completed &  & Must Have\\\midrule
+        FR & The system would provide flexible configurability for grade schema & PS1
+        & Should Have\\\midrule
+        FR & The system would provide one login for content delivery, assessment and 
+        record keeping & PS2 & Should Have\\\midrule
+        FR &  &  & Should Have\\
+        \bottomrule
     \end{tabularx}
 \end{table}
