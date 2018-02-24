@@ -11,6 +11,195 @@
 %     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 % \fi
 
+\section{Review of Relevant Education Research}
+
+Identifying issues in traditional higher education today that a blockchain-based system can better 
+tackle is one of the objectives of this project. This informs the scope of the 
+project and the design of the deliverables.
+
+There is an abundant amount of pedagogy and learning method research, which focuses on the 
+instruments and mode of delivery. These include methods such as "scaffolding", "constructivism", 
+"problem-based learning", and "active learning" \citep{ali2005effective}. However, this 
+research area is considered out of the scope of discussion for this project, which does not 
+aim to provide new insight into ICT-enhanced pedagogies, nor will it be designed around any 
+preferred pedagogies. This project is interested in representing components of e-learning, 
+such as delivery, assessment, and record keeping in a more generic, general purposed manner.
+
+\subsection{Assessments and Transparency}
+
+Assessment is arguably the most important process in the business of education as it "drives what 
+is learnt and taught" and "convert learning into credentials". \citep[p.160]{campbell2010digital}
+
+\citet{brown1999assessment} summarised examples of popular sentiments learners held about both 
+continuous assessments and traditional exams, such as:
+
+\begin{enumerate}
+    \setlength\itemsep{0em}
+    \item Assessment tasks do not increase students' want to learn, only their need to learn, promoting unhappiness;
+    \item Invalid and unreliable marking due to speed or fatigue of assessors, plagiarism and unwanted collaborations, etc.;
+    \item Sub-optimal levels of feedback after many types of assessments;
+    \item Students feel forced into surface learning.\\
+    \citep[p.62-65]{brown1999assessment}
+\end{enumerate}
+
+The importance of assessments, coupled with popular unhappiness and mistrust amongst learners towards 
+them, grows the tension between the teacher (or educational provider) and the learners.
+
+\citet{suhre2013determinants} looked into motivation on study progress in a higher education setting by collecting data 
+from 168 first-year university students for six months. The study found three main factors that motivates academic 
+progress: intrinsic abilities, personal motivations such as a need to achieve or fear of failure, and transparency in 
+exams and assessments.
+
+Transparency here refers to both the clarity of assessment goals and the procedures for assessing these goals. 
+It should be clear to learners what knowledge is required for a sufficient level of mastery. \citep{suhre2013determinants}
+The difference this makes was significant:
+
+\begin{itemize}
+    \setlength\itemsep{0em}    
+  \item Students' perceptions of degree programme organization and transparency of exams are 
+  significantly correlated with academic performance;
+  \item Academic pressure is substantially influenced by the perceived transparency of assessments.
+\end{itemize}
+
+An improvement in the transparency of goals, procedures, knowledge required of assessments and an increase 
+in feedback can directly tackle some of the negative sentiments listed above from \citet{brown1999assessment}, 
+such as 1, 2 and 3.
+
+\subsection{Personalisation in Education}
+
+Personalisation is regarded as the solution to traditional bureaucratic state education that is irresponsive, 
+inflexible, over-regulated, with the ‘one size fits all’ approach. The case for personalisation assumes that prior state 
+provision was, if not actually totalitarian, certainly machine-like, crude, churning out standardised goods, insensitive to diversity. \citep{bragg2014review}
+
+Current research into personalisation (or customisation) of education is broad and covers both the personalisation 
+of pedagogy and curriculum. Notably, research points to a growing appreciation of the need to support and 
+encourage learner control over the whole/entire learning process \citep{dron2007designing}.
+
+\citet{green2005futurelab} summarised four key areas pivotal to enabling personalised learning through digital 
+technologies. The pedagogy should:
+
+\begin{itemize}
+    \setlength\itemsep{0em}    
+    \item ensure that learners are capable of making informed educational decisions;
+    \item diversify and recognise different forms of skills and knowledge;
+    \item create diverse learning environments; and
+    \item include learner focused forms of feedback and assessment.
+\end{itemize}
+
+The design of a learning platform that aims at supporting personalisation must therefore focus on facilitating these 
+four actions.
+
+
+
+[TODO: Cover personalisation broadly and in terms of curriculum (which modules to take, 
+customised passing thresholds) which can be negotiated on the blockchain.
+To be added if there is time for the project to cover this area.]
+
+% https://www.researchgate.net/publication/262901454_Education_%27consumerism%27_and_%27personalisation%27
+
+
+
+
+
+(p.7)
+
+http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8527.2008.00411.x/full
+
+
+
+
+
+
+
+\section{Literature Review in e-Learning}
+
+E-learning has been growing as an industry and research area, and various standards have been devised. 
+A review of these frameworks could provide valuable insights.
+
+\subsection{e-Learning Systems}
+
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=1.0\textwidth]{LTSA}
+    \caption[Learning Technology Systems Architecture]
+        {Learning Technology Systems Architecture, IEEE P1484.1/D9 \citep{farance1999learning}}
+    \label{fig:LTSA}
+\end{figure}
+
+IEEE P1484.1/D9: the Learning Technology Systems Architecture (LTSA) provides a valuable way of organising 
+the scope and discussion in this project. It identified four main components: learner entity, coach, 
+delivery and evaluation; and two main resources: learning resources and learner records (See figure \ref{fig:LTSA}).
+
+Identifying the properties of a blockchain-based system that could improve these components is 
+critical to this project. For example, the distributed, immutable storage of learner records could 
+provide extra security.
+
+\subsection{e-Learning Research Framework}
+
+\citet{garrison2011learning} provided a framework for research and practice called the "Community 
+of Inquiry (CoI)" framework, which included three main categories:
+
+\begin{enumerate}
+    \setlength\itemsep{0em}    
+    \item Enhancing the social presence, such as collaborative learning
+    \item Enhancing the cognitive presence, such as practical inquiry and critical thinking
+    \item Enhancing the teaching presence, especially with asynchronous e-Learning (eg. pre-recorded lectures)
+\end{enumerate}
+
+A blockchain back-end could potentially provide experiential improvements in the above three categories as well. 
+For example, smart contracts could enhance the social and teaching presence by facilitating teacher-learner, or 
+learner-learner negotiations.
+
+% \subsection{Self-Regulation and Motivation}
+
+% There are several dimensions of self-regulation that will help a learner stay on an 
+% e-Learning course or curriculum:
+
+% \begin{table}[!ht] 
+%     \caption{Self-Regulation and Motivation Strategies, adapted from \citep[p.189]{o2013web}}
+%     \centering
+%     \label{table:Self-regulation Dimensions}
+%     \begin{tabular}{l c }
+%         \toprule
+%         Self-regulation Dimensions & Examples of Motivation Strategies \\ 
+%         \midrule
+%         Motives & Setting challenging but achievable goals \\ \hline
+%         Methods of Learning & Summarisation, outline-formatted notes, \\
+%         & interrogation and rehearsal, etc\\ \hline
+%         Time Management & Prioritizing tasks, dealing with procrastination\\ \hline
+%         Physical Environment & An environment conducive to learning\\ \hline
+%         Social environment & Help seeking: knowing when help is needed,\\
+%         & identifying sources of help, framing help request,\\
+%         & evaluating help received\\ \hline
+%         Performance & Observing and reflecting upon performance\\
+%         & with short-term and long-term goals\\
+%         \bottomrule
+%     \end{tabular}
+% \end{table}
+
+% An e-learning programme should equip a learner with these self-regulation skills,
+% and the e-learning system should provide tools that facilitate and enable the 
+% motivation strategies.
+
+\subsection{Security and Privacy}
+
+The security of e-learning systems have also been a concern. For example, \citet{el2003privacy} noted that “while many 
+advances have been made in the mechanics of providing online instruction, the needs for privacy and security have to-date 
+been largely ignored. At best they have been accommodated in an ad-hoc, patchwork fashion.”
+
+The consequences of cybersecurity breaches have also become more and more expensive. For example, when the General Data 
+Protection Regulation (GDPR) comes into effect across Europe in May 2018, the maximum fine for poor practices and data 
+breaches will be £17 million or 4\% of global turnover \citep{ico2017gdpr}.
+
+The scale and severity of historic breaches of of internet services has been worrying. Most notably in the e-learning 
+industry, the education platform Edmodo was hacked and 77M account details were lost and on sale on the dark 
+web, endangering students, teachers and parents who are account holders \citep{opsecmonkey2017edmodo}.
+
+The sizable threat and consequences makes a "security by design" and "privacy by design" approach for future e-Learning 
+systems very important.
+% The Information Commissioner's Office also encourages a "privacy by design approach" and 
+% https://www.ipc.on.ca/resource/privacy-by-design/
+
 \section{Properties of Blockchain Technologies}
 
 The advent of cryptocurrencies made blockchains an overnight darling, set to make significant disruptions 
@@ -22,7 +211,7 @@ that occur within the blockchain network. It only allows the insertion of transa
 or deletion of existing transactions. Its ability to prevent tampering is known as "immutability". \citep[p.182]{xu2016blockchain}
 
 Blockchains can be classified into two types: one being a permissionless (public) blockchain which anyone can 
-use and no central authority exist to allow or ban peers; the other a permissioned blockchain (usually private)
+use and no central authority exist to allow or ban peers; the other a permissioned blockchain (can be public or private)
 where a central entity assigns read/ write rights to individual peers \citep[p.1]{wust2017you}. These two types of 
 blockchain each provide varying degrees of the properties summarised in table \ref{table:permvsless}.
 
@@ -97,6 +286,7 @@ as a synonym for smart contracts \citep[p.6]{valenta2017comparison}.
 There are three main properties of smart contracts:
 
 \begin{itemize}
+    \setlength\itemsep{0.2em}        
     \item \textbf{Autonomous}: after launching and running, no further communication is required between a smart contract 
     and its initiating agent;
     \item \textbf{Self-sufficient}: a smart contract should have the ability to keep itself alive when it needs to be, 
@@ -106,151 +296,8 @@ There are three main properties of smart contracts:
     \citet[p.16]{swan2015blockchain} 
 \end{itemize}
 
-\section{Review of Relevant Education Research}
-
-Identifying issues in traditional higher education today that a future system can better 
-tackle is one of the objectives of this project. This informs the scope of the 
-project and the design of the deliverables.
-
-There is an abundant amount of pedagogy and learning method research, which focuses on the 
-instruments and mode of delivery. These include methods such as "scaffolding", "constructivism", 
-"problem-based learning", and "active learning" \citep{ali2005effective}. However, this 
-research area is considered out of the scope of discussion for this project, which does not 
-aim to provide new insight into ICT-enhanced pedagogies, nor will it be designed around any 
-preferred pedagogies. This project is interested in representing components of e-learning, 
-such as delivery, assessment, and record keeping in a more generic, general purposed manner.
-
-\subsection{Assessments and Transparency}
-
-Assessment is arguably the most important process in the business of education as it "drives what 
-is learnt and taught" and "convert learning into credentials". \citep[p.160]{campbell2010digital}
-
-\citet{brown1999assessment} summarised examples of popular sentiments learners held about both 
-continuous assessments and traditional exams, such as:
-
-\begin{enumerate}
-    \item Assessment tasks do not increase students' want to learn, only their need to learn, promoting unhappiness;
-    \item Invalid and unreliable marking due to speed or fatigue of assessors, plagiarism and unwanted collaborations, etc.;
-    \item Sub-optimal levels of feedback after many types of assessments;
-    \item Students feel forced into surface learning\\
-    \citep[p.62-65]{brown1999assessment}
-\end{enumerate}
-
-The importance of assessments, coupled with popular unhappiness and mistrust amongst learners towards 
-them, grows the tension between the teacher (or educational provider) and the learners.
-
-\citet{suhre2013determinants} looked into motivation on study progress in a higher education setting by collecting data 
-from 168 first-year university students for six months. The study found three main factors that motivates academic 
-progress: intrinsic abilities, personal motivations such as a need to achieve or fear of failure, and transparency in 
-exams and assessments.
-
-Transparency here refers to both the clarity of assessment goals and the procedures for assessing these goals. 
-It should be clear to learners what knowledge is required for a sufficient level of mastery. \citep{suhre2013determinants}
-The difference this makes was significant:
-
-\begin{itemize}
-  \item Students' perceptions of degree programme organization and transparency of exams are 
-  significantly correlated with academic performance;
-  \item Academic pressure is substantially influenced by the perceived transparency of assessments.
-\end{itemize}
-
-An improvement in the transparency of goals, procedures, knowledge required of assessments and an increase 
-in feedback can directly tackle some of the negative sentiments listed above from \citet{brown1999assessment}, 
-such as 1, 2 and 3.
-
-\subsection{Personalisation in Education}
-
-[TODO: Cover personalisation broadly and in terms of curriculum (which modules to take, 
-customised passing thresholds) which can be negotiated on the blockchain.
-To be added if there is time for the project to cover this area.]
-
-\section{Literature Review in e-Learning}
-
-E-learning has been growing as an industry and research area, and various standards have been devised. 
-A review of these frameworks could provide valuable insights.
-
-\subsection{e-Learning Systems}
-
-\begin{figure}[!ht] 
-    \centering    
-    \includegraphics[width=1.0\textwidth]{LTSA}
-    \caption[Learning Technology Systems Architecture]
-        {Learning Technology Systems Architecture, IEEE P1484.1/D9 \citep{farance1999learning}}
-    \label{fig:LTSA}
-\end{figure}
-
-IEEE P1484.1/D9: the Learning Technology Systems Architecture (LTSA) provides a valuable way of organising 
-the scope and discussion in this project. It identified four main components: learner entity, coach, 
-delivery and evaluation; and two main resources: learning resources and learner records (See figure \ref{fig:LTSA}).
-
-Identifying the properties of a blockchain-based system that could improve these components is 
-critical to this project. For example, the distributed, immutable storage of learner records could 
-provide extra security.
-
-\subsection{e-Learning Research Framework}
-
-\citet{garrison2011learning} provided a framework for research and practice called the "Community 
-of Inquiry (CoI)" framework, which included three main categories:
-
-\begin{enumerate}
-    \item Enhancing the social presence, such as collaborative learning
-    \item Enhancing the cognitive presence, such as practical inquiry and critical thinking
-    \item Enhancing the teaching presence, especially with asynchronous e-Learning (eg. pre-recorded lectures)
-\end{enumerate}
-
-A blockchain back-end could potentially provide experiential improvements in the above three categories as well. 
-For example, smart contracts could enhance the social and teaching presence by facilitating teacher-learner, or 
-learner-learner negotiations.
-
-% \subsection{Self-Regulation and Motivation}
-
-% There are several dimensions of self-regulation that will help a learner stay on an 
-% e-Learning course or curriculum:
-
-% \begin{table}[!ht] 
-%     \caption{Self-Regulation and Motivation Strategies, adapted from \citep[p.189]{o2013web}}
-%     \centering
-%     \label{table:Self-regulation Dimensions}
-%     \begin{tabular}{l c }
-%         \toprule
-%         Self-regulation Dimensions & Examples of Motivation Strategies \\ 
-%         \midrule
-%         Motives & Setting challenging but achievable goals \\ \hline
-%         Methods of Learning & Summarisation, outline-formatted notes, \\
-%         & interrogation and rehearsal, etc\\ \hline
-%         Time Management & Prioritizing tasks, dealing with procrastination\\ \hline
-%         Physical Environment & An environment conducive to learning\\ \hline
-%         Social environment & Help seeking: knowing when help is needed,\\
-%         & identifying sources of help, framing help request,\\
-%         & evaluating help received\\ \hline
-%         Performance & Observing and reflecting upon performance\\
-%         & with short-term and long-term goals\\
-%         \bottomrule
-%     \end{tabular}
-% \end{table}
-
-% An e-learning programme should equip a learner with these self-regulation skills,
-% and the e-learning system should provide tools that facilitate and enable the 
-% motivation strategies.
-
-\subsection{Security and Privacy}
-
-The security of e-learning systems have also been a concern. For example, \citet{el2003privacy} noted that “while many 
-advances have been made in the mechanics of providing online instruction, the needs for privacy and security have to-date 
-been largely ignored. At best they have been accommodated in an ad-hoc, patchwork fashion.”
-
-The consequences of cybersecurity breaches have also become more and more expensive. For example, when the General Data 
-Protection Regulation (GDPR) comes into effect across Europe in May 2018, the maximum fine for poor practices and data 
-breaches will be £17 million or 4\% of global turnover \citep{ico2017gdpr}.
-
-The scale and severity of historic breaches of of internet services has been worrying. Most notably in the e-learning 
-industry, the education platform Edmodo was hacked and 77M account details were lost and on sale on the dark 
-web, endangering students, teachers and parents who are account holders \citep{opsecmonkey2017edmodo}.
-
-The sizable threat and consequences makes a "security by design" and "privacy by design" approach for future e-Learning 
-systems very important.
-% The Information Commissioner's Office also encourages a "privacy by design approach" and 
-% https://www.ipc.on.ca/resource/privacy-by-design/
+These properties ensure effective operation of the logic defined. In an e-learning context, this can potentially 
+be used to govern how teaching, evaluation and feedback take place, enhancing protection for the consumers/ learners.
 
 \section{Existing Efforts in Blockchain for Education}
 
@@ -311,7 +358,7 @@ host institution is required for the awarding of accreditation. \citep{sharples2
 \begin{figure}[!h] 
     \centering    
     \includegraphics[width=0.95\textwidth]{moocon}
-    \caption[How smart contracts automates assessments]
+    \caption[Assessment Smart Contracts Concept]
         {Original diagram providing a high level view of how the project proposes automating assessments 
         with smart contracts}
     \label{fig:moocon_assess}
@@ -339,6 +386,7 @@ market is necessary. See table \ref{table:blockchainscomparison} for a overview 
         \toprule
         & Bitcoin & Ethereum & Hyperledger Fabric & R3 Corda\\ 
         \midrule
+        Governance & developers & developers & Linux Foundation & R3 \\\hline
         Crypto- & bitcoin & ether, user-created & none, user-created & none \\ 
         currency & & cryptocurrencies & cryptocurrencies\\\hline
         Network & permissionless, & permissionless, & permissioned, & permissioned,\\ 
@@ -379,7 +427,7 @@ the blockchain.
 \citet[p.7]{valenta2017comparison} described Fabric as a highly flexible "versatile toolbox". It 
 has different roles for peers within the network, where they can act as clients (end users), peers 
 (record keepers), endorsers (transaction verifiers), or orderers (transaction requester). The 
-consensus mechanism is by default a Byzantine fault-tolerant (BFT) algorithm but can be customised. 
+consensus mechanism is by default a Byzantine fault-tolerant (BFT) algorithm and can be customised. 
 A cryptocurrency is not required, but could be developed with chaincode.
 
 \subsection*{R3 Corda}
@@ -388,8 +436,18 @@ Built following use cases in the financial industry, Corda notably augmented sma
 with legal prose, making it a great tool for highly regulated environment. The development of 
 a cryptocurrency is not intended or supported. \citep{valenta2017comparison}
 
+Education is not a highly regulated environment and this unique selling point of Corda is not 
+immediately attractive to this project.
+
 \subsection*{Summary}
 
-Combining the recommendation from 
+Combining the recommendation for a public permissioned blockchain from the framework provided 
+by \citet{wust2017you} (See Section 2.1.1), and the brief analysis above, Hyperledger Fabric 
+stands out as the best platform which could allow for a lot of future work. Backed by the 
+Linux Foundation, Hyperledger projects have extensive documentations and a large, 
+active community. 
+
+The discussion following this chapter will now commit to using Hyperledger 
+Fabric as the blockchain platform for this project.
 
 % http://explore-ip.com/2017_Comparison-of-Ethereum-Hyperledger-Corda.pdf
