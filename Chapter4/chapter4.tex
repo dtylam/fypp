@@ -261,8 +261,8 @@ it would have more value because of the institution having a physical existence 
 
 Table \ref{table:fx-reqs} lists out the functional requirements (FR) and 
 table \ref{table:nonfx-reqs} the non-functional requirements (NR) adopted by this 
-project going forward. They are related to at least one problem statements (PS) from the primary data 
-gathered, or related to literature reviewed in Chapter 2. 
+project going forward. They are related to one or more of the problem statements (PS) gathered 
+above from primary data, or to the literature reviewed in Chapter 2. 
 
 These requirements have been ranked with the MoSCoW prioritisation
 framework, which specified four levels of priority: Must Have, Should Have, Could Have, and Won’t Have 
@@ -274,32 +274,57 @@ and do not necessarily reflect the priorities of the stakeholders.
     \caption{Prioritised list of functional requirements for this project}
     \centering
     \label{table:fx-reqs}
-    \begin{tabularx}{\textwidth}{>{\bfseries}l>{\hsize=1.6\hsize}X>{\hsize=.4\hsize}Xl}
+    \begin{tabularx}{\textwidth}{>{\bfseries}l>{\hsize=1.5\hsize}X>{\hsize=.5\hsize}Xl}
         & Requirement Statements & Related To & MoSCoW\\
         \toprule
         FR1 & The system would store learner records on a blockchain 
-        & Chapter 2.2.1 & Must Have\\\midrule
-        FR & The system would enforce predefined rules on assessments and evaluation with 
-        smart contracts & Chapter 2.2.1, PS6 & Must Have\\\midrule
-        FR & The system would enforce the provision of learning outcomes, knowledge required 
-        and assessment goals at the creation or update of learning modules & Chapter 2.1.1, 
-        PS4, PS6 & Must Have\\\midrule
-        FR & Teachers would be able to discuss and create a customised list of courses 
+        & Ch 2.2.1 (LTSA) & Must Have
+        \\\midrule
+        FR2 & Teachers would be able to create and edit learning resources
+        & Ch 2.2.1 (LTSA) & Must Have
+        \\\midrule
+        FR3 & Teachers would be able to create and edit assessments
+        & Ch 2.2.1 (LTSA) & Must Have
+        \\\midrule
+        FR4 & The system would enforce the provision of learning outcomes, knowledge required 
+        and assessment goals at the creation or update of modules & Ch 2.1.1 (Transparency), 
+        PS1 & Must Have
+        \\\midrule
+        FR5 & The system would enforce predefined assessments rules (eg. marking schemes, 
+        transparent procedures and feedback) with smart contracts 
+        & Ch 2.1.1 (Transparency), PS3, PS5 & Must Have
+        \\\midrule
+        FR6 & The system would allow teachers to configure multiple assessments and 
+        formative assessments for modules & PS2 & Could Have
+        \\\midrule
+        FR7 & The system would require vivas (oral defences) after automated assessments & 
+        PS4 & Could Have
+        \\\midrule
+        FR8 & The system would provide flexible configurability for grade schema & PS17
+        & Could Have
+        \\\midrule
+        FR9 & Teachers would be able to create a customised list of courses 
         for a student, customising programme outcomes and specifications 
-        & Chapter 2.1.2, PS7, PS8 & Must Have\\\midrule
-        FR & Students would be able to add assessment submissions on the blockchain 
-        &  & Must Have\\\midrule
-        FR & The system would be able to generate certificates on the blockchain when a course 
-        has been completed &  & Must Have\\\midrule
-        FR & The system would provide flexible configurability for grade schema & PS1
-        & Should Have\\\midrule
-        FR & The system would provide one login for content delivery, assessment and 
-        record keeping & PS2 & Should Have\\\midrule
-        FR & The system would require vivas (oral defences) after automated assessments & 
-        PS3 & Could Have\\\midrule
-        FR & The system would provide flexible configurability for multiple assessments and 
-        formative assessments for a course & PS5 & Could Have\\
-        \bottomrule
+        & Ch 2.1.2 (Personalisation), PS7, PS9 & Must Have
+        \\\midrule
+        FR10 & The system should feature dedicated support channels between students, teachers 
+        and other advisors 
+        & PS8, PS11 & Should Have
+        \\\midrule
+        FR11 & Students would be able to add assessment submissions on the blockchain 
+        & Figure \ref{fig:moocon_assess} (Concept)& Must Have
+        \\\midrule
+        FR12 & The system would be able to generate certificates on the blockchain when a course 
+        has been completed & Figure \ref{fig:moocon_assess} (Concept) & Must Have
+        \\\midrule
+        FR13 & The system would allow students to control access to their education history 
+        on the blockchain & PS14 & Should Have
+        \\\midrule
+        FR14 & The system would provide one login for content delivery, assessment and 
+        record keeping & PS18 & Should Have
+        \\\midrule
+         &  \multicolumn{2}{c}{Requirements targetting PS6, PS10, PS13, PS16} & Won't Have
+        \\\bottomrule
     \end{tabularx}
 \end{table}
 
@@ -311,11 +336,14 @@ and do not necessarily reflect the priorities of the stakeholders.
         & Requirement Statements & Related To & MoSCoW\\
         \toprule
         NR1 & The client applications would have the same functionalities across devices and 
-        a responsive interface. & PS & Should Have\\\midrule
+        a responsive interface & PS15 & Should Have\\\midrule
         NR2 & The client applications would fail safely and is error-forgiving 
         towards the user &  & Should Have\\\midrule
-        NR2 & The client applications would notify users of relevant events on the blockchain
+        NR3 & The client applications would notify users of relevant events on the blockchain
         network &  & Should Have\\\midrule
+        NR4 & The system should be able to reduce administrative work & PS12 & Should Have\\\midrule
+        NR5 & The system should be able to create more trust in online education providers 
+        and programmes & PS19 & Should Have\\\midrule
         \bottomrule
     \end{tabularx}
 \end{table}
