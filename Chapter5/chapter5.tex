@@ -10,7 +10,7 @@ will be created with a public permissioned blockchain based on Hyperledger Fabri
 It has become clear that a blockchain specific, high-fidelity prototyping tool is needed 
 to create system designs such as data and transaction models.
 
-\section*{Hyperledger Composer}
+\section{Design Tool}
 
 Hyperledger Composer is an open source development toolset and framework that aims to 
 accelerate time to value for blockchain projects. It offers business-centric 
@@ -18,8 +18,9 @@ abstractions, allowing business owners and developers to rapidly develop
 use cases and model a blockchain network. The design tools offered take the forms of:
 \begin{itemize}
     \setlength\itemsep{0em}            
-    \item a .cto file to define data models for assets, participants and transactions
-    \item a .js file to define logic (code) for smart contracts triggered by transactions
+    \item An object-oriented modelling language (.cto file) that defines data models in 
+    the blockchain network for assets, participants and transactions
+    \item a JavaScript file to define logic (code) for smart contracts triggered by transactions
     \item a .acl file to define access control rules for assets, participants and transactions\\
     \citep{official2018composer}
 \end{itemize}
@@ -27,12 +28,12 @@ use cases and model a blockchain network. The design tools offered take the form
 See figure \ref{fig:composer2fabric} for a visual explainer of how Hyperledger Composer 
 helps designers and developers create these high level definitions.
 
-\begin{figure}[!h] 
+\begin{figure}[!ht] 
     \centering    
     \includegraphics[width=1.0\textwidth]{composer2fabric}
     \caption[Hyperledger Composer]
         {Components in the Hyperledger Composer framework and how it deploys to 
-        Hyperledger Fabric \citep{cuicapuza2017composer}}
+        Hyperledger Fabric \citep{cuicapuza2017composer}} 
     \label{fig:composer2fabric}
 \end{figure}
 % https://medium.com/@RichardCuica/hyperledgers-fabric-composer-simplifying-business-networks-on-blockchain-94313b979671
@@ -42,24 +43,60 @@ prototype definitions and deploy it to Hyperledger Fabric, our target blockchain
 This will speed up the implementation of the proposed demonstrator applications 
 in the next stage.
 
-Throughout the design process, the hyperledger composer notations are converted into class 
-diagrams and activity diagrams with PlantUML, an open source language-to-diagram drawing tool.
+Throughout the design process, the hyperledger composer notations are converted into UML sequence 
+diagrams, class diagrams and activity diagrams with PlantUML, an open source language-to-diagram drawing tool.
 
 The discussion below may regularly refer back to the functional requirements (FR) and 
 non-functional requirements (NR) defined in the previous Chapter 4.
 
-\section{Participants, Assets and Transactions in the Blockchain Network}
+\section{Transaction Sequences}
 
-\subsection{Use Cases}
+A transaction is the only activity that can alter the state of the blockchain. Designing the 
+sequences of transactions necessary to fulfil the desired use cases will therefore be able to 
+provide a good overview of the work ahead, and the fields and properties that data model objects 
+should include to facilitate the transactions.
+
+\subsection{Assessment}
+
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=0.6\textwidth]{assessmentloop}
+    \caption[Assessment Use Case]
+        {Sequence diagram denoting the assets, transactions and events between 
+        learner and teacher participants on the blockchain for the assessment use case} 
+    \label{fig:assessmentloop}
+\end{figure}
+
+\subsection{Curriculum Personalisation}
+
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=0.7\textwidth]{personalisationloop}
+    \caption[Curriculum Personalisation Use Case]
+        {Sequence diagram denoting the assets, transactions and events between 
+         learner and teacher participants on the blockchain for the curriculum personalisation use case} 
+    \label{fig:personalisationloop}
+\end{figure}
 
 automatic formative assessments Annette's student
 
 schema --> reviewer
 
-\subsection{Access and Permissions on Assets}
+\section{Participant, Asset and Transaction Models}
+
+\subsection{Participants}
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=0.8\textwidth]{participants}
+    \caption[Participants Class Diagram]
+        {Class diagram describing the learner, teacher and reader participants defined on the blockchain} 
+    \label{fig:participants}
+\end{figure}
+
+\section{Access Control on Assets}
 Role based and attribute based
 
-\section{Logic and Events in Smart Contracts}
+\section{Smart Contracts: Transaction Logic and Events}
 
 \section{Limitations}
 No institutional approvers for certificates
