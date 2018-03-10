@@ -3,20 +3,55 @@
 %****************************** Third Chapter **********************************
 %*******************************************************************************
 \chapter{Approach}
+\graphicspath{{Chapter3/Figs/Raster/}{Chapter3/Figs/}}
 
-% **************************** Define Graphics Path **************************
-% \ifpdf
-%     \graphicspath{{Chapter3/Figs/Raster/}{Chapter3/Figs/PDF/}{Chapter3/Figs/}}
-% \else
-%     \graphicspath{{Chapter3/Figs/Vector/}{Chapter3/Figs/}}
-% \fi
 \section{Scope}
 
-The two primary problems: assessment transparency and curriculum personalisation
+The aim of this project focuses on improving assessments and curriculum personalisation, and does not require 
+coverage of all elements in the Learning Technology Systems Architecture (LTSA, Chapter 2.2.1). 
+See Figure \ref{fig:ltsa-covered} for which parts of LTSA this project will attempt to cover, and 
+Table \ref{table:ltsa-bcu} for the mappings from LTSA elements to the blockchain design objects in this project.
 
-Which bits of LTSA is relevant?
+Components such as delivery and the storage of learning resources will be out of the scope of this project. 
+A blockchain is also not the ideal storage service for multimedia data such as learning content and delivery activities 
+due to the inherent high latency in consensus. Security and redundancy of these data is also unnecessary. 
 
-Delivery
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=0.85\textwidth]{ltsa-covered}
+    \caption[Design Coverage of LTSA]
+        {The Learning Technology Systems Architecture \citep{ieee2003ltsa}, 
+        with components covered by this project highlighted in cyan} 
+    \label{fig:ltsa-covered}
+\end{figure}
+
+\begin{table}[!h] 
+    \caption{Mappings between LTSA elements and the BlockChain objects in this project}
+    \centering
+    \label{table:ltsa-bcu}
+    \begin{tabularx}{\textwidth}{l|X}
+        \textbf{LTSA Elements} & \textbf{BlockChain Objects}
+        \\\toprule
+        Learner Entity (component) & Learner
+        \\\midrule
+        Coach (component) & Teacher
+        \\\midrule
+        Evaluation (component) & Assessment Results, Feedback
+        \\\midrule
+        Behavior (flow) & Submission
+        \\\midrule
+        Catalog Info (flow) & Course Modules, Module Units
+        \\\midrule
+        Assessment (flow) & Assessment (Automatic Assessment, Assessor Assessment, etc.)
+        \\\midrule
+        Learner Info (flow) & Curriculum (a collection of Course Modules)
+        \\\midrule
+        Learning Parameters (flow) & Negotiation
+        \\\midrule
+        Learner Records (component) & Certificates, Submission, Assessment Results
+        \\\bottomrule
+    \end{tabularx}
+\end{table}
 
 \section{Project Management}
 

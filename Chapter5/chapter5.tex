@@ -6,7 +6,7 @@
 \graphicspath{{Chapter5/Figs/Raster/}{Chapter5/Figs/}}
 
 Following the discussion in Chapter 2.3.1 and 2.5, the designs for this project 
-will be created with a public permissioned blockchain based on Hyperledger Fabric in mind.
+will be created on top of Hyperledger Fabric, a public permissioned blockchain.
 It has become clear that a blockchain specific, high-fidelity prototyping tool is needed 
 to create system designs such as data and transaction models.
 
@@ -18,14 +18,14 @@ abstractions, allowing business owners and developers to rapidly develop
 use cases and model a blockchain network. The design tools offered take the forms of:
 \begin{itemize}
     \setlength\itemsep{0em}            
-    \item An object-oriented modelling language (.cto file) that defines data models in 
+    \item An object-oriented modelling language (.cto file) to define data models in 
     the blockchain network for assets, participants and transactions
-    \item a JavaScript file to define logic (code) for smart contracts triggered by transactions
-    \item a .acl file to define access control rules for assets, participants and transactions\\
+    \item JavaScript functions (.js file) to define logic for smart contracts triggered by transactions
+    \item An access control language (.acl file) to define access rules for records on the blockchain\\
     \citep{official2018composer}
 \end{itemize}
 
-See figure \ref{fig:composer2fabric} for a visual explainer of how Hyperledger Composer 
+See Figure \ref{fig:composer2fabric} for a visual explainer of how Hyperledger Composer 
 helps designers and developers create these high level definitions.
 
 \begin{figure}[!ht] 
@@ -43,7 +43,7 @@ prototype definitions and deploy it to Hyperledger Fabric, our target blockchain
 This will speed up the implementation of the proposed demonstrator applications 
 in the next stage.
 
-Throughout the design process, the hyperledger composer notations are converted into UML sequence 
+Throughout the design process, the Hyperledger Composer notations are converted into UML sequence 
 diagrams, class diagrams and activity diagrams with PlantUML, an open source language-to-diagram drawing tool.
 
 The discussion below may regularly refer back to the functional requirements (FR) and 
@@ -51,12 +51,15 @@ non-functional requirements (NR) defined in the previous Chapter 4.
 
 \section{Transaction Sequences}
 
-A transaction is the only activity that can alter the state of the blockchain. Designing the 
-sequences of transactions necessary to fulfil the desired use cases will therefore be able to 
-provide a good overview of the work ahead, and the fields and properties that data model objects 
-should include to facilitate the transactions.
+A transaction is the only activity that a peer can perform to alter the state of the blockchain. 
+Designing the sequences of transactions necessary to fulfil the desired use journeys will  
+be able to provide a good overview of the work ahead, and the fields that data model 
+objects should include to enable these transactions. Two overarching use cases are considered: 
+assessment and curriculum personalisation.
 
 \subsection{Assessment}
+
+
 
 \begin{figure}[!ht] 
     \centering    
@@ -66,6 +69,7 @@ should include to facilitate the transactions.
         learner and teacher participants on the blockchain for the assessment use case} 
     \label{fig:assessmentloop}
 \end{figure}
+
 
 \subsection{Curriculum Personalisation}
 
@@ -85,12 +89,25 @@ schema --> reviewer
 \section{Participant, Asset and Transaction Models}
 
 \subsection{Participants}
-\begin{figure}[!ht] 
+
+The network definitions will involve two main types of participants: teachers (which can be lecturers, 
+teaching assistants, tutors, etc.) and learners (which can be campus students, distant learners, etc.).
+
+\begin{figure}[!hb] 
     \centering    
-    \includegraphics[width=0.8\textwidth]{participants}
+    \includegraphics[width=0.7\textwidth]{participants}
     \caption[Participants Class Diagram]
         {Class diagram describing the learner, teacher and reader participants defined on the blockchain} 
     \label{fig:participants}
+\end{figure}
+
+\subsection{Assets}
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=0.6\textwidth]{assets}
+    \caption[Assets Class Diagram]
+        {Class diagram describing the assets defined on the blockchain} 
+    \label{fig:assets}
 \end{figure}
 
 \section{Access Control on Assets}

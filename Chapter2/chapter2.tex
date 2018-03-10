@@ -20,9 +20,9 @@ There is an abundant amount of pedagogy and learning method research, which focu
 instruments and mode of delivery. These include methods such as "scaffolding", "constructivism", 
 "problem-based learning", and "active learning" \citep{ali2005effective}. However, this 
 research area is considered out of the scope of discussion for this project, which does not 
-aim to provide new insight into ICT-enhanced pedagogies, nor will it be designed around any 
-preferred pedagogies. This project is interested in representing components of e-learning, 
-such as delivery, assessment, and record keeping in a more generic, general purposed manner.
+aim to provide new insight into ICT-enhanced pedagogies. This project is interested in 
+mapping components of e-learning, such as delivery, assessment, and record keeping 
+in a more general-purposed, pedagogically neutral manner to a blockchain.
 
 \subsection{Assessments and Transparency}
 
@@ -66,9 +66,14 @@ such as 1, 2 and 3.
 
 \subsection{Personalisation in Education}
 
+[TODO: Cover personalisation broadly and in terms of curriculum (which modules to take, 
+customised passing thresholds) which can be negotiated on the blockchain.
+To be added if there is time for the project to cover this area.]
+
 Personalisation is regarded as the solution to traditional bureaucratic state education that is irresponsive, 
 inflexible, over-regulated, with the ‘one size fits all’ approach. The case for personalisation assumes that prior state 
-provision was, if not actually totalitarian, certainly machine-like, crude, churning out standardised goods, insensitive to diversity. \citep{bragg2014review}
+provision was, if not actually totalitarian, certainly machine-like, crude, churning out standardised goods, 
+insensitive to diversity. \citep{bragg2014review}
 
 Current research into personalisation (or customisation) of education is broad and covers both the personalisation 
 of pedagogy and curriculum. Notably, research points to a growing appreciation of the need to support and 
@@ -88,49 +93,38 @@ technologies. The pedagogy should:
 The design of a learning platform that aims at supporting personalisation must therefore focus on facilitating these 
 four actions.
 
-
-
-[TODO: Cover personalisation broadly and in terms of curriculum (which modules to take, 
-customised passing thresholds) which can be negotiated on the blockchain.
-To be added if there is time for the project to cover this area.]
-
 % https://www.researchgate.net/publication/262901454_Education_%27consumerism%27_and_%27personalisation%27
-
-
-
-
 
 (p.7)
 
 http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8527.2008.00411.x/full
 
-
-
-
-
-
-
 \section{Literature Review in e-Learning}
-
-E-learning has been growing as an industry and research area, and various standards have been devised. 
-A review of these frameworks could provide valuable insights.
 
 \subsection{e-Learning Systems}
 
+[TODO: is this really relevant?]
+
+E-learning has been growing as an industry and research area, and the Learning Technology Standards Committee 
+was set up within the IEEE Computer Society to devise relevant standards. In 1999, the Learning Technology 
+Systems Architecture (LTSA) standard was published (See Figure \ref{fig:LTSA}) and was last revised in 2003.
+
 \begin{figure}[!ht] 
     \centering    
-    \includegraphics[width=1.0\textwidth]{LTSA}
+    \includegraphics[width=1.0\textwidth]{ltsa2003}
     \caption[Learning Technology Systems Architecture]
-        {Learning Technology Systems Architecture, IEEE P1484.1/D9 \citep{farance1999learning}}
+        {Learning Technology Systems Architecture, IEEE Standard \citep[p.9]{ieee2003ltsa}}
     \label{fig:LTSA}
 \end{figure}
 
-IEEE P1484.1/D9: the Learning Technology Systems Architecture (LTSA) provides a valuable way of organising 
+LTSA is "pedagogically neutral, content-neutral, culturally neutral, implementation-neutral, 
+and platform-neutral"\citep[p.1]{ieee2003ltsa}. It provides a valuable way of organising 
 the scope and discussion in this project. It identified four main components: learner entity, coach, 
-delivery and evaluation; and two main resources: learning resources and learner records (See figure \ref{fig:LTSA}).
+delivery, evaluation; two main stores: learning resources, learner records; and the information flows 
+or actions between them.
 
-Identifying the properties of a blockchain-based system that could improve these components is 
-critical to this project. For example, the distributed, immutable storage of learner records could 
+Identifying the properties of a blockchain-based system that could improve these components, stores and 
+flows is critical to this project. For example, the distributed, immutable storage of learner records could 
 provide extra security.
 
 \subsection{e-Learning Research Framework}
@@ -248,7 +242,7 @@ corrupt or lose the data stored.
     \label{fig:blockchain_need}
 \end{figure}
 
-\citet[p.3]{wust2017you} proposed a decision flowchart (figure \ref{fig:blockchain_need}) to determine whether a blockchain is 
+\citet[p.3]{wust2017you} proposed a decision flowchart (Figure \ref{fig:blockchain_need}) to determine whether a blockchain is 
 the appropriate solution for a problem, and which type of blockchain is the most appropriate. We could analyse our problem at 
 hand using these steps:
 
@@ -308,7 +302,7 @@ be used to govern how teaching, evaluation and feedback take place, enhancing pr
 \subsection{Blockcerts}
 
 Blockcerts is an open standard for blockchain certificates led by MIT’s Media Lab. Education providers can use it to store 
-the records of certifications they have awarded (See figure \ref{fig:blockcerts}). One bitcoin transaction is performed for 
+the records of certifications they have awarded (See Figure \ref{fig:blockcerts}). One bitcoin transaction is performed for 
 every batch of certificates, with the certificates stored in the OP\_RETURN transaction field on the bitcoin blockchain. 
 This is paid for by the certificate issuer. \citep{blockcerts2018}
 
@@ -345,7 +339,7 @@ learning history data for institutions. \citep{sonyged2017}
     \label{fig:openlearn}
 \end{figure}
 
-The OpenLearn Blockchain project envisions the creation of blockchain based ePortfolios (See figure 
+The OpenLearn Blockchain project envisions the creation of blockchain based ePortfolios (See Figure 
 \ref{fig:openlearn}). They are currently demonstrating this with an experimental plugin for Moodle, 
 a popular course management system, with which achievement badges can be stored on the Ethereum 
 blockchain. This system currently allows students to register for courses and receive badges which 
@@ -365,7 +359,7 @@ host institution is required for the awarding of accreditation. \citep{sharples2
 
 All of the above three notable efforts focus on identity management and record keeping for education. 
 This project will aim to extend these efforts by proposing smart contracts that automate assessments 
-(See figure \ref{fig:moocon_assess}) and deliver personalised curricula. 
+(See Figure \ref{fig:moocon_assess}) and deliver personalised curricula. 
 
 The vision of this project will also be to create an e-Learning marketplace that teachers can use directly, 
 instead of a blockchain network that education providers will have to consume through APIs. This makes for a 
@@ -435,8 +429,8 @@ Built following use cases in the financial industry, Corda notably augmented sma
 with legal prose, making it a great tool for highly regulated environment. The development of 
 a cryptocurrency is not intended or supported. \citep{valenta2017comparison}
 
-Education is not a highly regulated environment and this unique selling point of Corda is not 
-immediately attractive to this project.
+Education is not a highly regulated environment in most countries and this unique selling point of 
+Corda is not immediately attractive to this project.
 
 \subsection*{Summary}
 
