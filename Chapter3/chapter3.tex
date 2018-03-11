@@ -53,47 +53,82 @@ due to the inherent high latency in consensus. Security and redundancy of these 
     \end{tabularx}
 \end{table}
 
-\section{Project Timeline}
+\section{Lean Project Management and Agile Software Development}
 
-\begin{figure}[!hb] 
-    \centering    
+\subsection{Project Timeline}
+
+\begin{figure}[!hb]
+    \centering
     \includegraphics[width=1.0\textwidth]{simple_gantt}
     \caption[Project Timeline]
-        {A timeline of the stages of actions in this project and their dependencies if any, loosely based on a Gantt chart} 
+        {A timeline of the stages of actions in this project and their dependencies if any}
     \label{fig:simple_gantt}
 \end{figure}
 
-Figure \ref{fig:simple_gantt} shows the ten main stages of action, their timeframe and dependencies.
-Fairly waterfall... research specific?
+The project largely follows a linear process, with key steps in planning, requirements elicitation, 
+implementation and evaluation shown in Figure \ref{fig:simple_gantt}.
+% Fairly waterfall... research specific?
 
-\section{Agile Software Development}
+\subsection{Lean Project Management}
+
+Two kanbans were used to manage the project processes: a Kanban for implementation and 
+a Kanban for research and writing. The implementation Kanban used
+a loose adaptation of the development phase Kanban from \citet[p.25]{middleton2012lean}, 
+without ideation, user acceptance testing and release stages.
+See Table \ref{table:kanban-implementation} and \ref{table:kanban-research} for what the Kanban categories adopted are:
+\\
+\begin{table}[!ht] 
+    \caption{Implementation Kanban used for the project}
+    \centering
+    \label{table:kanban-implementation}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Minimum Marketable Function & Developing & Development Complete & Tested \\
+        &&&\\
+        &&&\\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{table}[!ht] 
+    \caption{Research Kanban used for the project}
+    \centering
+    \label{table:kanban-research}
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        Reading/Activity & Writing & Review & Completed\\
+        &&&\\
+        &&&\\        
+        \hline
+    \end{tabular}
+\end{table}
+
+The Kanbans are drawn on the online collaborative Kanban platform Trello. This is due to 
+the good extensibility of Trello, with plugins allowing the attachment of links and documents 
+from many other platforms.
 
 % \begin{figure}[!hb] 
-%     \centering    
+%     \centering
 %     \includegraphics[width=1.0\textwidth]{}
 %     \caption[Extreme Programming]
 %         {A timeline of the stages of actions in this project and their dependencies if any, loosely based on a Gantt chart} 
 %     \label{fig:}
 % \end{figure}
 
-There are some agile software development principles that this project has chosen to adopt. 
-Some clear limitations exist, for example, \citet{beck2001agile}'s agile manifesto asks for 
-daily collaboration between customer and developers, and teamwork and interactions
+\subsection{Agile Software Development}
 
-Here are the tools that this project has used to manage the agile process. Here is 
+There are two main agile software development principles that this project has chosen to adopt:
 
-Trello as Kanban
+\begin{itemize}
+    \setlength\itemsep{0em}        
+    \item Working software over comprehensive documentation;
+    \item Responding to change over following a plan.\\
+    \citep{beck2001agile}    
+\end{itemize}
 
-Github is a git-based version control, code hosting and project management service that offers free 
-private repositories to verified students \citep{github2018education}.
+Some clear limitations exist, for example, \citet{beck2001agile}'s Agile Manifesto asks for 
+daily collaboration between customer and developers, but contact with stakeholders 
+for this project has only happen twice at the requirements elicitation 
+phase and the evaluation phase. \citet{beck2001agile} also asks for teamwork and 
+interactions over processes and tools, but this project is an individual endeavour.
 
-\begin{figure}[!hb] 
-    \centering    
-    \includegraphics[width=1.0\textwidth]{platforms_stats}
-    \caption[Project Management Statistics]
-        {Statistics from Trello, GitHub and Stack Overflow collected over the duration of this project} 
-    \label{fig:platforms_stats}
-\end{figure}
-
-% \section{ and Testing}
-
+At the end of the implementation phase of this project, two main iterations were completed.
