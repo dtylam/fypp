@@ -119,7 +119,26 @@ teaching assistants, tutors, etc.) and learners (which can be campus students, d
 \end{figure}
 
 \section{Smart Contracts: Transaction Logic and Events}
-
+\begin{figure}[!ht]
+    \centering
+\begin{tikzpicture}[>=stealth,every node/.style={shape=rectangle,draw,rounded corners},]
+    % create the nodes
+    \node (start)[shape=circle, fill=gray, label=below:Tx Ordered] {};
+    \node (c1) [right =of start, text width=1.5cm, align=center]{Integrity checks};
+    \node (c2) [right =of c1, text width=4cm, align=center]{Adding new CourseModule, ModuleUnit, Assessment objects to blockchain};
+    \node (c3) [right =of c2, text width=4cm, align=center]{Adding newly created CourseModule to the list of modules for each teacher};
+    \node (stop1)[below =of c1, shape=circle, fill=gray, label=below:Tx Rejected] {};        
+    \node (stop2)[right = of c3, shape=circle, fill=gray, label=below:Tx Accepted] {};    
+    % connect the nodes
+    \draw[->] (start) to (c1);
+    \draw[->] (c1) -- node[anchor=south]{passed} (c2);
+    \draw[->] (c1) -- node[anchor=west]{failed} (stop1);    
+    \draw[->] (c2) to (c3);
+    \draw[->] (c3) to (stop2);    
+    % \draw[->] (c1.south) to[out=180,in=180] (c0.south);
+\end{tikzpicture}
+\caption{Smart Contract Logic for the Create Module Transaction (Tx)} \label{fig:cmtx}
+\end{figure}
 \section{Access Control}
 Role based and attribute based
 
