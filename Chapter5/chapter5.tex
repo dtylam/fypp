@@ -59,19 +59,44 @@ assessment and curriculum personalisation.
 
 \subsection{Assessment}
 
+These four transactions are required to complete the assessment use case:
+\begin{itemize}
+    \setlength\itemsep{0em}        
+    \item CreateModule: a transaction ordered by a teacher to store metadata about a course module, 
+    its units and assessments onto the blockchain;
+    \item AddSubmission: a transaction ordered by a learner to store a submission (assessment attempt) 
+    on the blockchain, this could return the result of the assessment if the result is returned by 
+    an automatic (machine) marking service;
+    \item SubmitResult: a transaction ordered by a teacher to store details of an assessor assessment 
+    on the blockchain;
+    \item GenCertificate: a transaction ordered by a teacher to create a new certificate on the blockchain.
+\end{itemize}
 
+See Figure \ref{fig:assessmentloop} for where these transactions occur in a sequence diagram.
 
 \begin{figure}[!ht] 
     \centering    
-    \includegraphics[width=0.6\textwidth]{assessmentloop}
+    \includegraphics[width=0.65\textwidth]{assessmentloop}
     \caption[Assessment Use Case]
-        {Sequence diagram denoting the assets, transactions and events between 
+        {A UML sequence diagram denoting the assets, transactions and events between 
         learner and teacher participants on the blockchain for the assessment use case} 
     \label{fig:assessmentloop}
 \end{figure}
 
-
 \subsection{Curriculum Personalisation}
+
+Similarly, we looked at the transactions required to build a minimum viable product 
+that facilitates curriculum personalisation. A curriculum here is simply a list of course 
+modules attached to a learner and a teacher (a personal tutor for the learner).
+
+\begin{itemize}
+    \item ProposeCurriculum: a transaction ordered by a learner or a teacher to propose 
+    a brand new curriculum, or to proposed edits to an existing curriculum on the blockchain.
+    \item ApproveCurriculum: a transaction ordered by a teacher to enrol a learner to 
+    the course modules in the learner's curriculum.
+\end{itemize}
+
+See Figure \ref{fig:personalisationloop} for where these two transactions occur in a sequence diagram.
 
 \begin{figure}[!ht] 
     \centering    
@@ -82,22 +107,31 @@ assessment and curriculum personalisation.
     \label{fig:personalisationloop}
 \end{figure}
 
-automatic formative assessments Annette's student
+% automatic formative assessments Annette's student
 
-schema --> reviewer
+% schema --> reviewer
 
 \section{Participant, Asset and Transaction Models}
 
 \subsection{Participants}
 
-The network definitions will involve two main types of participants: teachers (which can be lecturers, 
-teaching assistants, tutors, etc.) and learners (which can be campus students, distant learners, etc.).
+The network definitions will involve three main types of participants: 
+\begin{itemize}
+    \setlength\itemsep{0em}    
+    \item teachers (which can be lecturers, teaching assistants, tutors, etc.)
+    \item learners (which can be campus students, distant learners, etc.)
+    \item readers (members of the public who are interested in querying or verifying records, 
+    such as employers and further education providers)
+\end{itemize}
+
+See Figure \ref{fig:participants} for the detailed entity properties of these three participant types 
+in a class diagram.
 
 \begin{figure}[!ht] 
     \centering    
     \includegraphics[width=0.7\textwidth]{participants}
     \caption[Participants Class Diagram]
-        {Class diagram describing the learner, teacher and reader participants defined on the blockchain} 
+        {A UML class diagram describing the learner, teacher and reader participants defined on the blockchain} 
     \label{fig:participants}
 \end{figure}
 
@@ -131,8 +165,8 @@ teaching assistants, tutors, etc.) and learners (which can be campus students, d
     \node (stop2)[right = of c3, shape=circle, fill=gray, label=below:Tx Accepted] {};    
     % connect the nodes
     \draw[->] (start) to (c1);
-    \draw[->] (c1) -- node[anchor=south]{passed} (c2);
-    \draw[->] (c1) -- node[anchor=west]{failed} (stop1);    
+    \draw[->] (c1) -- node[anchor=south] {passed} (c2);
+    \draw[->] (c1) -- node[anchor=west] {failed} (stop1);    
     \draw[->] (c2) to (c3);
     \draw[->] (c3) to (stop2);    
     % \draw[->] (c1.south) to[out=180,in=180] (c0.south);
