@@ -163,8 +163,10 @@ The special design considerations included:
     self-assessment, computer assessment, tutor assessment, and peer assessment. Why two in future work?
     \item knowledge required, learning objective
     \item programme outcomes: middleman fields bureaucracy
-    \item Markdown fields: markdown is [TODO]. such as detailsMd in Assessment, materialMd in ModuleUnit, 
-    fineprintMd in Certificate, etc
+    \item Markdown fields: Markdown is [TODO]. It is anticipated that many markets, institutions, departments and teachers 
+    will have their own requirements, format and templates for what their e-Learning content should look like. To cater to 
+    this need for content and layout flexibility the blockchain will accept markdown syntax as input in fields such as 
+    detailsMd in Assessment, materialMd in ModuleUnit and fineprintMd in Certificate.
     \item Assessments: grade descriptors and criteria
 \end{itemize}
 
@@ -181,6 +183,10 @@ Concepts are ... [TODO] include
 \end{figure}
 
 \section{Smart Contracts: Transaction Logic and Events}
+
+We have previously discussed the nature of Smart Contracts in Chapter 2.3.2. They are autonomous, self-sufficient and 
+decentralised code that runs on a blockchain. In Hyperledger Composer, Smart Contracts are called chaincode and 
+they are run synchronously with a transaction order, with a final output required to accept the transaction or reject it.
 
 \subsection{The CreateModule Transaction}
 \begin{figure}[!ht]
@@ -229,6 +235,15 @@ Concepts are ... [TODO] include
 \caption{A flowchart representation of the Smart Contract behind the AddSubmission Transaction (Tx)} \label{fig:astx}
 \end{figure}
 
+\subsection{The SubmitResult Transaction}
+
+\subsection{The GenCertificate Transaction}
+
+\subsection{The ProposeCurriculum Transaction}
+
+\subsection{The ApproveCurriculum Transaction}
+
+
 \section{Access Control}
 Role based and attribute based
 
@@ -237,3 +252,10 @@ No institutional approvers for certificates
 No different tiers of privileges for teachers for roles such as module leader, module reviewer, supporting staff
 
 \section{User Interfaces for Client Applications}
+
+While improving general usability is not one of the objectives of this project, poor usability and interface designs 
+could negate the improvements in assessments and curriculum personalisation that this project aims for.
+
+Adopt a popular design language for the user interfaces in the client applications.
+
+Paper prototypes that follow usability hieuristics.
