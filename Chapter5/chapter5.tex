@@ -111,7 +111,20 @@ See Figure \ref{fig:personalisationloop} for where these two transactions occur 
 
 % schema --> reviewer
 
-\section{Participant, Asset and Transaction Models}
+\section{Participant, Asset and Concept Models}
+
+These are the type of records that are allowed to be created, updated and read in the blockchain. 
+The Hyperledger Composer framework recommends the development of blockchain schema objects 
+based on three types:
+
+\begin{enumerate}
+    \setlength\itemsep{0em}    
+    \item Participants
+    \item Assets
+    \item Concepts
+\end{enumerate}
+
+
 
 \subsection{Participants}
 
@@ -140,7 +153,7 @@ in a class diagram.
     \centering    
     \includegraphics[width=0.6\textwidth]{assets}
     \caption[Assets Class Diagram]
-        {Class diagram describing the assets defined on the blockchain} 
+        {A UML class diagram describing the assets defined on the blockchain} 
     \label{fig:assets}
 \end{figure}
 
@@ -148,11 +161,13 @@ in a class diagram.
     \centering    
     \includegraphics[width=1.0\textwidth]{concepts}
     \caption[Concepts Class Diagram]
-        {Class diagram describing the concepts (other abstract classes that are contained as a field) defined on the blockchain} 
+        {A UML class diagram describing the concepts (other abstract classes that are contained as a field) defined on the blockchain} 
     \label{fig:concepts}
 \end{figure}
 
 \section{Smart Contracts: Transaction Logic and Events}
+
+\subsection{The CreateModule Transaction}
 \begin{figure}[!ht]
     \centering
 \begin{tikzpicture}[>=stealth,every node/.style={shape=rectangle,draw,rounded corners},]
@@ -171,8 +186,34 @@ in a class diagram.
     \draw[->] (c3) to (stop2);    
     % \draw[->] (c1.south) to[out=180,in=180] (c0.south);
 \end{tikzpicture}
-\caption{Smart Contract Logic for the Create Module Transaction (Tx)} \label{fig:cmtx}
+\caption{A flowchart representation of the Smart Contract behind the CreateModule Transaction (Tx)} \label{fig:cmtx}
 \end{figure}
+
+\subsection{The AddSubmission Transaction}
+
+\begin{figure}[!ht]
+    \centering
+\begin{tikzpicture}[>=stealth,every node/.style={shape=rectangle,draw,rounded corners},]
+    % create the nodes
+    \node (start)[shape=circle, fill=gray, label=below:Tx Ordered] {};
+    \node (c1) [right =of start, text width=3cm, align=center]{Assign a teacher to the submission};
+    \node (auto1) [right =of c1, text width=3cm, align=center]{Send the test file and submission file to the automatic testing service};
+    \node (ass1) [below =of auto1, text width=3cm, align=center]{Create the Submission blockchain object};
+    \node (ass2) [right =of ass1, text width=3cm, align=center]{add the new Submission to learner's list of Submissions};
+    % \node (stop1)[below =of c1, shape=circle, fill=gray, label=below:Tx Rejected] {};        
+    \node (stop2)[right = of c3, shape=circle, fill=gray, label=below:Tx Accepted] {};    
+    % connect the nodes
+    \draw[->] (start) to (c1);
+    \draw[->] (c1) -- node[anchor=south] {if Automatic Assessment} (auto1);
+    % \draw[->] (c1) -- node[anchor=west] {failed} (stop1);    
+    \draw[->] (c1) -- node[anchor=south] {if Assessor Assessment} (ass1);
+    \draw[->] (ass1) to (ass2);        
+    \draw[->] (ass2) to (stop2);    
+    % \draw[->] (c1.south) to[out=180,in=180] (c0.south);
+\end{tikzpicture}
+\caption{A flowchart representation of the Smart Contract behind the AddSubmission Transaction (Tx)} \label{fig:astx}
+\end{figure}
+
 \section{Access Control}
 Role based and attribute based
 
