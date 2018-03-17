@@ -9,8 +9,10 @@
 % \else
 %     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 % \fi
+In this chapter we will take a deeper dive into the issues around education and e-learning that 
+is relevant to this project, and 
 
-\section{Review of Relevant Education Research}
+\section{Literature Review in Education and e-Learning}
 
 Identifying issues in traditional higher education today that a blockchain-based system can better 
 tackle is one of the objectives of this project. This informs the scope of the 
@@ -20,16 +22,16 @@ There is an abundant amount of pedagogy and learning method research, which focu
 instruments and mode of delivery. These include methods such as "scaffolding", "constructivism", 
 "problem-based learning", and "active learning" \citep{ali2005effective}. However, this 
 research area is considered out of the scope of discussion for this project, which does not 
-aim to provide new insight into ICT-enhanced pedagogies. This project is interested in 
+aim to provide new insight into ICT-enhanced pedagogies. Instead, this project is interested in 
 mapping components of e-learning, such as delivery, assessment, and record keeping 
 in a more general-purposed, pedagogically neutral manner to a blockchain.
 
 \subsection{Assessments and Transparency}
 
 Assessment is arguably the most important process in the business of education as it "drives what 
-is learnt and taught" and "convert learning into credentials". \citep[p.160]{campbell2010digital}
+is learnt and taught" and "converts learning into credentials". \citep[p.160]{campbell2010digital}
 
-\citet{brown1999assessment} summarised examples of popular sentiments learners held about both 
+\citet{brown1999assessment} summarises examples of popular sentiments learners held about both 
 continuous assessments and traditional exams, such as:
 
 \begin{enumerate}
@@ -42,20 +44,20 @@ continuous assessments and traditional exams, such as:
 \end{enumerate}
 
 The importance of assessments, coupled with popular unhappiness and mistrust amongst learners towards 
-them, grows the tension between the teacher (or educational provider) and the learners.
+them, increases the tension between the teacher (or educational provider) and the learners.
 
-\citet{suhre2013determinants} looked into motivation on study progress in a higher education setting by collecting data 
+\citet{suhre2013determinants} looks into motivation on study progress in a higher education setting by collecting data 
 from 168 first-year university students for six months. The study found three main factors that motivates academic 
 progress: intrinsic abilities, personal motivations such as a need to achieve or fear of failure, and transparency in 
 exams and assessments.
 
 Transparency here refers to both the clarity of assessment goals and the procedures for assessing these goals. 
-It should be clear to learners what knowledge is required for a sufficient level of mastery. \citep{suhre2013determinants}
+It should be clear to learners what knowledge is required for a sufficient level of mastery \citep{suhre2013determinants}.
 The difference this makes was significant:
 
 \begin{itemize}
     \setlength\itemsep{0em}    
-  \item Students' perceptions of degree programme organization and transparency of exams are 
+  \item Students' perceptions of degree programme organisation and transparency of exams are 
   significantly correlated with academic performance;
   \item Academic pressure is substantially influenced by the perceived transparency of assessments.
 \end{itemize}
@@ -99,11 +101,7 @@ four actions.
 
 http://onlinelibrary.wiley.com/doi/10.1111/j.1467-8527.2008.00411.x/full
 
-\section{Literature Review in e-Learning}
-
 \subsection{e-Learning Systems}
-
-[TODO: is this really relevant?]
 
 E-learning has been growing as an industry and research area, and the Learning Technology Standards Committee 
 was set up within the IEEE Computer Society to devise relevant standards. In 1999, the Learning Technology 
@@ -127,21 +125,21 @@ Identifying the properties of a blockchain-based system that could improve these
 flows is critical to this project. For example, the distributed, immutable storage of learner records could 
 provide extra security.
 
-\subsection{e-Learning Research Framework}
+% \subsection{e-Learning Research Framework}
 
-\citet{garrison2011learning} provided a framework for research and practice called the "Community 
-of Inquiry (CoI)" framework, which included three main categories:
+% \citet{garrison2011learning} provided a framework for research and practice called the "Community 
+% of Inquiry (CoI)" framework, which included three main categories:
 
-\begin{enumerate}
-    \setlength\itemsep{0em}    
-    \item Enhancing the social presence, such as collaborative learning
-    \item Enhancing the cognitive presence, such as practical inquiry and critical thinking
-    \item Enhancing the teaching presence, especially with asynchronous e-Learning (eg. pre-recorded lectures)
-\end{enumerate}
+% \begin{enumerate}
+%     \setlength\itemsep{0em}    
+%     \item Enhancing the social presence, such as collaborative learning
+%     \item Enhancing the cognitive presence, such as practical inquiry and critical thinking
+%     \item Enhancing the teaching presence, especially with asynchronous e-Learning (eg. pre-recorded lectures)
+% \end{enumerate}
 
-A blockchain back-end could potentially provide experiential improvements in the above three categories as well. 
-For example, smart contracts could enhance the social and teaching presence by facilitating teacher-learner, or 
-learner-learner negotiations.
+% A blockchain back-end could potentially provide experiential improvements in the above three categories as well. 
+% For example, Smart Contracts could enhance the social and teaching presence by facilitating teacher-learner, or 
+% learner-learner negotiations.
 
 % \subsection{Self-Regulation and Motivation}
 
@@ -174,7 +172,7 @@ learner-learner negotiations.
 % and the e-learning system should provide tools that facilitate and enable the 
 % motivation strategies.
 
-\subsection{Security and Privacy}
+\section{Security and Privacy}
 
 The security of e-learning systems have also been a concern. For example, \citet{el2003privacy} noted that “while many 
 advances have been made in the mechanics of providing online instruction, the needs for privacy and security have to-date 
@@ -205,12 +203,8 @@ or deletion of existing transactions. Its ability to prevent tampering is known 
 
 Blockchains can be classified into two types: one being a permissionless (public) blockchain which anyone can 
 use and no central authority exist to allow or ban peers; the other a permissioned blockchain (can be public or private)
-where a central entity assigns read/ write rights to individual peers \citep[p.1]{wust2017you}. These two types of 
-blockchain each provide varying degrees of the properties summarised in table \ref{table:permvsless}.
-
-Using blockchains as a data storage gives the system a very high degree of integrity. The public verifiability, 
-redundancy (see table \ref{table:permvsless}) and immutability of the blockchain makes it very difficult to 
-corrupt or lose the data stored.
+where a central entity assigns read/ write rights to individual peers \citep[p.1]{wust2017you}. Table \ref{table:permvsless} 
+summarises the main differences in these two types of blockchain.
 
 %https://eprint.iacr.org/2017/375.pdf
 \begin{table}[!ht] 
@@ -232,6 +226,10 @@ corrupt or lose the data stored.
     \end{tabularx}
 \end{table}
 
+Using blockchains as a data storage gives the system a very high degree of integrity. The public verifiability, 
+redundancy (in Table \ref{table:permvsless}) and immutability of the blockchain makes it very difficult to 
+corrupt or lose the data stored.
+
 \subsection{Decision Framework for Blockchain Solutions}
 
 \begin{figure}[!ht] 
@@ -243,8 +241,8 @@ corrupt or lose the data stored.
 \end{figure}
 
 \citet[p.3]{wust2017you} proposed a decision flowchart (Figure \ref{fig:blockchain_need}) to determine whether a blockchain is 
-the appropriate solution for a problem, and which type of blockchain is the most appropriate. We could analyse our problem at 
-hand using these steps:
+the appropriate solution for a problem, and which type of blockchain is the most appropriate. Here is an analysis of our problem at 
+hand with the decision flowchart steps:
 
 \begin{enumerate}
     \item \textbf{Do you need a store state?} Yes. Records in an e-learning system require secure storage.
@@ -272,31 +270,104 @@ hand using these steps:
 This process led to the recommendation of a \textbf{public permissioned blockchain} for this project.
 
 \subsection{Properties of Smart Contracts}
-Again, smart contracts are logic embedded in a blockchain that defines the rules and penalties around an agreement and 
-could automatically enforce those obligations \citep{gulhane2017ibm}. The term "chaincode" is also used interchangeably 
-as a synonym for smart contracts \citep[p.6]{valenta2017comparison}.
+Smart Contracts are self-executing code embedded in a blockchain that defines the rules and penalties around an agreement and 
+could automatically enforce those obligations. They can effectively "cut out the middleman" to save time, and prevent disagreements 
+about transactions \citep{gulhane2017ibm}. The term "chaincode" is also used interchangeably as a synonym for 
+Smart Contracts \citep[p.6]{valenta2017comparison}.
 
-There are three main properties of smart contracts:
+There are three main properties of Smart Contracts \citep[p.16]{swan2015blockchain}:
 
 \begin{itemize}
-    \setlength\itemsep{0.2em}        
+    \setlength\itemsep{0em}        
     \item \textbf{Autonomous}: after launching and running, no further communication is required between a smart contract 
     and its initiating agent;
     \item \textbf{Self-sufficient}: a smart contract should have the ability to keep itself alive when it needs to be, 
     such as raising funds by providing services, and spending them on computing power or storage;
     \item \textbf{Decentralised}: a smart contract does not exist on a single server, they are distributed and self-executing 
-    across all of the blockchain peers.\\ 
-    \citet[p.16]{swan2015blockchain} 
+    across all of the blockchain peers.
 \end{itemize}
 
 These properties ensure effective operation of the logic defined. In an e-learning context, this can potentially 
 be used to govern how teaching, evaluation and feedback take place, enhancing protection for the consumers/ learners.
 
+\section{Overview of Blockchain Development Toolkits}
+
+This project will involve the design of Smart Contracts for e-Learning transactions and building a demonstrator 
+network and applications. A review of the popular blockchain implementations and development toolkits on the 
+market is necessary. See Table \ref{table:blockchainscomparison} for a overview and below for more commentary.
+
+\begin{table}[!ht] 
+    \caption{Comparison of key blockchain implementations, adapted from \citet{ibm2018hyperledger} and \citet{valenta2017comparison}}
+    \centering
+    \label{table:blockchainscomparison}
+    \begin{tabularx}{\textwidth}{>{\bfseries}lXXXX}
+        \toprule
+        & \textbf{Bitcoin} & \textbf{Ethereum} & \textbf{Hyperledger Fabric} & \textbf{R3 Corda}\\ 
+        \midrule
+        Governance & Bitcoin  & Ethereum & Linux & R3\\
+        & developers & developers & Foundation\\
+        \midrule       
+        Cryptocurrency & bitcoin & ether, and & none, or & none \\ 
+        & & user-created cryptocurrencies & user-created cryptocurrencies & \\         
+        \midrule
+        Network & permissionless, public & permissionless, public or private & permissioned, private & permissioned, private\\ 
+        \midrule        
+        Transactions & anonymous & anonymous or & public or & \\ 
+        & & private & confidential & \\         
+        \midrule        
+        Consensus & proof of work & proof of work & PBFT & PBFT\\
+        \midrule               
+        Smart Contracts & none & yes (Solidity, & yes (chaincode) & yes (chaincode)\\ 
+        & & Serpent, LLL) \\         
+        \hline
+        Language & C++ & Golang, C++, & Golang, Java, & Kotlin, Java, \\ 
+        & & Python & JavaScript & legal prose\\         
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+Bitcoin is included in the Table only as a point of reference. Building with the bitcoin 
+blockchain is not considered for this project because of its lack of support for Smart 
+Contracts (any kind of embedded logic or programmes).
+
+\subsection*{Ethereum}
+
+Ethereum is famous for its Turing-complete Smart Contracts capabilities, which allows entire 
+decentralised applications (dApps) to run autonomously on its blockchain. It has a build-in cryptocurrency 
+"Ether", which is used to reward miners that contribute to consensus, and to pay transaction fees. 
+Developers of dApps can also issue their own currency inside their Smart Contracts.
+
+\citet[p.3-4]{valenta2017comparison} noted that compared with Ethereum, which makes records accessible 
+to all participants, permissioned blockchains such as Fabric and Corda provide "more fine-grained access 
+control to records and thus enhance privacy". 
+They also achieves higher performance due to a faster consensus mechanism that does not involve mining.
+
+For this project, another crucial consideration against the adoption of the Ethereum environment is the 
+lack of a central authority, which makes it impossible for the platform to kick unscrupulous actors off 
+the blockchain.
+
+\subsection*{Hyperledger Fabric}
+
+\citet[p.7]{valenta2017comparison} described Fabric as a highly flexible "versatile toolbox". It 
+has different roles for peers within the network, where they can act as clients (end users), peers 
+(record keepers), endorsers (transaction verifiers), or orderers (transaction requester). The 
+consensus mechanism is by default a Byzantine fault-tolerant (BFT) algorithm and can be customised. 
+A cryptocurrency is not required, but could be developed with chaincode.
+
+\subsection*{R3 Corda}
+
+Built following use cases in the financial industry, Corda notably augmented Smart Contracts 
+with legal prose, making it a great tool for highly regulated environment. The development of 
+a cryptocurrency is not intended or supported. \citep{valenta2017comparison}
+
+Education is not a highly regulated environment in most countries and this unique selling point of 
+Corda is not immediately attractive to this project.
+
 \section{Existing Efforts in Blockchain for Education}
 
 % chapter 1
 % The potential of blockchain enabled systems in education has been noted by the community, with \citet[p.62]{swan2015blockchain} 
-% proposing that “learning smart contracts could automatically confirm the completion of learning modules through standardized 
+% proposing that “learning Smart Contracts could automatically confirm the completion of learning modules through standardized 
 % online tests”. Appropriate configurations in permissions and visibility can also provide improved security and privacy to e-Learning.
 
 \subsection{Blockcerts}
@@ -335,7 +406,7 @@ learning history data for institutions. \citep{sonyged2017}
     \centering    
     \includegraphics[width=0.95\textwidth]{openlearn}
     \caption[OpenLearn Blockchain scenario]
-        {A typical education scenario with the OpenLearn Blockchain\citep{openlearn2018}}
+        {A typical education scenario with the OpenLearn Blockchain \citep{openlearn2018}}
     \label{fig:openlearn}
 \end{figure}
 
@@ -346,91 +417,25 @@ blockchain. This system currently allows students to register for courses and re
 can be viewed in a student Learning Passport. The transactions are peer-to-peer: in principle no 
 host institution is required for the awarding of accreditation. \citep{sharples2016blockchain}
 
-\subsection{Novelty of the proposed project}
+\subsection{Novelty of the Proposed Project}
 
 \begin{figure}[!ht] 
     \centering    
     \includegraphics[width=0.95\textwidth]{moocon}
     \caption[Assessment Smart Contracts Concept]
         {Original diagram providing a high level view of how the project proposes automating assessments 
-        with smart contracts}
+        with Smart Contracts}
     \label{fig:moocon_assess}
 \end{figure}
 
 All of the above three notable efforts focus on identity management and record keeping for education. 
-This project will aim to extend these efforts by proposing smart contracts that automate assessments 
+This project will aim to extend these efforts by proposing Smart Contracts that automate assessments 
 (See Figure \ref{fig:moocon_assess}) and deliver personalised curricula. 
 
 The vision of this project will also be to create an e-Learning marketplace that teachers can use directly, 
 instead of a blockchain network that education providers will have to consume through APIs. This makes for a 
 lower cost of entrance in terms of technological know-how and investment.
 
-\section{Overview of Blockchain Development Toolkits}
-
-This project will involve the design of smart contracts for e-Learning transactions and building a demonstrator 
-network and applications. A review of the popular blockchain implementations and development toolkits on the 
-market is necessary. See table \ref{table:blockchainscomparison} for a overview and below for more commentary.
-
-\begin{table}[!hb] 
-    \caption{Comparison of key blockchain implementations, adapted from \citet{ibm2018hyperledger} and \citet{valenta2017comparison}}
-    \centering
-    \label{table:blockchainscomparison}
-    \begin{tabular}{l c c c c}
-        \toprule
-        & Bitcoin & Ethereum & Hyperledger Fabric & R3 Corda\\ 
-        \midrule
-        Governance & developers & developers & Linux Foundation & R3 \\\hline
-        Crypto- & bitcoin & ether, user-created & none, user-created & none \\ 
-        currency & & cryptocurrencies & cryptocurrencies\\\hline
-        Network & permissionless, & permissionless, & permissioned, & permissioned,\\ 
-        & public & public or private & private & private\\\hline
-        Transactions & anonymous & anonymous or & public or & \\ 
-        & & private & confidential \\\hline
-        Consensus & proof of work & proof of work & PBFT & PBFT\\ \hline
-        Smart & none & yes (Solidity, & yes (chaincode) & yes (chaincode)\\ 
-        Contracts & & Serpent, LLL) \\\hline
-        Language & C++ & Golang, C++, & Golang, Java, & Kotlin, Java,\\
-        & & Python & JavaScript & legal prose\\
-        \bottomrule
-    \end{tabular}
-\end{table}
-
-Bitcoin is included in the table only as a point of reference, building with the bitcoin 
-blockchain is not considered for this project because of its lack of support for smart 
-contracts (any kind of embedded logic or programmes).
-
-\subsection*{Ethereum}
-
-Ethereum is famous for its Turing-complete smart contracts capabilities, which allows entire 
-decentralised applications (dApps) to run autonomously on its blockchain. It has a build-in cryptocurrency 
-"Ether", which is used to reward miners that contribute to consensus, and to pay transaction fees. 
-Developers of dApps can also issue their own currency inside their smart contracts.
-
-\citet[p.3-4]{valenta2017comparison} noted that compared with Ethereum, which makes records accessible 
-to all participants, permissioned blockchains such as Fabric and Corda provide "more fine-grained access 
-control to records and thus enhance privacy". 
-They also achieves higher performance due to a faster consensus mechanism that does not involve mining.
-
-For this project, another crucial consideration against the adoption of the Ethereum environment is the 
-lack of a central authority, which makes it impossible for the platform to kick unscrupulous actors off 
-the blockchain.
-
-\subsection*{Hyperledger Fabric}
-
-\citet[p.7]{valenta2017comparison} described Fabric as a highly flexible "versatile toolbox". It 
-has different roles for peers within the network, where they can act as clients (end users), peers 
-(record keepers), endorsers (transaction verifiers), or orderers (transaction requester). The 
-consensus mechanism is by default a Byzantine fault-tolerant (BFT) algorithm and can be customised. 
-A cryptocurrency is not required, but could be developed with chaincode.
-
-\subsection*{R3 Corda}
-
-Built following use cases in the financial industry, Corda notably augmented smart contracts 
-with legal prose, making it a great tool for highly regulated environment. The development of 
-a cryptocurrency is not intended or supported. \citep{valenta2017comparison}
-
-Education is not a highly regulated environment in most countries and this unique selling point of 
-Corda is not immediately attractive to this project.
 
 \subsection*{Summary}
 
