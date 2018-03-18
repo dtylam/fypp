@@ -19,7 +19,7 @@ use cases and model a blockchain network. The design tools offered take the form
 \begin{itemize}
     \setlength\itemsep{0em}            
     \item An object-oriented modelling language (.cto file) to define data models in 
-    the blockchain network for assets, participants and transactions
+    the blockchain network
     \item JavaScript functions (.js file) to define logic for smart contracts triggered by transactions
     \item An access control language (.acl file) to define access rules for records on the blockchain\\
     \citep{official2018composer}
@@ -57,9 +57,19 @@ be able to provide a good overview of the work ahead, and the fields that data m
 objects should include to enable these transactions. Two overarching use cases are considered: 
 assessment and curriculum personalisation.
 
-\subsection{Assessment}
+\subsection{Assessment Use Case}
 
-These four transactions are required to complete the assessment use case:
+These four transactions are required to complete the assessment use case (see Figure \ref{fig:assessmentloop}):
+
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=0.65\textwidth]{assessmentloop}
+    \caption[Assessment Use Case]
+        {A UML sequence diagram denoting the assets, transactions and events between 
+        learner and teacher participants on the blockchain for the assessment use case} 
+    \label{fig:assessmentloop}
+\end{figure}
+
 \begin{itemize}
     \setlength\itemsep{0em}        
     \item CreateModule: a transaction ordered by a teacher to store metadata about a course module, 
@@ -72,18 +82,7 @@ These four transactions are required to complete the assessment use case:
     \item GenCertificate: a transaction ordered by a teacher to create a new certificate on the blockchain.
 \end{itemize}
 
-See Figure \ref{fig:assessmentloop} for where these transactions occur in a sequence diagram.
-
-\begin{figure}[!ht] 
-    \centering    
-    \includegraphics[width=0.65\textwidth]{assessmentloop}
-    \caption[Assessment Use Case]
-        {A UML sequence diagram denoting the assets, transactions and events between 
-        learner and teacher participants on the blockchain for the assessment use case} 
-    \label{fig:assessmentloop}
-\end{figure}
-
-\subsection{Curriculum Personalisation}
+\subsection{Curriculum Personalisation Use Case}
 
 Similarly, we looked at the transactions required to build a minimum viable product 
 that facilitates curriculum personalisation. A curriculum here is simply a list of course 
@@ -112,25 +111,32 @@ See Figure \ref{fig:personalisationloop} for where these two transactions occur 
 
 % schema --> reviewer
 
-\section{Participant, Asset and Concept Models}
+\section{Data Models}
 
 These are the type of records that are allowed to be created, updated and read in the blockchain. 
-The Hyperledger Composer framework recommends the development of blockchain schema objects 
-inheriting three basic types: Participants, Assets and Concepts.
+The Hyperledger Composer framework calls these resource definitions, and recommends defining objects 
+inheriting three basic types: Participants, Assets and Concepts in its object-oriented modelling language 
+\citep{official2018composer}.
 
 \subsection{Participants}
 
-Participants are ... [TODO]
-The network will allow the creation of three main types of participants: 
+A participant is an actor in a blockchain network. A participant can create and exchange other assets 
+by submitting transactions.
+The network design for this project will allow the creation of three main types of participants: 
 \begin{itemize}
     \setlength\itemsep{0em}    
-    \item teachers (which can be lecturers, teaching assistants, tutors, etc.)
-    \item learners (which can be campus students, distant learners, etc.)
-    \item readers (members of the public who are interested in querying or verifying records, 
-    such as employers and further education providers)
+    \item \textit{Teacher}, which can be lecturers, teaching assistants, tutors, etc.
+    \item \textit{Learner}, which can be campus students, distant learners, etc.
+    \item \textit{Reader}, members of the public who are interested in querying or verifying records, 
+    such as employers and further education providers.
 \end{itemize}
 
-See Figure \ref{fig:participants} for the detailed entity properties of these three participant types 
+All three types of participants inherit an abstract (cannot be created) class \textit{User}. The \textit{nid} field 
+that all \textit{Users} must have would contain a hash of their national identification number. A hash is a form 
+of cryptographically processed representation of data that is non-invertible. This allows the system to ensure that 
+all writers in the system is known and unique while protecting their privacy to the general public.
+
+See Figure \ref{fig:participants} for the detailed entity properties of all participant types 
 in a class diagram.
 
 \begin{figure}[!ht] 
@@ -140,6 +146,10 @@ in a class diagram.
         {A UML class diagram describing the learner, teacher and reader participants defined on the blockchain} 
     \label{fig:participants}
 \end{figure}
+
+A notable design consideration is in the acLevels and priviledgedReaderIds
+777
+
 
 \subsection{Assets}
 
