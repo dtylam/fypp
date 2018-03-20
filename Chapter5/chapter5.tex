@@ -160,7 +160,7 @@ The asset definitions are modelled carefully according to literature and user re
 
 \begin{figure}[!ht] 
     \centering    
-    \includegraphics[width=0.65\textwidth]{assets}
+    \includegraphics[width=0.6\textwidth]{assets}
     \caption[Assets Class Diagram]
         {A UML class diagram describing the assets defined on the blockchain} 
     \label{fig:assets}
@@ -183,16 +183,25 @@ in a class diagram. The special design considerations included:
     improving transparency of procedures. 
     They include the \textit{gradeDescriptors} and \textit{criteria} fields that which encourage teachers to provide clarity of 
     assessment criteria, and give Smart Contracts the capabilities to enforce these criteria.
-    \item \underline{Reducing administration}: programme outcomes: middleman fields bureaucracy
-    \item \underline{Content flexibility}: Markdown is [TODO]. It is anticipated that many markets, institutions, departments and teachers 
+    \item \underline{Administrative Work for Personalisation}: Primary data suggested that administrative and regulatory work required for 
+    curriculum personalisation could be daunting for institutions. The \textit{programmeOutcomes} field in the \textit{Curriculum} asset is one of 
+    the suggested regulatory steps for the UK market (see Ch4.X TODO). Making these administrative data available on the blockchain 
+    gives Smart Contracts the capabilities to automate approvals and other administrative steps. This has the potential to reduce 
+    bureaucracy by eliminating the middleman in the future.
+    \item \underline{Content flexibility}: It is anticipated that many markets, institutions, teams and teachers 
     will have their own requirements, format and templates for what their e-Learning content should look like. To cater to 
     this need for content and layout flexibility the blockchain will accept markdown syntax as input in fields such as 
-    detailsMd in Assessment, materialMd in ModuleUnit and fineprintMd in Certificate.
+    \textit{detailsMd} in \textit{Assessment}, \textit{materialMd} in \textit{ModuleUnit} and \textit{fineprintMd} in \textit{Certificate}. 
+    Markdown is a popular text-to-HTML conversion tool for web writers \citep{gruber2004markdown}, with many internet forums and 
+    services releasing their own standards.
 \end{itemize}
 
 \subsection{Concepts}
 
 Concepts are abstract classes that are not assets or participants. They are used to define custom properties contained by an asset or participant.
+
+For this project: five of these Concepts were designed. These are related to modelling the assessment results, grade descriptors and criteria. 
+See figure \ref{fig:concepts} for their detailed entity properties.
 
 \begin{figure}[!ht] 
     \centering    
@@ -201,6 +210,13 @@ Concepts are abstract classes that are not assets or participants. They are used
         {A UML class diagram describing the concepts (other abstract classes that are contained as a field) defined on the blockchain} 
     \label{fig:concepts}
 \end{figure}
+
+A matrix/ grid of assessment criteria against grade definitions, a common format used in schools \citep[p.102]{bryan2006innovative}, 
+is used to record grade breakdowns on the blockchain. The \textit{MarkingCriterion} and \textit{GradeDescriptors} fields are designed to 
+fulfil this feature.
+
+the higher education community explicit description of learning outcomes, programme specifications, grade descriptors.
+engaging students in activities pre-assessment intervention
 
 \section{Smart Contracts: Transaction Logic and Events}
 
