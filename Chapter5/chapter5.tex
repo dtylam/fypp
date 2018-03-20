@@ -157,8 +157,6 @@ This will be covered in more detail in an upcoming section.
 
 Assets are "tangible or intangible goods, services, or property, and are stored in registries" \citep{official2018composer}.
 The asset definitions are modelled carefully according to literature and user requirements.
-See Figure \ref{fig:assets} for the detailed entity properties and relationships of these assets 
-in a class diagram.
 
 \begin{figure}[!ht] 
     \centering    
@@ -168,18 +166,28 @@ in a class diagram.
     \label{fig:assets}
 \end{figure}
 
-The special design considerations included:
+See Figure \ref{fig:assets} for the detailed entity properties and relationships of these assets 
+in a class diagram. The special design considerations included:
+
 \begin{itemize}
     \setlength\itemsep{0em}            
-    \item Types of assessments: Online assessments may be grouped in four categories (TODO: Paulsen, 2003, page 68): 
-    self-assessment, computer assessment, tutor assessment, and peer assessment. Why two in future work?
-    \item knowledge required, learning objective
-    \item programme outcomes: middleman fields bureaucracy
-    \item Markdown fields: Markdown is [TODO]. It is anticipated that many markets, institutions, departments and teachers 
+    \item \underline{Types of assessments}: A review of e-Learning and course management systems showed that online assessments could be 
+    grouped in four categories: self assessment, computer assessment, tutor assessment, and peer assessment 
+    \citep[p.68]{paulsen2004online}. In this initial design, two of these types are considered: \textit{AutoAssessment} (computer 
+    assessment), and \textit{AssessorAssessment} (tutor assessment). They are daughter classes of the abstract \textit{Assessment}.
+    \item \underline{Transparency of assessment goals}: the model contains mandatory fields to improve transparency in assessments, as identified by 
+    \citet{suhre2013determinants}'s research reviewed in Chapter 2.1.1. This includes the \textit{knowledgeRequired} field 
+    in \textit{Assessment} and \textit{learningObjectives} in \textit{CourseModule}, which encourage teachers to provide 
+    clarity over assessment goals. 
+    \item \underline{Transparency of assessment procedures}: \textit{Assessment} assets are on the blockchain and visible to all participants, 
+    improving transparency of procedures. 
+    They include the \textit{gradeDescriptors} and \textit{criteria} fields that which encourage teachers to provide clarity of 
+    assessment criteria, and give Smart Contracts the capabilities to enforce these criteria.
+    \item \underline{Reducing administration}: programme outcomes: middleman fields bureaucracy
+    \item \underline{Content flexibility}: Markdown is [TODO]. It is anticipated that many markets, institutions, departments and teachers 
     will have their own requirements, format and templates for what their e-Learning content should look like. To cater to 
     this need for content and layout flexibility the blockchain will accept markdown syntax as input in fields such as 
     detailsMd in Assessment, materialMd in ModuleUnit and fineprintMd in Certificate.
-    \item Assessments: grade descriptors and criteria
 \end{itemize}
 
 \subsection{Concepts}
