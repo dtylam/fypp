@@ -113,7 +113,7 @@ See Figure \ref{fig:personalisationloop} for where these two transactions occur 
 
 \section{Data Models}
 
-These are the type of records that are allowed to be created, updated and read in the blockchain. 
+Building a blockchain network requires a network-wide schema of what records are allowed to be created, updated and read. 
 The Hyperledger Composer framework calls these resource definitions, and recommends defining objects 
 inheriting three basic types: Participants, Assets and Concepts in its object-oriented modelling language 
 \citep{official2018composer}.
@@ -121,7 +121,7 @@ inheriting three basic types: Participants, Assets and Concepts in its object-or
 \subsection{Participants}
 
 A participant is an actor in a blockchain network. A participant can create and exchange other assets 
-by submitting transactions.
+by submitting transactions \citep{official2018composer}.
 The network design for this project will allow the creation of three main types of participants: 
 \begin{itemize}
     \setlength\itemsep{0em}    
@@ -132,9 +132,10 @@ The network design for this project will allow the creation of three main types 
 \end{itemize}
 
 All three types of participants inherit an abstract (cannot be created) class \textit{User}. The \textit{nid} field 
-that all \textit{Users} must have would contain a hash of their national identification number. A hash is a form 
-of cryptographically processed representation of data that is non-invertible. This allows the system to ensure that 
-all writers in the system is known and unique while protecting their privacy to the general public.
+that all \textit{Users} must have would contain a one-way hash of their national identification number, which can be a 
+driver's license number, social security number, etc. A hash is a form 
+of cryptographical representation of data that is non-invertible. This allows the system to ensure that 
+all writers in the system is known and unique, while protecting their privacy to the general public.
 
 See Figure \ref{fig:participants} for the detailed entity properties of all participant types 
 in a class diagram.
@@ -143,17 +144,18 @@ in a class diagram.
     \centering    
     \includegraphics[width=0.7\textwidth]{participants}
     \caption[Participants Class Diagram]
-        {A UML class diagram describing the learner, teacher and reader participants defined on the blockchain} 
+        {A UML class diagram describing the participants defined on the blockchain} 
     \label{fig:participants}
 \end{figure}
 
-A notable design consideration is in the acLevels and priviledgedReaderIds
-777
-
+A notable design consideration is the mechanism for allowing tiered access control of 
+learner information. The \textit{acLevels} and \textit{priviledgedReaderIds} fields in \textit{Learner}
+store access control settings for two tiers of \textit{Readers}, normal and privileged. 
+This will be covered in more detail in an upcoming section.
 
 \subsection{Assets}
 
-Assets are ... [TODO]
+Assets are "tangible or intangible goods, services, or property, and are stored in registries" \citep{official2018composer}.
 The asset definitions are modelled carefully according to literature and user requirements.
 See Figure \ref{fig:assets} for the detailed entity properties and relationships of these assets 
 in a class diagram.
@@ -182,7 +184,7 @@ The special design considerations included:
 
 \subsection{Concepts}
 
-Concepts are ... [TODO] include 
+Concepts are abstract classes that are not assets or participants. They are used to define custom properties contained by an asset or participant.
 
 \begin{figure}[!ht] 
     \centering    
