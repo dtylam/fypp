@@ -9,13 +9,16 @@
     % create the nodes
     \node (start)[shape=circle, fill=gray, label=below:Tx Ordered] {};
     \node (c1) [right = and of start, text width=3cm, align=center]{Assign a teacher to the submission};
-    \node (auto1) [right = and 4cm of c1, text width=3cm, align=center]{Send the test file and submission file to the automatic testing service};
-    \node (ass1) [below =of auto1, text width=3cm, align=center]{Create the Submission blockchain object};
+    \node (auto1) [right = and 4cm of c1, text width=3cm, align=center]{Use the test file on the blockchain to assess the submission file};
+    \node (auto2) [right =of auto1, text width=3cm, align=center]{Create the assessment result in the submission};
+    \node (ass1) [below =of auto2, text width=3cm, align=center]{Create the Submission blockchain object};
     \node (ass2) [right =of ass1, text width=3cm, align=center]{add the new Submission to learner's list of Submissions};
-    \node (stop2)[right = of ass2, shape=circle, fill=gray, label=below:Tx Accepted] {};    
+    \node (stop2)[above = of ass2, shape=circle, fill=gray, label=above:Tx Accepted] {};    
     % connect the nodes
     \draw[->] (start) to (c1);
     \draw[->] (c1) -- node[draw=none, anchor=south] {if Automatic Assessment} (auto1);
+    \draw[->] (auto1) to (auto2);  
+    \draw[->] (auto2) to (ass1);          
     \draw[->] (c1) -- node[draw=none, anchor=north east] {if Assessor Assessment} (ass1);
     \draw[->] (ass1) to (ass2);
     \draw[->] (ass2) to (stop2);    

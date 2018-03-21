@@ -215,16 +215,25 @@ A matrix/ grid of assessment criteria against grade definitions, a common format
 is used to record grade breakdowns on the blockchain. The \textit{MarkingCriterion} and \textit{GradeDescriptors} fields are designed to 
 fulfil this feature.
 
-the higher education community explicit description of learning outcomes, programme specifications, grade descriptors.
-engaging students in activities pre-assessment intervention
+\textit{AssessmentResult} stores the overall result of an assessment or course module, as an example of how flexible this can be (TODO link to requirement), 
+three example format Concepts are designed: \textit{PassFailResult}, \textit{GradeResult}, and \textit{ScoreResult}.
 
 \section{Smart Contracts: Transaction Logic and Events}
 
 We have previously discussed the nature of Smart Contracts in Chapter 2.3.2. They are autonomous, self-sufficient and 
-decentralised code that runs on a blockchain. In Hyperledger Composer, Smart Contracts are called chaincode and 
-they are run synchronously with a transaction order, with a final output required to accept the transaction or reject it.
+decentralised code that runs on a blockchain. 
+
+In Hyperledger Composer, Smart Contracts are called chaincode. 
+They are run synchronously with a transaction order and a final output is required, to either accept the transaction, or reject it. 
+Smart Contract chaincode can emit network-wide Events. This could be consumed by participants or applications.
+
+The discussion below describes the six transactions planned in Figure \ref{fig:assessmentloop} and \ref{fig:personalisationloop}, 
+and the chaincode logic triggered by them.
 
 \subsection{The CreateModule Transaction}
+
+What kind of detail would be useful here...
+
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=1.0\textwidth]{cmtx}
@@ -240,6 +249,11 @@ they are run synchronously with a transaction order, with a final output require
 \end{figure}
 
 \subsection{The SubmitResult Transaction}
+
+\begin{figure}[!ht]
+    \centering
+    \caption{A flowchart representation of the Smart Contract behind the SubmitResult Transaction (Tx)} \label{fig:srtx}
+\end{figure}
 
 \subsection{The GenCertificate Transaction}
 
@@ -258,7 +272,7 @@ No different tiers of privileges for teachers for roles such as module leader, m
 \section{User Interfaces for Client Applications}
 
 While improving general usability is not one of the objectives of this project, poor usability and interface designs 
-could negate the improvements in assessments and curriculum personalisation that this project aims for.
+could adversely affect evaluation of the improvements that this project aims for.
 
 Adopt a popular design language for the user interfaces in the client applications.
 
