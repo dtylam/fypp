@@ -225,14 +225,15 @@ decentralised code that runs on a blockchain.
 
 In Hyperledger Composer, Smart Contracts are called chaincode. 
 They are run synchronously with a transaction order and a final output is required, to either accept the transaction, or reject it. 
-Smart Contract chaincode can emit network-wide Events. This could be consumed by participants or applications.
+Smart Contract chaincode can emit network-wide Events. These Events could be consumed by participants or applications.
 
 The discussion below describes the six transactions planned in Figure \ref{fig:assessmentloop} and \ref{fig:personalisationloop}, 
 and the chaincode logic triggered by them.
 
 \subsection{The CreateModule Transaction}
 
-What kind of detail would be useful here...
+The transaction for creating a course module was kept simple, as we are more interested in the assessment experience than the 
+content creation experience.
 
 \begin{figure}[!ht]
     \centering
@@ -241,6 +242,8 @@ What kind of detail would be useful here...
 \end{figure}
 
 \subsection{The AddSubmission Transaction}
+
+This transaction is ordered by a student to add a submission for the assessment of a module unit.
 
 \begin{figure}[!ht]
     \centering
