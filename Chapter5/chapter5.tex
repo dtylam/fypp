@@ -232,14 +232,17 @@ and the chaincode logic triggered by them.
 
 \subsection{The CreateModule Transaction}
 
-The transaction for creating a course module was kept simple, as we are more interested in the assessment experience than the 
-content creation experience.
+The transaction for creating a course module was kept simple, as this project is more interested in the assessment experience than the 
+content creation experience. A \textit{CourseModule} asset is uploaded with all of its \textit{ModuleUnits} and \textit{Assessments}. 
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=1.0\textwidth]{cmtx}
     \caption{A flowchart representation of the Smart Contract behind the CreateModule Transaction (Tx)} \label{fig:cmtx}
 \end{figure}
+
+Transactions that allow content editing and content archiving (making courses unavailable to new students) will have to be designed 
+for a fully-fledged real world system, but we will defer them to future work for this project.
 
 \subsection{The AddSubmission Transaction}
 
@@ -254,7 +257,9 @@ compressed and converted into base64 data strings and attached to the \textit{co
 
 \subsection{The SubmitResult Transaction}
 
-The assessor submits markings on the marking criteria against grade descriptor matrix.
+The assessor submits markings on a marking criteria against grade descriptor grid. This is uploaded as the transaction 
+parameter \textit{marks}, a one dimensional array where the index correlates to the marking criteria number and 
+the value correlates to the grade number.
 
 \begin{figure}[!ht]
     \centering
@@ -264,10 +269,30 @@ The assessor submits markings on the marking criteria against grade descriptor m
 
 \subsection{The GenCertificate Transaction}
 
+This transaction is designed to allow and encourage manual diligence over course completion evidences before issuing a certificate. 
+It could also require multiple signatures for a certificate.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1.0\textwidth]{gctx}    
+    \caption{A flowchart representation of the Smart Contract behind the GenCertificate Transaction (Tx)} \label{fig:gctx}
+\end{figure}
+
 \subsection{The ProposeCurriculum Transaction}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1.0\textwidth]{pctx}    
+    \caption{A flowchart representation of the Smart Contract behind the ProposeCurriculum Transaction (Tx)} \label{fig:pctx}
+\end{figure}
 
 \subsection{The ApproveCurriculum Transaction}
 
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=1.0\textwidth]{actx}    
+    \caption{A flowchart representation of the Smart Contract behind the ApproveCurriculum Transaction (Tx)} \label{fig:actx}
+\end{figure}
 
 \section{Access Control}
 Role based and attribute based
