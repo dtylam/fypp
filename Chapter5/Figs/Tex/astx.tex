@@ -15,12 +15,12 @@
     \node (event1)[right =of auto2, text width=3.8cm, fill=lime]{ResultAvailable Event:\\ Submission submission\\String unitId \\ String details };
     \node (ass1) [below =of auto2, text width=3cm, align=center]{Create the Submission blockchain object};
     \node (ass2) [right =of ass1, text width=3cm, align=center]{add the new Submission to learner's list of Submissions};
-    \node (event2)[below = 1.5cm of auto1, text width=4.4cm, fill=lime]{SubmissionUploaded Event:\\ Submission submission\\String unitId \\ String teacherId (optional) };    
+    \node (event2)[below left=1.5cm and -2.5cm of auto1 , text width=4.4cm, fill=lime]{SubmissionUploaded Event:\\ Submission submission\\String unitId \\ String teacherId (optional) };    
     \node (stop2)[below = of ass2, shape=circle, fill=gray, label=below:Tx Accepted] {};    
     % connect the nodes
-    \draw[dashed] (param) to (start);    
-    \draw[dashed] (event1) to (auto2);    
-    \draw[dashed] (event2) to (ass1);        
+    \draw[->, dashed] (param) to (start);    
+    \draw[->, dashed] (auto2) to (event1);    
+    \draw[->, dashed] (ass1) to (event2);        
     \draw[->] (start) to (c1);
     \draw[->] (c1) -- node[draw=none, anchor=south] {if Automatic Assessment} (auto1);
     \draw[->] (auto1) to (auto2);  

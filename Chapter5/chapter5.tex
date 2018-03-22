@@ -243,7 +243,8 @@ content creation experience.
 
 \subsection{The AddSubmission Transaction}
 
-This transaction is ordered by a student to add a submission for the assessment of a module unit.
+This transaction is ordered by a student to add a submission for the assessment of a module unit. The submission files will be 
+compressed and converted into base64 data strings and attached to the \textit{content} parameter.
 
 \begin{figure}[!ht]
     \centering
@@ -253,8 +254,11 @@ This transaction is ordered by a student to add a submission for the assessment 
 
 \subsection{The SubmitResult Transaction}
 
+The assessor submits markings on the marking criteria against grade descriptor matrix.
+
 \begin{figure}[!ht]
     \centering
+    \includegraphics[width=1.0\textwidth]{srtx}    
     \caption{A flowchart representation of the Smart Contract behind the SubmitResult Transaction (Tx)} \label{fig:srtx}
 \end{figure}
 

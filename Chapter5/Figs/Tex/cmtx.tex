@@ -14,12 +14,11 @@
     \node (stop1)[below =of c2, shape=circle, fill=gray, label=below:Tx Rejected] {};        
     \node (stop2)[right = of c3, shape=circle, fill=gray, label=below:Tx Accepted] {};    
     % connect the nodes
-    \draw[dashed] (param) to (start);        
+    \draw[->, dashed] (param) to (start);        
     \draw[->] (start) to (c1);
     \draw[->] (c1) -- node[draw=none, anchor=south] {passed} (c2);
     \draw[->] (c1) -- node[draw=none, anchor=east] {failed} (stop1);    
     \draw[->] (c2) to (c3);
     \draw[->] (c3) to (stop2);    
-    % \draw[->] (c1.south) to[out=180,in=180] (c0.south);
 \end{tikzpicture}
 \end{document}
