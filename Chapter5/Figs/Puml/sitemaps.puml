@@ -1,0 +1,33 @@
+@startsalt
+{
+    ==Learner Client Application
+    {T
+        + Login
+        ++ <u>Learn</u>
+        +++ Ongoing Courses -- AddSubmission()
+        +++ My Submissions
+        ++ <u>Plan</u>
+        +++ Course Catalogue
+        +++ My Curriculum -- ProposeCurriculum()
+        ++ <u>Records</u>
+        +++ My Certificates
+        +++ Access Control
+        +++ My History
+        ++ Logout
+    }
+    ....
+    ==Teacher Client Application
+    {T
+        + Login
+        ++ <u>Manage</u>
+        +++ My Courses -- CreateModule()       
+        +++ Marking Requests -- SubmitResult()       
+        +++ Curriculum Requests -- ApproveCurriculum(), ProposeCurriculum()
+        +++ Issue Certificates -- GenCertificate()
+        ++ <u>Records</u>
+        +++ History        
+        +++ Course Catalogue
+        ++ Logout
+    }
+}
+@endsalt
