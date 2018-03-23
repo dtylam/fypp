@@ -8,11 +8,11 @@
 	% create the nodes
 	\node (users){Users};
 	\node (roles)[right =of users, text width=3.5cm]{Participant Roles\\ eg. Teachers, Learners};
-	\node (functions)[right =of roles, text width=2.25cm]{Transactions\\(optional)};
-	\node (conditions)[right =of functions, text width=3.5cm]{Attribute-based\\Conditions (optional)};	
-	\node (permissions)[right =of conditions, text width=2.25cm]{Permissions};
-	\node (operation)[below left = 1cm and -1cm of permissions, text width=2.5cm]{Operation(s)};
-	\node (object)[below right = 1cm and -1cm of permissions, text width=4cm]{Object\\eg. Assets, Participants};
+	\node (functions)[right =of roles, text width=2.1cm]{Transactions\\(optional)};
+	\node (conditions)[right =of functions, text width=2.5cm]{Attribute-based\\Conditions\\(optional)};	
+	\node (permissions)[right =of conditions, text width=1.8cm]{Permissions};
+	\node (operation)[below left = 1cm and -0.5cm of permissions, text width=2cm]{Operation(s)};
+	\node (object)[below right = 1cm and -1cm of permissions, text width=3.75cm]{Object\\eg. Assets, Participants};
 	
 	% \node (start)[shape=circle, fill=gray, label=above:Tx Ordered] {};
 	% \node (param)[below =of start, text width=4cm, fill=yellow]{Transaction Parameters:\\CourseModule mod\{\\ModuleUnit units,\\Assessment assessments\}};

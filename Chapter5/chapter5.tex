@@ -301,8 +301,7 @@ the use of a specific transaction, and the values of properties of the participa
 
 This means the mode of access control for the blockchain is both role-based and attribute-based.
 Figure \ref{fig:ac_model} is a generic representation of what an access control rule deployed to the Hyperledger Fabric blockchain is composed of,
-drawn based on the style proposed by \citet{poniszewska2005representation} for extended role-based access controls.
-Table \ref{table:ac_rules} lists all of the access control rules designed for the blockchain of this project.\\
+drawn based on the style proposed by \citet{poniszewska2005representation} for extended role-based access controls.\\
 
 \begin{figure}[!ht]
 	\centering
@@ -310,53 +309,100 @@ Table \ref{table:ac_rules} lists all of the access control rules designed for th
 	\caption{A flowchart representation of the Access Control model offered by Hyperledger Composer \citep{official2018composer}.}
 	\label{fig:ac_model}
 \end{figure}
-\begin{landscape}
-	\begin{table}[!ht]
-		\caption{The access control rules designed for the blockchain}
-		\centering
-		\label{table:ac_rules}
-		\begin{tabularx}{23.5cm}{l>{\hsize=.45\hsize}X>{\hsize=.55\hsize}X>{\hsize=1.25\hsize}Xc>{\hsize=.6\hsize}X}
-			   & Role                     & Transaction                          & Attribute-based Condition                                    & Operation(s)   & Object(s)                            \\
-			\toprule
-			1  & Learner, Teacher, Reader & --                                   & --                                                           & READ           & CourseModule, ModuleUnit, Assessment \\
-			\midrule
-			2  & Learner                  & --                                   & user.uId == object.uId                                       & UPDATE, READ   & Learner                              \\
-			\midrule
-			3  & Learner                  & --                                   & --                                                           & READ           & Teacher                              \\
-			\midrule
-			4  & Learner                  & AddSubmission                        & user.uId == object.learner.uId                               & CREATE         & Submission                           \\
-			\midrule
-			5  & Learner                  & --                                   & user.uId == object.learner.uId                               & READ           & Submission                           \\
-			\midrule
-			6  & Learner                  & ProposeCurriculum                    & user.uId == object.learner.uId                               & CREATE, UPDATE & Curriculum                           \\
-			\midrule
-			7  & Learner                  & --                                   & user.uId == object.learner.uId                               & READ           & Curriculum                           \\
-			\midrule
-			8  & Teacher                  & --                                   & user.uId == object.uId                                       & UPDATE, READ   & Teacher                              \\
-			\midrule
-			9  & Teacher                  & --                                   & object.mods has (mod.teachers has (teacher.uId == user.uId)) & READ           & Learner                              \\
-			\midrule
-			10 & Teacher                  & CreateModule                         & object.teachers has (teacher.uId == user.uId)                & CREATE         & CourseModule, ModuleUnit, Assessment \\
-			\midrule
-			11 & Teacher                  & --                                   & object.unit.mod.teachers has (teacher.uId == user.uId)       & READ           & Submission                           \\
-			\midrule
-			12 & Teacher                  & SubmitResult                         & user.uId == object.teacherAssigned.uId                       & UPDATE         & Submission                           \\
-			\midrule
-			13 & Teacher                  & --                                   & user.uId == object.teacher.uId                               & READ           & Curriculum                           \\
-			\midrule
-            13 & Teacher                  & ProposeCurriculum, ApproveCurriculum & user.uId == object.teacher.uId                               & UPDATE         & Curriculum                           \\
-            \midrule
-			\bottomrule
-		\end{tabularx}
-	\end{table}
-\end{landscape}
 
 Most of the rules are a form of Mandatory Access Controls across the network, enforced by the system and cannot be modified by
 users or client applications, where access to objects is restricted based on fixed security attributes \citep{yuan2005attributed}.
 Unless explicitly allowed by a defined access control rule, all operations are denied by default.
 
 Some rules are more discretionary because the access related attributes can be changed by users.
-A notable case of such a design is the access control for readers and assets related to a learner.
+For example, a \textit{learner} will be able to set its own \textit{acLevels} and \textit{priviledgedReaderIds} fields to control
+what records related to the \textit{learner} that \textit{readers} can read. Integer values are stored in \textit{acLevels} correlating to
+a permission permutation model inspired by UNIX file permissions.
+
+\begin{table}[!ht]
+	\caption{The reader access permutation model for learner assets}
+	\centering
+	\label{table:reader_permutations}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+		\hline
+		                     & 0 & 1          & 2          & 3          & 4          & 5          & 6          & 7          \\
+		\hline
+		Certificates         &   & \checkmark &            & \checkmark &            & \checkmark &            & \checkmark \\
+		\hline
+		Submissions          &   &            & \checkmark & \checkmark &            &            & \checkmark & \checkmark \\
+		\hline
+		Learner, Curriculums &   &            &            &            & \checkmark & \checkmark & \checkmark & \checkmark \\
+		\hline
+	\end{tabular}
+\end{table}
+
+So an \textit{acLevels} value of \texttt{[1, 3]} would mean all \textit{readers} can read your \textit{Certificates},
+while \textit{readers} included in \textit{priviledgedReaderIds} can read your \textit{Certificates} and \textit{Submissions}.
+
+Table \ref{table:ac_rules} lists all of the access control rules designed for the blockchain of this project.
+
+\begin{landscape}
+	\begin{table}[!ht]
+		\caption{The access control rules designed for the blockchain}
+		\centering
+		\label{table:ac_rules}
+		\begin{tabularx}{24cm}{l>{\hsize=.45\hsize}X>{\hsize=.55\hsize}X>{\hsize=0.9\hsize}Xc>{\hsize=.65\hsize}X}
+			   & Role                     & Transaction                                   & Attribute-based Condition                                      & Operation(s)   & Object(s)                            \\
+			\toprule
+			1  & Learner, Teacher, Reader & --                                            & --                                                             & READ           & CourseModule, ModuleUnit, Assessment \\
+			\midrule
+			2  & Learner                  & --                                            & user.uId == object.uId                                         & UPDATE, READ   & Learner                              \\
+			\midrule
+			3  & Learner                  & --                                            & --                                                             & READ           & Teacher, Reader                      \\
+			\midrule
+			4  & Learner                  & AddSubmission                                 & user.uId == object.learner.uId                                 & CREATE         & Submission                           \\
+			\midrule
+			5  & Learner                  & --                                            & user.uId == object.learner.uId                                 & READ           & Submission                           \\
+			\midrule
+			6  & Learner                  & ProposeCurriculum                             & user.uId == object.learner.uId                                 & CREATE, UPDATE & Curriculum                           \\
+			\midrule
+			7  & Learner                  & --                                            & user.uId == object.learner.uId                                 & READ           & Curriculum                           \\
+			\midrule
+			8  & Teacher                  & --                                            & user.uId == object.uId                                         & UPDATE, READ   & Teacher                              \\
+			\midrule
+			9  & Teacher                  & --                                            & object.mods has (mod.teachers has (teacher.uId == user.uId))   & READ           & Learner                              \\
+			\midrule
+			10 & Teacher                  & --                                            & --                                                             & READ           & Reader                               \\
+			\midrule
+			11 & Teacher                  & CreateModule                                  & object.teachers has \newline(teacher.uId == user.uId)          & CREATE         & CourseModule, ModuleUnit, Assessment \\
+			\midrule
+			12 & Teacher                  & --                                            & object.unit.mod.teachers has \newline(teacher.uId == user.uId) & READ           & Submission                           \\
+			\midrule
+			13 & Teacher                  & SubmitResult                                  & user.uId == object.teacherAssigned.uId                         & UPDATE         & Submission                           \\
+			\midrule
+			14 & Teacher                  & --                                            & user.uId == object.teacher.uId                                 & READ           & Curriculum                           \\
+			\midrule
+			15 & Teacher                  & ProposeCurriculum, \newline ApproveCurriculum & user.uId == object.teacher.uId                                 & UPDATE         & Curriculum                           \\
+			\bottomrule
+		\end{tabularx}
+	\end{table}
+	(Continued on next page)
+	\begin{table}
+		\begin{tabularx}{24cm}{l>{\hsize=.45\hsize}X>{\hsize=.3\hsize}X>{\hsize=0.9\hsize}Xc>{\hsize=.65\hsize}X}
+			   & Role   & Transaction & Attribute-based Condition                                                                   & Operation(s)           & Object(s)                                                                           \\
+			\toprule
+			16 & Reader & --          & user.uId == object.uId                                                                      & UPDATE, READ           & Reader                                                                              \\
+			\midrule
+			17 & Reader & --          & --                                                                                          & READ                   & Teacher                                                                             \\
+			\midrule
+			18 & Reader & --          & n = object.learner.acLevels[0]                                                              & READ*                  & Certificate (n>=1), \newline Submission (n>=3), \newline Learner, Curriculum (n>=5) \\
+			\midrule
+			19 & Reader & --          & object.learner.priviledgedReaderIds has (id == user.uId) AND n = object.learner.acLevels[1] & READ*                  & Certificate (n>=1), \newline Submission (n>=3), \newline Learner, Curriculum (n>=5) \\
+			\midrule
+			20 & ADMIN  & --          & --                                                                                          & CREATE, UPDATE, DELETE & PARTICIPANTS                                                                        \\
+			\midrule
+			20 & ADMIN  & --          & --                                                                                          & READ                   & ALL                                                                                 \\
+			\bottomrule
+		\end{tabularx}
+
+	\end{table}
+
+\end{landscape}
 
 \section{Limitations}
 No institutional approvers for certificates
