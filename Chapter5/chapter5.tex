@@ -399,14 +399,23 @@ Table \ref{table:ac_rules} lists all of the access control rules designed for th
 			20 & ADMIN  & --          & --                                                                                          & READ                   & ALL                                                                                 \\
 			\bottomrule
 		\end{tabularx}
-
 	\end{table}
 
 \end{landscape}
 
 \section{Limitations}
-No institutional approvers for certificates
-No different tiers of privileges for teachers for roles such as module leader, module reviewer, supporting staff
+
+Some limitations have been discovered for the above blockchain network design. They have not been accounted for or patched 
+because of either a desire to keep the design minimal and achievable, or a shortage of time to conduct background research.
+Here is a list of the notable limitations:
+
+\begin{itemize}
+    \item The \textit{Teacher} participant was not designed to have different tiers of privileges. In higher education, 
+    different roles such as module leader, module reviewer, supporting tutors exist. A module leader may also need the 
+    permissions to create new \textit{Teacher} participants who are supporting tutors.
+    \item There is no participant type for a higher education staff who is an administrator and not a teaching staff. 
+    They may require more permissions than a \textit{Reader} and bespoke transactions.
+\end{itemize}
 
 \section{User Interfaces for Client Applications}
 
