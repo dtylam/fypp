@@ -96,8 +96,8 @@ needed to run it from code and tools to system settings.
 Docker can emulate multiple servers and run them separately on one development machine. 
 This provides the peers network needed to host the distributed ledger required for the 
 Hyperledger Fabric blockchain. A minimum of three docker containers are required to start a 
-Fabric blockchain: the Central Authority server, a minimum of one peer, and a Couchdb server, 
-a database that stores the state of the blockchain in a queryable form.
+Fabric blockchain: the Central Authority server, a minimum of one peer server, and a Couchdb server, 
+which is a database that stores the state of the blockchain in a queryable form.
 
 See the full list of pre-requisites and dependencies in in Appendix B.2.
 
@@ -109,14 +109,63 @@ a simple JavaScript server that checks for file equivalence was implemented.
 This was written with Express.js, a minimal Node.js web application framework and hosted 
 on Heroku, a Node.js capable cloud platform with a free tier. See the full list of pre-requisites and dependencies in in Appendix B.3.
 
-\section{Docker and the Command Line Interface}
+\section{Blockchain Network Development}
 
-Beginning with this section, progress descriptions and evidences of implementation work will be presented.
+Beginning here, progress descriptions and evidences of implementation work will be presented.
 
-\section{Application Program Interface}
+\subsection{Command Line Interface}
+Using Docker, setup images of Hyperledger Fabric were downloaded, the basic three servers were set up 
+and a certificate for the central authority administrator was generated. This allows Hyperledger Composer 
+to later authenticate as the blockchain administrator and import custom network definitions.
 
-\section{Learner Client Application}
+The Hyperledger Composer notations from the design phase where packaged into 
+a business network archive (.bna) file, and deployed to the Hyperledger Fabric blockchain.
 
-\section{Teacher Client Application}
+Three bash shell scripts were created:
+\begin{enumerate}
+	\setlength\itemsep{0em}    
+    \item \textit{start.sh}: This script starts Hyperledger Fabric, generate the minimum number of peers, 
+    and connects as the blockchain administrator. It then creates the .bna file with Hyperledger Composer 
+    and deploys it to the Fabric blockchain.
+    See Figure \ref{fig:startsh} for a screenshot of the script running.
+    \begin{figure}[!ht] 
+        \centering    
+        \includegraphics[width=0.9\textwidth]{startsh}
+        \caption[Blockchain Startup Script Screenshot]
+            {Screenshot of the start.sh script in action in a command line interface}
+        \label{fig:startsh}
+    \end{figure}
+    \item \textit{load\_participant.sh}: This script
+    \item \textit{destroy.sh}
+\end{enumerate}
+
+The GitHub repository used is hosted at \href{https://github.com/dtylam/moocon-beta}{\underline{github.com/dtylam/moocon-beta}}.
+Three branches (significant iterations) were created for this component, below in chronological order:
+\begin{enumerate}
+	\setlength\itemsep{0em}
+    \item \textit{moocon-alpha}: 
+    \item \textit{master}
+    \item \textit{bcu}
+\end{enumerate}
+
+\subsection{Application Program Interface}
+
+Loopback
+
+multiuser authentication
+
+\section{Automatic Marking Service Development}
+
+\section{Client Applications Development}
+
+\subsection{Learner Application}
+Component driven development
+
+\subsection{Teacher Application}
+
 
 \section{Test Driven Development}
+
+mocha
+
+postman
