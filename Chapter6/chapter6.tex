@@ -124,7 +124,7 @@ a business network archive (.bna) file, and deployed to the Hyperledger Fabric b
 Three bash shell scripts were created:
 \begin{enumerate}
 	\setlength\itemsep{0em}    
-    \item \textit{start.sh}: This script starts Hyperledger Fabric, generate the minimum number of peers, 
+    \item \textit{start.sh}: this script starts Hyperledger Fabric, generate the minimum number of peers, 
     and connects as the blockchain administrator. It then creates the .bna file with Hyperledger Composer 
     and deploys it to the Fabric blockchain.
     See Figure \ref{fig:startsh} for a screenshot of the script running.
@@ -135,8 +135,23 @@ Three bash shell scripts were created:
             {Screenshot of the start.sh script in action in a command line interface}
         \label{fig:startsh}
     \end{figure}
-    \item \textit{load\_participant.sh}: This script
+    \item \textit{load\_participant.sh}: this script connects as the blockchain administrator and creates 
+    three \textit{Learner}, four \textit{Teacher} and two \textit{Reader} participants on the blockchain.
+    \begin{figure}[!ht] 
+        \centering    
+        \includegraphics[width=0.9\textwidth]{load_participantsh}
+        \caption[Participant Loading Script Screenshot]
+            {Screenshot of the load\_participant.sh script in action in a command line interface}
+        \label{fig:load_participantsh}
+    \end{figure}
     \item \textit{destroy.sh}
+    \begin{figure}[!ht] 
+        \centering    
+        \includegraphics[width=0.9\textwidth]{destroysh}
+        \caption[Blockchain Teardown Script Screenshot]
+            {Screenshot of the destroy.sh script in action in a command line interface}
+        \label{fig:destroysh}
+    \end{figure}
 \end{enumerate}
 
 The GitHub repository used is hosted at \href{https://github.com/dtylam/moocon-beta}{\underline{github.com/dtylam/moocon-beta}}.
