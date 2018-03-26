@@ -54,7 +54,7 @@ will be explained in due course below.
     \caption[Demonstrator Component Architecture]
         {Component architecture overview for the demonstrator system built (dashed lines components were not built)}
     \label{fig:architecture}
-\end{figure} 
+\end{figure}
 
 The microservices architecture pattern is used to design the demonstrator system. Microservices is a pattern proposed by 
 \citet{richardson2018ms} that structures a system as a set of loosely coupled, collaborating services, partitioned so that 
@@ -83,21 +83,35 @@ with the JavaScript scripting language facilitating most of the user interaction
 
 Vue.js is a JavaScript-based framework for developing web interfaces. Vue.js was chosen over other 
 popular frameworks such as React.js and Angular.js because it is focused on the view layer and is much 
-simpler and faster to learn. The node.js JavaScript runtime is used to run the Vue.js applications. The npm package manager 
+simpler and faster to learn. The Node.js JavaScript runtime is used to run the Vue.js applications. The npm package manager 
 is used to install and manage the packages used. See more details such as version numbers in Appendix B.1.
 
 \subsection{Blockchain Network}
-Dependencies:
-\begin{itemize}
-    \item 
-\end{itemize}
-Hyperledger Composer and Fabric has a series of dependencies. 
+
+Hyperledger Composer deploys to Hyperledger Fabric, which runs on Docker.
+Docker is a containerisation platform used to develop distributed systems. 
+A container is a lightweight, stand-alone package of a piece of software that includes everything 
+needed to run it from code and tools to system settings. 
+
+Docker can emulate multiple servers and run them separately on one development machine. 
+This provides the peers network needed to host the distributed ledger required for the 
+Hyperledger Fabric blockchain. A minimum of three docker containers are required to start a 
+Fabric blockchain: the Central Authority server, a minimum of one peer, and a Couchdb server, 
+a database that stores the state of the blockchain in a queryable form.
+
+See the full list of pre-requisites and dependencies in in Appendix B.2.
 
 \subsection{Automatic Marking Service}
 
-A simple 
+More automatic marking services were originally planned but due to time constraints only 
+a simple JavaScript server that checks for file equivalence was implemented. 
+
+This was written with Express.js, a minimal Node.js web application framework and hosted 
+on Heroku, a Node.js capable cloud platform with a free tier. See the full list of pre-requisites and dependencies in in Appendix B.3.
 
 \section{Docker and the Command Line Interface}
+
+Beginning with this section, progress descriptions and evidences of implementation work will be presented.
 
 \section{Application Program Interface}
 
@@ -105,3 +119,4 @@ A simple
 
 \section{Teacher Client Application}
 
+\section{Test Driven Development}
