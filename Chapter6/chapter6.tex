@@ -8,10 +8,21 @@
 
 \section{Development Environment and Tools}
 
-Specific systems and tools were used to build the demonstrator network and client applications. 
-These choices and their explanations are detailed below, which could also be helpful in making this project reproducible.
+\begin{figure}[!ht] 
+    \centering    
+    \includegraphics[width=1.0\textwidth]{platform_stats}
+    \caption[Development Tools and Usage Statistics]
+        {A visual overview of the tools used and their usage statistics if any} 
+    \label{fig:platform_stats}
+\end{figure}
 
-\underline{Operating System}: Ubuntu
+Specific systems and tools were used to build the demonstrator network and client applications (as in Figure \ref{fig:platform_stats}). 
+These choices and their rationale are detailed below:
+
+\underline{Operating System}: The developer's guide for both Hyperledger Composer and Hyperledger Fabric 
+recommends using Ubuntu or Mac OS as the host operating system for development. 
+Ubuntu is selected for being the free and open source option. The development personal computer, which was originally 
+a Windows machine, was set up to dual boot with the latest Ubuntu release.
 
 \underline{Version Control}: A version control system or software keeps track of source code modifications, 
 so that developers can compare earlier versions of the code, revert changes, and 
@@ -26,13 +37,14 @@ project management service that offers free private repositories to verified stu
 development environment and recommends using a text editor. Visual Studio Code, an open source text editor developed 
 by Microsoft was chosen as it has a dedicated syntax checking and beautifying official plugin for Hyperledger Composer.
 
-\begin{figure}[!hb] 
-    \centering    
-    \includegraphics[width=1.0\textwidth]{platforms_stats}
-    \caption[Project Management Statistics]
-        {Statistics from Trello, GitHub and Stack Overflow collected over the duration of this project} 
-    \label{fig:platforms_stats}
-\end{figure}
+\underline{Community Support}: Hyperledger Composer and Hyperledger Fabric have active communities on Stack Overflow, 
+a popular online community forums for developers to discuss coding problems. Throughout the duration of the project, 
+it has been a source of solutions to common problems faced and solved by many other users. Towards the end of the project, 
+answer contributions were also made.
+
+Several other tools were also used, for example, as previously mentioned in Chapter 3, Trello was used to manage 
+feature prioritisation for the agile development process. The use of Docker containers and npm package manager 
+will be explained in due course below.
 
 \section{Architecture and Tech Stack}
 

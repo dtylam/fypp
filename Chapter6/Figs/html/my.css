@@ -7,3 +7,33 @@ p{
 .card{
     margin: 2rem 0;
 }
+i{
+    vertical-align: middle;
+}
+.ubuntu-orange{
+    color: #E95420;
+    border-color: #E95420;
+}
+.stackoverflow-orange{
+    color:#f48024;
+    border-color: #f48024;
+}
+.trello-blue{
+    color: #007ac0;
+    border-color: #007ac0;
+}
+.github-black{
+    color: #24292e;
+    border-color: #24292e;
+}
+.vscode-blue{
+    color: #0078c8;
+    border-color: #0078c8;
+}
+.npm-red{
+    color: #cb3837;
+    border-color: #cb3837;
+}
+.devicons-size{
+    font-size: 48px;
+}
