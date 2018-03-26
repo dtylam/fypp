@@ -50,19 +50,51 @@ will be explained in due course below.
 
 \begin{figure}[!ht] 
     \centering    
-    \includegraphics[width=1.0\textwidth]{architecture}
-    \caption[Component architecture overview for the demonstrator system built]
-        {Component architecture overview for the demonstrator system built}
+    \includegraphics[width=0.9\textwidth]{architecture}
+    \caption[Demonstrator Component Architecture]
+        {Component architecture overview for the demonstrator system built (dashed lines components were not built)}
     \label{fig:architecture}
 \end{figure} 
 
+The microservices architecture pattern is used to design the demonstrator system. Microservices is a pattern proposed by 
+\citet{richardson2018ms} that structures a system as a set of loosely coupled, collaborating services, partitioned so that 
+each service corresponds to a business capability.
+
+In the demonstrator system (as in Figure \ref{fig:architecture}), this is exemplified by the separation of teacher and student applications, 
+the separation of content delivery and student records (blockchain), and the separation of different automatic marking services.
+They communicate through RESTful web protocols (HTTP and JSON). 
+This also enables the use of different technologies for each component.
+
+Figure \ref{fig:techstack} shows an alternate overview of the demonstrator system with its technology stack. 
+These main software packages are described further below.
+
 \begin{figure}[!ht] 
     \centering    
-    \includegraphics[width=0.9\textwidth]{techstack}
-    \caption[Technology Stack overview for the demonstrator system built]
+    \includegraphics[width=0.85\textwidth]{techstack}
+    \caption[Demonstrator Technology Stack]
         {Technology Stack overview for the demonstrator system built}
     \label{fig:techstack}
 \end{figure} 
+
+\subsection{Client Applications}
+
+The client applications for learners and teachers has to be highly dynamic (non-static) web applications, 
+with the JavaScript scripting language facilitating most of the user interactions.
+
+Vue.js is a JavaScript-based framework for developing web interfaces. Vue.js was chosen over other 
+popular frameworks such as React.js and Angular.js because it is focused on the view layer and is much 
+simpler and faster to learn.
+
+The node.js JavaScript runtime is used to run the Vue.js applications. The npm package manager 
+is used to install and manage the packages used.
+
+\subsection{Blockchain Network}
+
+
+
+\subsection{Automatic Marking Service}
+
+A simple 
 
 \section{Docker and the Command Line Interface}
 
