@@ -35,7 +35,7 @@ project management service that offers free private repositories to verified stu
 
 \underline{Code Editor}: The Hyperledger Composer framework does not require a dedicated integrated 
 development environment and recommends using a text editor. Visual Studio Code, an open source text editor developed 
-by Microsoft was chosen as it has a dedicated syntax checking and beautifying official plugin for Hyperledger Composer.
+by Microsoft was chosen as it has a dedicated official syntax checking and beautifying plugin for Hyperledger Composer.
 
 \underline{Community Support}: Hyperledger Composer and Hyperledger Fabric have active communities on Stack Overflow, 
 a popular online community forums for developers to discuss coding problems. Throughout the duration of the project, 
@@ -63,7 +63,7 @@ each service corresponds to a business capability.
 In the demonstrator system (as in Figure \ref{fig:architecture}), this is exemplified by the separation of teacher and student applications, 
 the separation of content delivery and student records (blockchain), and the separation of different automatic marking services.
 They communicate through RESTful web protocols (HTTP and JSON). 
-This also enables the use of different technologies for each component.
+This also enables the use of different technologies, separate testing and deployment for each component.
 
 Figure \ref{fig:techstack} shows an alternate overview of the demonstrator system with its technology stack. 
 These main software packages are described further below.
@@ -83,14 +83,15 @@ with the JavaScript scripting language facilitating most of the user interaction
 
 Vue.js is a JavaScript-based framework for developing web interfaces. Vue.js was chosen over other 
 popular frameworks such as React.js and Angular.js because it is focused on the view layer and is much 
-simpler and faster to learn.
-
-The node.js JavaScript runtime is used to run the Vue.js applications. The npm package manager 
-is used to install and manage the packages used.
+simpler and faster to learn. The node.js JavaScript runtime is used to run the Vue.js applications. The npm package manager 
+is used to install and manage the packages used. See more details such as version numbers in Appendix B.1.
 
 \subsection{Blockchain Network}
-
-
+Dependencies:
+\begin{itemize}
+    \item 
+\end{itemize}
+Hyperledger Composer and Fabric has a series of dependencies. 
 
 \subsection{Automatic Marking Service}
 
