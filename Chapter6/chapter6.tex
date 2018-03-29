@@ -234,7 +234,7 @@ This limitation and subsequent redesign has actually inspired the microservices 
 
 To use the \texttt{post(url,data)} functionality effectively, an extra asset \textit{AutoAssessRequest} was added to the blockchain schema.
 \textit{AutoAssessRequest} would contain the submission content file, the test file on the blockchain for this assessment, the test type of
-this assessment (eg. software testing, AI testing, etc), and a API response field. This packages all the information the external
+this assessment (eg. software testing, AI testing, etc), and an API response field. This packages all the information the external
 Automated Marking Services will need, and keep the request and response records permanently on the blockchain.
 
 To build an example automated marking service, a string equivalence test was created on a simple Express.js application server.
@@ -258,11 +258,25 @@ The source code of this component is also tracked and hosted at
 
 \section{Client Applications Development}
 
+Before developing the client applications, some example data was created and imported into the network. 
+This was nine courses modules, their module units and assessments. These data were created by loosely following 
+the syllabuses of courses from Massive Open Online Courses.
+
+A video demonstration showcasing the user journeys across both applications was created and 
+available on \href{https://youtu.be/FUMBn6wPG5M}{youtube.com/FUMBn6wPG5M}.
+
+Notes on the development process are further detailed below.
+
 \subsection{Learner Application}
 Component driven development
 
+The source code of this application is tracked and hosted at 
+\href{https://github.com/dtylam/moocon-learner-client}{\underline{github.com/dtylam/moocon-learner-client}}.
+
 \subsection{Teacher Application}
 
+The source code of this application is tracked and hosted at 
+\href{https://github.com/dtylam/moocon-teacher-client}{\underline{github.com/dtylam/moocon-teacher-client}}.
 
 \section{Test Driven Development}
 
