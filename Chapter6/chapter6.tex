@@ -263,20 +263,99 @@ This was nine courses modules, their module units and assessments. These data we
 the syllabuses of courses from Massive Open Online Courses.
 
 A video demonstration showcasing the user journeys across both applications was created and 
-available on \href{https://youtu.be/FUMBn6wPG5M}{youtube.com/FUMBn6wPG5M}.
+available on \href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}}.
 
-Notes on the development process are further detailed below.
+An open source styling and component library, \href{https://vuematerial.io/}{Vue-material}, was used to 
+create Material Design compliant user interfaces. Notes on the development process are further detailed below.
 
 \subsection{Learner Application}
-Component driven development
 
 The source code of this application is tracked and hosted at 
 \href{https://github.com/dtylam/moocon-learner-client}{\underline{github.com/dtylam/moocon-learner-client}}.
 
+The switch from traditional static webpage development to component-driven development was a steep learning curve.
+Traditional web development focuses on the separation of concerns by file types, where markup (HTML), 
+styling (CSS) and scripting (JavaScript) are in different files and folders.
+
+JavaScript-based web applications, on the other hand, encourage organisation according to functional components. 
+In Vue.js for example, components (.vue) files are used to write HTML, CSS and JavaScript in one file \citep{vue2017components}, 
+which creates a component in the web application. It is afterwards packaged to be production-ready with build tools.
+
+For example, the entire web application only uses one main \texttt{index.html} page. Each main menu button 
+such as "Ongoing Courses" swaps out the previous page component for another. Components can also be nested, 
+the YouTube embedding view is its own component, for example.
+
+Below are some annotated screenshots of the application (Figures to ).
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Learner_login}
+	\caption[Learner Application Login Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Learner_login}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Learner_allcourses}
+	\caption[Learner Application Course Catalogue Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Learner_allcourses}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Learner_customiser}
+	\caption[Learner Application My Curriculum Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Learner_customiser}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Learner_ongoing1}
+	\caption[Learner Application Example Ongoing Module Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Learner_ongoing1}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Learner_AC}
+	\caption[Learner Application Access Control Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Learner_AC}
+\end{figure}
+
 \subsection{Teacher Application}
 
+The Teacher application was created as a fork of the Learner application. 
 The source code of this application is tracked and hosted at 
 \href{https://github.com/dtylam/moocon-teacher-client}{\underline{github.com/dtylam/moocon-teacher-client}}.
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Teacher_createcourse}
+	\caption[Teacher Application My Courses Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Teacher_createcourse}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Teacher_approvecurr}
+	\caption[Teacher Application Curriculum Requests Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Teacher_approvecurr}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Teacher_marking}
+	\caption[Teacher Application Marking Requests Page]
+	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	\label{fig:Teacher_marking}
+\end{figure}
 
 \section{Test Driven Development}
 
