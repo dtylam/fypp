@@ -272,6 +272,13 @@ create Material Design compliant user interfaces. Notes on the development proce
 
 The source code of this application is tracked and hosted at 
 \href{https://github.com/dtylam/moocon-learner-client}{\underline{github.com/dtylam/moocon-learner-client}}.
+Two branches (significant iterations) were created for this component, below in chronological order:
+\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item \textit{master} branch: this is the first iteration made based on literature review and background research.
+	\item \textit{bcu} branch: this is the final, demonstration ready branch. 
+	Changes were made to satisfy new requirements obtained through primary data (interviews in Chapter 4).
+\end{enumerate}
 
 The switch from traditional static webpage development to component-driven development was a steep learning curve.
 Traditional web development focuses on the separation of concerns by file types, where markup (HTML), 
@@ -332,6 +339,7 @@ Below are some annotated screenshots of the application (Figures to ).
 The Teacher application was created as a fork of the Learner application. 
 The source code of this application is tracked and hosted at 
 \href{https://github.com/dtylam/moocon-teacher-client}{\underline{github.com/dtylam/moocon-teacher-client}}.
+Only one iteration was completed by the end of the project, as this application was built after requirements gathering interviews.
 
 \begin{figure}[!ht]
 	\centering
@@ -359,10 +367,11 @@ The source code of this application is tracked and hosted at
 
 \section{Test Driven Development}
 
-Mocha
+Support for unit testing is built-in for Hyperledger Composer with popular JavaScript testing frameworks Mocha and Chai.
+Several unit tests were written to test the blockchain network schema and transactions. [TODO expand]
 
 Postman, a popular API testing platform, is used to run whitebox tests against the API 
-before and during the development of the client applications.
+before and during the development of the client applications. [TODO expand]
 
 \section{Limitations and Issues}
 
