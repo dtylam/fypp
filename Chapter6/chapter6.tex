@@ -359,8 +359,20 @@ The source code of this application is tracked and hosted at
 
 \section{Test Driven Development}
 
-mocha
+Mocha
 
-postman
+Postman, a popular API testing platform, is used to run whitebox tests against the API 
+before and during the development of the client applications.
 
 \section{Limitations and Issues}
+
+Blockchain Events were being broadcasted network-wide without access control filters. 
+Some Events are only targeted at a particular individual but all of the peers will receive it.
+
+For example, only the proposing \textit{Learner} and his/ her personal tutor \textit{Teacher} should 
+be receiving the notification that a curriculum has been proposed. Currently, all peers across the 
+blockchain receives this notification, but they are blocked at the client application level.
+
+This is a limitation of Hyperledger Composer, which does not provide ways to limit the scope of an \textit{Event}.
+It would cause privacy issues for a real-world system, as any actor on the blockchain could potentially 
+listen to these \textit{Events} and attempt to create a partial view of user histories.
