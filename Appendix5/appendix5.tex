@@ -1,0 +1,64 @@
+%!TEX root = ../thesis.tex
+% ******************************* Thesis Appendix B ********************************
+
+\chapter{Demonstrator System Dependencies}
+
+\section{Client Applications}
+
+\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item \textbf{vuejs}: vue (2.5.11), vue-loader (13.0.5), vue-template-compiler (2.4.4)\\
+	      the web development UI framework used
+	\item \textbf{vue-material} (1.0.0-beta-7)\\
+	      a styling framework for Vue.js that follows the Google Material Design specifications
+	\item \textbf{vue-config} (1.0.0)\\
+	      a plugin for Vue.js that allows simple caching of some configuration variables
+	\item \textbf{vue-youtube-embed} (2.1.3)\\
+	      a plugin for Vue.js that makes embedding videos from youtube.com easier
+	\item \textbf{babel}: babel-core (6.26.0), babel-loader (7.1.2), babel-preset-env (1.6.0), babel-preset-stage-3 (6.24.1)\\
+	      a tool that helps you write code in the latest version of JavaScript, compiling written code down to supported version if the environment does not run the latest.
+	\item \textbf{webpack}: webpack (3.6.0), webpack-dev-server (2.9.1), css-loader (0.28.7), file-loader (1.1.4)\\
+	      a automatic bundling tool for developing JavaScript applications, transforming and organising assets such as images and CSS styling files
+\end{enumerate}
+
+\section{Blockchain Network}
+
+\hspace{\parindent}Hyperledger Fabric Pre-requisites:
+\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item \textbf{Ubuntu Linux} (17.10)
+	\item \textbf{Docker Engine} (17.12)
+	\item \textbf{Docker-Compose} (1.13.0)
+	\item \textbf{Node} (8.9.1)
+	\item \textbf{npm} (5.6.0)
+	\item \textbf{Python} (2.7.14)	
+\end{enumerate}
+
+Hyperledger Composer Pre-requisites and Dependencies:
+
+\begin{enumerate}
+	\setlength\itemsep{0em}
+	\item \textbf{Node} (8.9.1)
+	\item \textbf{npm} (5.6.0)
+	\item \textbf{hyperledger composer} (0.16.3)
+	\item \textbf{mocha} (3.2.0)\\
+	      javascript test framework for node.js
+	\item \textbf{chai} (3.5.0)\\
+	      test driven development assertion framework for node.js
+	\item \textbf{moment} (2.17.1)\\
+	      a package that help with parsing and displaying dates in JavaScript
+	\item \textbf{jsdoc} (3.5.5)\\
+	      an API documentation generator
+\end{enumerate}
+
+\section{Automatic Marking Service}
+
+JavaScript Marking Service Dependencies:
+
+\begin{enumerate}
+	\setlength\itemsep{0em}	
+	\item \textbf{expressjs}: express (4.15.5), body-parser (1.18.2), serve-favicon (2.4.5), morgan (1.9.0)
+	\item \textbf{heroku-cli} (6.15.39)
+	\item \textbf{Node} (9.9.0)
+	\item \textbf{npm} (5.6.0)
+\end{enumerate}
