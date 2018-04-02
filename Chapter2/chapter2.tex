@@ -375,12 +375,36 @@ Corda is not immediately attractive to this project.
 % proposing that “learning Smart Contracts could automatically confirm the completion of learning modules through standardized 
 % online tests”. Appropriate configurations in permissions and visibility can also provide improved security and privacy to e-Learning.
 
-\subsection{Blockcerts}
+Several blockchain-based projects for education exists. Here we look at three that has attracted plenty of media attention:
+Blockcerts, Sony Global Education (GED) Blockchain, and the OpenLearn Blockchain. See Table \ref{table:existingprojects} for a quick comparison.
 
-Blockcerts is an open standard for blockchain certificates led by MIT’s Media Lab. Education providers can use it to store
-the records of certifications they have awarded (See Figure \ref{fig:blockcerts}). One bitcoin transaction is performed for
-every batch of certificates, with the certificates stored in the OP\_RETURN transaction field on the bitcoin blockchain.
-This is paid for by the certificate issuer. \citep{blockcerts2018}
+\begin{table}[!ht]
+	\caption[Comparison of existing projects: Blockcerts, Sony GED, and OpenLearn]
+	{Comparison of existing projects: Blockcerts \citep{blockcerts2018}, Sony Global Education Blockchain \citep{sonyged2017}, and the OpenLearn Blockchain \citep{openlearn2018}}		 
+	\centering
+	\label{table:existingprojects}
+	\begin{tabularx}{\textwidth}{|>{\bfseries}p{3.3cm}|p{2cm}|X|}
+		\hline
+		Project                                 & Based on            & Features                                                                                   \\
+		\hline
+		Blockcerts \newline by MIT Media Lab             & Bitcoin             & Education providers can store a batch of certificates by paying for a bitcoin transaction,
+		storing data in the OP\_RETURN transaction field on the global bitcoin blockchain.                                                                         \\
+		\hline
+		Sony GED \newline Blockchain                     & Hyperledger \newline Project & Developers at education institutions can use their application program interface (API) to
+		securely store learning history data and certificates, integrating with third party e-Learning systems.                                                    \\
+		\hline
+		OpenLearn \newline Blockchain \newline by Open University & Ethereum            & An experimental plugin for Moodle, a popular course management system, is provided. \newline 
+		Achievement badges can be stored on the Ethereum blockchain. Students can register for courses and receive badges in a "Student Learning Passport".\\
+		\hline
+	\end{tabularx}
+\end{table}
+
+% \subsection{Blockcerts}
+
+% Blockcerts is an open standard for blockchain certificates led by MIT’s Media Lab. Education providers can use it to store
+% the records of certifications they have awarded (See Figure \ref{fig:blockcerts}). One bitcoin transaction is performed for
+% every batch of certificates, with the certificates stored in the OP\_RETURN transaction field on the bitcoin blockchain.
+% This is paid for by the certificate issuer. \citep{blockcerts2018}
 
 \begin{figure}[!ht]
 	\centering
@@ -390,37 +414,30 @@ This is paid for by the certificate issuer. \citep{blockcerts2018}
 	\label{fig:blockcerts}
 \end{figure}
 
-\subsection{Sony Global Education Blockchain}% https://blockchain.sonyged.com/
+% \subsection{Sony Global Education Blockchain}% https://blockchain.sonyged.com/
 
-The Sony Global Education Blockchain is based on the Hyperledger project, an open source distributed ledger
-for businesses. It provides an application program interface (API) for developers at education institutes,
-allowing integration with third party applications. It aims to provide tamper-proof, secure storage of
-learning history data for institutions. \citep{sonyged2017}
+% The Sony Global Education Blockchain is based on the Hyperledger project, an open source distributed ledger
+% for businesses. It provides an application program interface (API) for developers at education institutes,
+% allowing integration with third party applications. It aims to provide tamper-proof, secure storage of
+% learning history data for institutions. \citep{sonyged2017}
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.7\textwidth]{sonyged}
-	\caption[Sony Global Education Blockchain]
-	{Operation Example of the Sony Global Education Blockchain \citep{sonyged2017}}
-	\label{fig:sonyged}
-\end{figure}
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=0.7\textwidth]{sonyged}
+% 	\caption[Sony Global Education Blockchain]
+% 	{Operation Example of the Sony Global Education Blockchain \citep{sonyged2017}}
+% 	\label{fig:sonyged}
+% \end{figure}
 
-\subsection{OpenLearn Blockchain}% http://blockchain.open.ac.uk/
+% \subsection{OpenLearn Blockchain}% http://blockchain.open.ac.uk/
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.95\textwidth]{openlearn}
-	\caption[OpenLearn Blockchain scenario]
-	{A typical education scenario with the OpenLearn Blockchain \citep{openlearn2018}}
-	\label{fig:openlearn}
-\end{figure}
-
-The OpenLearn Blockchain project envisions the creation of blockchain based ePortfolios (See Figure
-\ref{fig:openlearn}). They are currently demonstrating this with an experimental plugin for Moodle,
-a popular course management system, with which achievement badges can be stored on the Ethereum
-blockchain. This system currently allows students to register for courses and receive badges which
-can be viewed in a student Learning Passport. The transactions are peer-to-peer: in principle no
-host institution is required for the awarding of accreditation. \citep{sharples2016blockchain}
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=0.95\textwidth]{openlearn}
+% 	\caption[OpenLearn Blockchain scenario]
+% 	{A typical education scenario with the OpenLearn Blockchain \citep{openlearn2018}}
+% 	\label{fig:openlearn}
+% \end{figure}
 
 \subsection{Novelty of the Proposed Project}
 
@@ -435,12 +452,11 @@ host institution is required for the awarding of accreditation. \citep{sharples2
 
 All of the above three notable efforts focus on identity management and record keeping for education.
 This project will aim to extend these efforts by proposing Smart Contracts that automate assessments
-(See Figure \ref{fig:moocon_assess}) and deliver personalised curricula.
+(See Figure \ref{fig:moocon_assess}) and facilitate the negotiation of personalised curricula.
 
 The vision of this project will also be to create an e-Learning marketplace that teachers can use directly,
 instead of a blockchain network that education providers will have to consume through APIs. This makes for a
 lower cost of entrance in terms of technological know-how and investment.
-
 
 \subsection*{Summary}
 
@@ -452,7 +468,5 @@ active community.
 
 The discussion following this chapter will now commit to using Hyperledger
 Fabric as the blockchain platform for this project.
-
-[TODO: intro frameworks before existing work]
 
 % http://explore-ip.com/2017_Comparison-of-Ethereum-Hyperledger-Corda.pdf
