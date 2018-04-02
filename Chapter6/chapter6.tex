@@ -8,16 +8,16 @@
 
 \section{Development Environment and Tools}
 
+Specific systems and tools were used to build the demonstrator network and client applications (as in Figure \ref{fig:platform_stats}).
+These choices and their rationale are detailed below:
+
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1.0\textwidth]{platform_stats}
 	\caption[Development Tools and Usage Statistics]
-	{A visual overview of the tools used and their usage statistics if any}
+	{A visual overview of the tools used and their usage statistics (Last Updated: 26th Mar 2018))}
 	\label{fig:platform_stats}
 \end{figure}
-
-Specific systems and tools were used to build the demonstrator network and client applications (as in Figure \ref{fig:platform_stats}).
-These choices and their rationale are detailed below:
 
 \underline{Operating System}: The developer's guide for both Hyperledger Composer and Hyperledger Fabric
 recommends using Ubuntu or Mac OS as the host operating system for development.
@@ -43,7 +43,7 @@ it has been a source of solutions to common problems faced and solved by many ot
 answer contributions were also made.
 
 Several other tools were also used, for example, as previously mentioned in Chapter 3, Trello was used to manage
-feature prioritisation for the agile development process. The use of Docker containers and npm package manager
+feature prioritisation for the agile development process. The use of Docker containers, Node.js and npm 
 will be explained in due course below.
 
 \section{Architecture and Tech Stack}
@@ -205,6 +205,25 @@ switches between them to create a "multiuser" API. So to switch between users in
 client applications, a request must be made to \texttt{localhost:3000/wallet/\{cardFileName\}/setDefault}.
 This limitation is accepted for the demonstrator system, as it does not impact core requirements.
 
+Postman, a popular API testing platform, is used to run tests against the API 
+before and during the development of the client applications. 
+
+These tests were a form of grey-box testing. Knowledge about the API endpoints 
+and parameters is required, but knowledge about how the Blockchain Network schema
+and transactions work is not required. 
+
+Testing with Postman confirms that the required API functionalities work well and 
+prevents unexpected responses when building the client applications later on.
+
+\clearpage
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{postman}
+	\caption[Postman API Testing Example Screenshot]
+	{Postman API Testing Example Screenshot}
+	\label{fig:postman}
+\end{figure}
+
 \section{Automatic Marking Service Development}
 
 The first iteration of the Blockchain Network has no automatic marking Smart Contract features.
@@ -263,7 +282,7 @@ This was nine courses modules, their module units and assessments. These data we
 the syllabuses of courses from Massive Open Online Courses.
 
 A video demonstration showcasing the user journeys across both applications was created and 
-available on \href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}}.
+available on \href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}}. [TODO: video too long, speed up]
 
 An open source styling and component library, \href{https://vuematerial.io/}{Vue-material}, was used to 
 create Material Design compliant user interfaces. Notes on the development process are further detailed below.
@@ -292,13 +311,14 @@ For example, the entire web application only uses one main \texttt{index.html} p
 such as "Ongoing Courses" swaps out the previous page component for another. Components can also be nested, 
 the YouTube embedding view is its own component, for example.
 
-Below are some annotated screenshots of the application (Figures to ).
+Below are some annotated screenshots of the application (Figures \ref{fig:Learner_login} to 
+\ref{fig:Learner_AC}). They attempt to showcase how requirements are fulfilled. [annotations TODO]
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Learner_login}
 	\caption[Learner Application Login Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Learner Application Login Page}
 	\label{fig:Learner_login}
 \end{figure}
 
@@ -306,7 +326,7 @@ Below are some annotated screenshots of the application (Figures to ).
 	\centering
 	\includegraphics[width=1.0\textwidth]{Learner_allcourses}
 	\caption[Learner Application Course Catalogue Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Learner Application Course Catalogue Page}
 	\label{fig:Learner_allcourses}
 \end{figure}
 
@@ -314,15 +334,23 @@ Below are some annotated screenshots of the application (Figures to ).
 	\centering
 	\includegraphics[width=1.0\textwidth]{Learner_customiser}
 	\caption[Learner Application My Curriculum Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Learner Application My Curriculum Page}
 	\label{fig:Learner_customiser}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.0\textwidth]{Learner_cmdetails}
+	\caption[Learner Application Course Module Preview Dialogue]
+	{Learner Application Course Module Preview Dialogue}
+	\label{fig:Learner_cmdetails}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Learner_ongoing1}
 	\caption[Learner Application Example Ongoing Module Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Learner Application Example Ongoing Module Page}
 	\label{fig:Learner_ongoing1}
 \end{figure}
 
@@ -330,10 +358,11 @@ Below are some annotated screenshots of the application (Figures to ).
 	\centering
 	\includegraphics[width=1.0\textwidth]{Learner_AC}
 	\caption[Learner Application Access Control Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Learner Application Access Control Page}
 	\label{fig:Learner_AC}
 \end{figure}
 
+\clearpage
 \subsection{Teacher Application}
 
 The Teacher application was created as a fork of the Learner application. 
@@ -341,11 +370,14 @@ The source code of this application is tracked and hosted at
 \href{https://github.com/dtylam/moocon-teacher-client}{\underline{github.com/dtylam/moocon-teacher-client}}.
 Only one iteration was completed by the end of the project, as this application was built after requirements gathering interviews.
 
+Below are some annotated screenshots of this application (Figures \ref{fig:Teacher_createcourse} to 
+\ref{fig:Teacher_marking}). [annotations TODO]
+
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1.0\textwidth]{Teacher_createcourse}
 	\caption[Teacher Application My Courses Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Teacher Application My Courses Page}
 	\label{fig:Teacher_createcourse}
 \end{figure}
 
@@ -353,7 +385,7 @@ Only one iteration was completed by the end of the project, as this application 
 	\centering
 	\includegraphics[width=1.0\textwidth]{Teacher_approvecurr}
 	\caption[Teacher Application Curriculum Requests Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Teacher Application Curriculum Requests Page}
 	\label{fig:Teacher_approvecurr}
 \end{figure}
 
@@ -361,27 +393,91 @@ Only one iteration was completed by the end of the project, as this application 
 	\centering
 	\includegraphics[width=1.0\textwidth]{Teacher_marking}
 	\caption[Teacher Application Marking Requests Page]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Teacher Application Marking Requests Page}
 	\label{fig:Teacher_marking}
 \end{figure}
 
+\clearpage
 \section{Test Driven Development}
 
+At the early stages of this project, an attempt at test driven development was made. 
 Support for unit testing is built-in for Hyperledger Composer with popular JavaScript testing frameworks Mocha and Chai.
-Several unit tests were written to test the blockchain network schema and transactions. [TODO expand]
+Unit tests were written before writing the code for transactions.
 
-Postman, a popular API testing platform, is used to run whitebox tests against the API 
-before and during the development of the client applications. [TODO expand]
+With the Hyperledger Composer 0.16 upgrade, the test scripts stopped working as 
+the method for connecting to the blockchain network has changed. This complication 
+rendered the tests written useless, and attempts were made to port the tests over 
+to work in the updated framework but were not immediately successful. In the interest of 
+time, test driven development was abandoned.
 
-\section{Limitations and Issues}
+At the time of abandoning these efforts, three unit tests were written targeting transactions, 
+and two were passing. One asserts that a learner can subscribe to a course, 
+and the other asserts that a learner can add a new submission. 
+These tests can be found at: \href{https://github.com/dtylam/moocon-alpha/blob/master/test/test_end2end.js}
+{\underline{github.com/dtylam/moocon-alpha/.../test\_end2end.js}}.
 
-Blockchain Events were being broadcasted network-wide without access control filters. 
+\section{Limitations, Outstanding Issues and Features}
+
+\subsection{Limitations}
+
+The frameworks used have some notable limitations:
+\vspace{0.25cm}\\
+\textbf{Limitation 1: Blockchain Events were broadcasted network-wide without access control filters.}
+
 Some Events are only targeted at a particular individual but all of the peers will receive it.
-
-For example, only the proposing \textit{Learner} and his/ her personal tutor \textit{Teacher} should 
+For example, only the proposing \textit{Learner} and their personal tutor \textit{Teacher} should 
 be receiving the notification that a curriculum has been proposed. Currently, all peers across the 
 blockchain receives this notification, but they are blocked at the client application level.
 
 This is a limitation of Hyperledger Composer, which does not provide ways to limit the scope of an \textit{Event}.
 It would cause privacy issues for a real-world system, as any actor on the blockchain could potentially 
 listen to these \textit{Events} and attempt to create a partial view of user histories.
+\vspace{0.25cm}\\
+\textbf{Limitation 2: Client applications login sessions do not persist.}
+
+Built with the simple Vue.js framework which does not have built-in caching capabilities 
+(that is included in a separate VueX framework), when the page is reloaded the login session 
+is automatically ended. This could frustrate real world users but is accepted as a limitation 
+for this demonstrator.
+
+\subsection{Outstanding Issues}
+
+With a finite amount of time dedicated to development, a number of issues remain:
+\vspace{0.25cm}\\
+\textbf{Issue 1: Notification icon in client applications are not changing when new notifications arrive.}
+
+The JavaScript function that receive Websocket messages (the web standard channel where new 
+blockchain Events are broadcasted) was written in vanilla JavaScript outside of the Vue.js 
+framework. The Vue.js conditional block that controls the notification icon is not responsive.
+\vspace{0.25cm}\\
+\textbf{Issue 2: Main menu in learner application freezes after adding a new Viva booking submission.}
+
+This is a Heisenbug which appears only sometimes when a full live demo flow is performed. 
+For a proof-of-concept demonstrator, stability of the application is not the most important factor 
+and priority was not given to solving this issue.
+
+\subsection{Outstanding Features}
+
+Several features were not built in time for the demonstrator system evaluation.
+Most of these features were not prioritised as "Must Have" previously in Chapter 4.2:
+
+\begin{itemize}
+	\item GenCertificate transaction (chaincode)
+	\item My Certificate page for Learner application (UI)
+	\item Certificate Requests page for Teacher application (UI)	
+	\item Feedback viewing dialogue for client applications (UI)
+\end{itemize}
+
+\section*{Summary}
+
+A working blockchain network, a client application for learners and another for teachers 
+were successfully built. 
+
+A demonstration script was created as the implementation phase came to an end to allow 
+time for user evaluation. The previously mentioned video at 
+\href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}} 
+was recorded following the same steps as the user evaluation demonstration.
+
+[TODO: should there be a flowchart here of the demonstration script?]
+
+The following chapter will discuss evaluation further.
