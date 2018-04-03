@@ -19,9 +19,46 @@ This can be done with black box testing, with test cases that are traceable to o
 the requirements as stated in Chapter 4.2.
 
 The full list of test cases run are listed in Appendix E. The test results are overall positive. 
-Out of [TODO], test cases were not passing, and here are the remedial actions.
+Out of the 19 test cases developed, only 4 test cases were not completely passing.
 
-A limitation of these tests are that they are performed by the same person as the developer and could be biased.
+See Table \ref{fig:failed_tests} for the remedial actions were conducted for the failed tests.
+
+\begin{table}[!ht]
+	\caption{Remedial actions for failed test cases}
+	\label{table:failed_tests}
+	\begin{tabularx}{\textwidth}{|c|c|X|c|}
+		\hline
+		Test                                                              & Req                     & Requirement Statement                                                                                                                                 & Status                  \\
+		\hline
+		2                                                                 & FR2                     & \textbf{Teachers would be able to create and edit learning resources}                                                                                 & \cellcolor{pink}FAILED  \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{The user interface and transaction for creating learning resources have been built,
+			but not for editing.}                                                                                                                                                                                                                                                         \\
+		\hline
+		3                                                                 & FR3                     & \textbf{Teachers would be able to create and edit assessments}                                                                                        & \cellcolor{pink}FAILED  \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{The user interface and transaction for creating assessments have been built,
+			but not for editing.}                                                                                                                                                                                                                                                         \\
+		\hline
+		12                                                                & FR12                    & \textbf{The system would be able to generate certificates on
+		the blockchain when a course has been completed}                  & \cellcolor{pink}FAILED                                                                                                                                                                                    \\
+        \hline
+        &                         & \multicolumn{2}{X|}{This feature has not been completed due to time limitation}                                                                                                 \\
+		\hline
+		15 & NR1 & \textbf{The client applications would have the same functionalities
+        across devices and a responsive interface} & \cellcolor{pink}FAILED \\
+		\hline
+           &      & \multicolumn{2}{X|}{The product is a web application that works on all 
+           JavaScript enabled browsers and has the same functionalities across devices.
+           A majority of pages have been optimised for smaller screens but not all.}      \\
+        \hline
+	\end{tabularx}
+\end{table}
+
+A limitation of these tests are that they are performed by the same person as the developer, 
+and could lead to biased results. 
+For example, no test cases have been developed for non-functional requirements NR4 and NR5, 
+because they describe criteria that cannot be objectively assessed by the developer.
 
 \section{User Evaluation}
 
@@ -100,10 +137,14 @@ where 1 is for Strongly disagree, 2 for Disagree, 3 for Neither agree nor disagr
 \end{table}
 
 Overall, the participants have rated the demonstrator system positively.
+None of the participants have disagreed with the above statements about the demonstrator, 
+which is an encouraging sign.
 
-The rest of the raw data from interviews (transcripts) were contextually analysed and grouped into 
+Moving on, the rest of the raw data from interviews (transcripts) were contextually analysed and grouped thematically into 
 observational statements (OS) and functionality suggestions (FS).
 For the relevant transcript snippets for each evaluation question asked, please go to Appendix D.
+
+Here is a high level overview and discussion on what opinions have been expressed:
 
 \subsubsection{On Assessments}
 
@@ -285,7 +326,7 @@ For the relevant transcript snippets for each evaluation question asked, please 
 
 \section{Conclusion}
 
-The demonstrator system has been a moderate success. Most of the requirement-based test cases have been passed and 
+The demonstrator system has been a moderate success. 15 out of 19 of the requirement-based test cases have been passed and 
 user evaluation feedback has been positive overall.
 All of the participants interviewed said they would enrol into a platform like this in the future, 
 praising its transparency, security and user experience.

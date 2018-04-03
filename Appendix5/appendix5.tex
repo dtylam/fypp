@@ -3,3 +3,121 @@
 
 \chapter{Test Cases}
 
+Below are the test cases run for the software testing evaluation in Chapter 7.1.
+Testing evidences such as screenshots are not included to reduce the length of this document.
+
+\begin{table}[!ht]
+	\begin{tabularx}{\textwidth}{|c|c|X|c|}
+		\hline
+		Test                                                              & Req                     & Requirement Statement                                                                                                                                 & Status                  \\
+		\hline
+		1                                                                 & FR1                     & \textbf{The system would store learner records on a blockchain}                                                                                       & \cellcolor{green}PASSED \\
+		\hline
+		% &&\multicolumn{2}{X|}{} \\
+		% \hline
+		2                                                                 & FR2                     & \textbf{Teachers would be able to create and edit learning resources}                                                                                 & \cellcolor{pink}FAILED  \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{The user interface and transaction for creating learning resources have been built,
+			but not for editing.}                                                                                                                                                                                                                                                         \\
+		\hline
+		3                                                                 & FR3                     & \textbf{Teachers would be able to create and edit assessments}                                                                                        & \cellcolor{pink}FAILED  \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{The user interface and transaction for creating assessments have been built,
+			but not for editing.}                                                                                                                                                                                                                                                         \\
+		\hline
+		4                                                                 & FR4                     & \textbf{The system would enforce the provision of learning outcomes, knowledge required
+		and assessment goals}                                             & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{Course modules, module units and assessments cannot be created without
+			these fields.}                                                                                                                                                                                                                                                                \\
+		\hline
+		5                                                                 & FR5                     & \textbf{The system would enforce predefined assessments
+			rules (eg. marking schemes, transparent procedures
+		and feedback) with Smart Contracts}                               & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		% &&\multicolumn{2}{X|}{} \\
+		% \hline
+		6                                                                 & FR6                     & \textbf{The system would enforce predefined assessments
+			rules (eg. marking schemes, transparent procedures
+		and feedback) with Smart Contracts}                               & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		% &&\multicolumn{2}{X|}{} \\
+		% \hline
+		7                                                                 & FR7                     & \textbf{The system would be able to facilitate vivas (oral defence) as a form of assessments}                                                         & \cellcolor{green}PASSED \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{This feature is present but could be improved. For example, time selection fields are missing from the UI and blockchain schema.}                           \\
+		\hline
+		8                                                                 & FR8                     & \textbf{The system would provide multiple ways to define
+		grade schema}                                                     & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{Support for pass/ fail, score, and grade result types.}                                                                                                     \\
+		\hline
+		9                                                                 & FR9                     & \textbf{Teachers would be able to create a customised list of courses
+		for a student, customising programme outcomes and specifications} & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		% &&\multicolumn{2}{X|}{} \\
+		% \hline
+		10                                                                & FR10                    & \textbf{The system should feature dedicated support channels
+		between students and teachers or other advisors}                  & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		                                                                  &                         & \multicolumn{2}{X|}{This is present in the form of a direct messaging UI.}                                                                                                      \\
+		\hline
+		11                                                                & FR11                    & \textbf{Students would be able to add assessment submissions
+		on the blockchain}                                                & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		% &&\multicolumn{2}{X|}{} \\
+		% \hline
+	\end{tabularx}
+\end{table}
+\clearpage
+\begin{table}[!ht]
+    \begin{tabularx}{\textwidth}{|c|c|X|c|}
+        \hline
+		Test                                                              & Req                     & Requirement Statement                                                                                                                                 & Status                  \\
+        \hline
+        12                                                                & FR12                    & \textbf{The system would be able to generate certificates on
+		the blockchain when a course has been completed}                  & \cellcolor{pink}FAILED                                                                                                                                                                                    \\
+        \hline
+        &                         & \multicolumn{2}{X|}{This feature has not been completed due to time limitation}                                                                                                 \\
+        \hline
+		13                                                                & FR13                    & \textbf{The system would allow students to control access to
+		their education history on the blockchain}                        & \cellcolor{green}PASSED                                                                                                                                                                                   \\
+		\hline
+		% &&\multicolumn{2}{X|}{} \\
+		% \hline
+		14 & FR14 & \textbf{The system would provide one login for content delivery, assessment and record keeping} & \cellcolor{green}PASSED \\
+		\hline
+		   &      & \multicolumn{2}{X|}{Content delivery is embedded into this system, which facilitates
+			assessment and record keeping, with a single sign-on with the .card file.}                                                            \\
+        \hline
+        15 & NR1 & \textbf{The client applications would have the same functionalities
+        across devices and a responsive interface} & \cellcolor{pink}FAILED \\
+		\hline
+           &      & \multicolumn{2}{X|}{The product is a web application that works on all 
+           JavaScript enabled browsers and has the same functionalities across devices.
+           A majority of pages have been optimised for smaller screens but not all.}      \\
+        \hline
+        16 & NR2 & \textbf{The client applications would fail safely and display error messages
+		to the user} & \cellcolor{green}PASSED \\
+		\hline
+           &      & \multicolumn{2}{X|}{A dialogue is created for every transaction 
+           and clear error messages are shown when transactions fail.}      \\
+        \hline
+        17 & NR3 & \textbf{The client applications would notify users of relevant
+        events on the blockchain network} & \cellcolor{green}PASSED \\
+		\hline
+           &      & \multicolumn{2}{X|}{A notification drawer is built for the client applications.}      \\
+        \hline
+        18 & NR6 & \textbf{The system should be highly usable and visually appealing} & \cellcolor{green}PASSED \\
+		\hline
+           &      & \multicolumn{2}{X|}{A consistent UI design language framework is adopted for the client applications.}      \\
+        \hline
+        19 & NR7 & \textbf{The client applications should always display its navigation menu and status of the application} & \cellcolor{green}PASSED \\
+		\hline
+           &      & \multicolumn{2}{X|}{A navigation menu is always present on the left edge, and a top title bar displays where the user is at.}      \\
+        \hline
+	\end{tabularx}
+\end{table}
+
+No test cases have been developed for non-functional requirements NR4 and NR5, 
+because they describe criteria that cannot be objectively assessed by the developer.
