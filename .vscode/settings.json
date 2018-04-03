@@ -1,6 +1,8 @@
 {
 	"latex-workshop.debug.showUpdateMessage": false,
 	"cSpell.words": [
-		"blockchain"
+		"blockchain",
+		"chaincode",
+		"pseudocode"
 	]
 }

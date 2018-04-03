@@ -44,7 +44,7 @@ This will speed up the implementation of the proposed demonstrator applications
 in the next stage.
 
 Throughout the design process, the Hyperledger Composer notations are converted or drawn into UML sequence
-diagrams, class diagrams and flowcharts. PlantUML, an open source language-to-diagram drawing tool, 
+diagrams, class diagrams and flowcharts. PlantUML, an open source language-to-diagram drawing tool,
 and TikZ, a LaTeX package that creates graphic elements, were used.
 
 The discussion below may regularly refer back to the functional requirements (FR) and
@@ -54,7 +54,7 @@ non-functional requirements (NR) defined in the previous Chapter 4.
 
 A transaction is the only activity that a peer can perform to alter the state of a blockchain.
 Designing the sequences of transactions necessary to fulfil the desired user journeys will
-be able to provide a good overview of the work ahead. It will also shine a light on 
+be able to provide a good overview of the work ahead. It will also shine a light on
 what data objects and properties must be defined. Two overarching use cases are considered:
 assessment and curriculum personalisation.
 
@@ -166,7 +166,7 @@ Assets are "tangible or intangible goods, services, or property, and are stored 
 	\label{fig:assets}
 \end{figure}
 
-See Figure \ref{fig:assets} for the detailed entity properties and relationships of these assets in a class diagram. 
+See Figure \ref{fig:assets} for the detailed entity properties and relationships of these assets in a class diagram.
 The asset definitions are modelled carefully according to literature and user requirements.
 The special design considerations included:
 
@@ -228,20 +228,34 @@ In Hyperledger Composer, Smart Contracts are called chaincode.
 They are run synchronously with a transaction order and a final output is required, to either accept the transaction, or reject it.
 Smart Contract chaincode can emit network-wide Events. These Events could be consumed by participants or applications.
 
-The discussion below describes the six transactions previously planned in Figure \ref{fig:assessmentloop} and \ref{fig:personalisationloop},
-and the chaincode logic triggered by them.
+The discussion below describes the six transactions previously planned in Figure \ref{fig:assessmentloop} and \ref{fig:personalisationloop}.
+The Smart Contract chaincode triggered by the transactions are explained in pseudocode.
 
 \subsection{The CreateModule Transaction}
 
 The transaction for creating a course module was kept simple, as this project is more interested in the assessment experience than the
 content creation experience. A \textit{CourseModule} asset is uploaded with all of its \textit{ModuleUnits} and \textit{Assessments}.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=1.0\textwidth]{cmtx}
-	\caption[CreateModule Transaction flowchart]
-	{Flowchart representation of the Smart Contract for the CreateModule Transaction (Tx)} \label{fig:cmtx}
-\end{figure}
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=1.0\textwidth]{cmtx}
+% 	\caption[CreateModule Transaction flowchart]
+% 	{Flowchart representation of the Smart Contract for the CreateModule Transaction (Tx)} \label{fig:cmtx}
+% \end{figure}
+
+\begin{algorithm}
+	\begin{algorithmic}[0]
+	\Function{CreateModule}{CourseModule mod, ModuleUnit[] units, Assessment[] assessments}
+		\If{integrity checks of uploaded mod passed}
+		\State add mod, unit and assessment objects to blockchain
+		\State add relationships between these objects and the Teacher(s)
+		\State \textbf{return} Accepted
+		\Else
+		\State \textbf{return} Rejected
+		\EndIf
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
 
 Transactions that allow content editing and course archiving (making courses unavailable to new students) will have to be designed
 for a fully-fledged real world system, but we will defer them to future work for this project.
@@ -251,12 +265,32 @@ for a fully-fledged real world system, but we will defer them to future work for
 This transaction is ordered by a student to add a submission for the assessment of a module unit. The submission files will be
 compressed and converted into base64 data strings and attached to the \textit{content} parameter.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=1.0\textwidth]{astx}
-	\caption[AddSubmission Transaction flowchart]
-	{Flowchart representation of the Smart Contract for the AddSubmission Transaction (Tx)} \label{fig:astx}
-\end{figure}
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=1.0\textwidth]{astx}
+% 	\caption[AddSubmission Transaction flowchart]
+% 	{Flowchart representation of the Smart Contract for the AddSubmission Transaction (Tx)} \label{fig:astx}
+% \end{figure}
+
+\begin{algorithm}
+	\begin{algorithmic}[0]
+	\Function{AddSubmission}{Learner learner, ModuleUnit unit, String content, String comments}
+		\State assign a Teacher to the submission		
+		\If{unit.assessment.type is AutoAssessment}
+		\State get unit.assessment.testFile
+		\State post testFile and content to Marking API \Comment{content is the Submission file in base64}
+		\State await return from Marking API
+		\State add returned result to Submission object
+		\State emit ResultAvailable Event (Submission submission, String unitId, String details)
+		\ElsIf{unit.assessment.type is AssessorAssessment}
+		\State emit SubmissionUploaded Event (Submission submission, String unitId, String teacherId)
+		\EndIf
+		\State add Submission object to blockchain
+		\State add relationship between Submission object and the Learner
+		\State \textbf{return} Accepted		
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
 
 \subsection{The SubmitResult Transaction}
 
@@ -264,12 +298,36 @@ The assessor submits markings on a marking criteria against grade descriptor gri
 parameter \textit{marks}, a one dimensional array where the index correlates to the marking criteria number and
 the value correlates to the grade number.
 
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=1.0\textwidth]{srtx}
-	\caption[SubmitResult Transaction flowchart]
-	{Flowchart representation of the Smart Contract for the SubmitResult Transaction (Tx)} \label{fig:srtx}
-\end{figure}
+% \begin{figure}[!ht]
+% 	\centering
+% 	\includegraphics[width=1.0\textwidth]{srtx}
+% 	\caption[SubmitResult Transaction flowchart]
+% 	{Flowchart representation of the Smart Contract for the SubmitResult Transaction (Tx)} \label{fig:srtx}
+% \end{figure}
+
+\begin{algorithm}
+	\begin{algorithmic}[0]
+	\Function{SubmitResult}{Submission submission, Teacher assessor, Integer[] marks, String feedbackMd}
+		\If{unit.assessment.type is AssessorAssessment}
+			\State \textbf{continue}
+		\Else \textbf{ return} Rejected
+		\EndIf
+		\If{assessor is submission.teacherAssigned}
+			\State \textbf{continue}
+		\Else \textbf{ return} Rejected
+		\EndIf
+		\State calculate result based on grade descriptors and marking criteria
+		\State update the Submission object on the blockchain with result
+		\State emit ResultAvailable Event (Submission submission, String unitId, String details)
+		\If{assessment.terminal is true}
+			\If{the overall result of the module is a pass}
+				\State emit CourseModuleCompleted Event (Teacher teacherAssigned, Submission submission, String modId)
+			\EndIf
+		\EndIf
+		\State \textbf{return} Accepted		
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
 
 \subsection{The GenCertificate Transaction}
 
@@ -282,6 +340,30 @@ It could also require multiple signatures for a certificate.
 	\caption[GenCertificate Transaction flowchart]
 	{Flowchart representation of the Smart Contract for the GenCertificate Transaction (Tx)} \label{fig:gctx}
 \end{figure}
+
+\begin{algorithm}
+	\begin{algorithmic}[0]
+	\Function{SubmitResult}{Submission submission, Teacher assessor, Integer[] marks, String feedbackMd}
+		\If{unit.assessment.type is AssessorAssessment}
+			\State \textbf{continue}
+		\Else \textbf{ return} Rejected
+		\EndIf
+		\If{assessor is submission.teacherAssigned}
+			\State \textbf{continue}
+		\Else \textbf{ return} Rejected
+		\EndIf
+		\State calculate result based on grade descriptors and marking criteria
+		\State update the Submission object on the blockchain with result
+		\State emit ResultAvailable Event (Submission submission, String unitId, String details)
+		\If{assessment.terminal is true}
+			\If{the overall result of the module is a pass}
+				\State emit CourseModuleCompleted Event (Teacher teacherAssigned, Submission submission, String modId)
+			\EndIf
+		\EndIf
+		\State \textbf{return} Accepted		
+	\EndFunction
+	\end{algorithmic}
+\end{algorithm}
 
 \subsection{The ProposeCurriculum Transaction}
 
@@ -441,29 +523,29 @@ were considered when developing the application prototypes. See Table \ref{table
 	\centering
 	\label{table:ux_considerations}
 	\begin{tabularx}{\textwidth}{lXX}
-		Usability Goal            & Usability Hieuristic                                    & Requirements from Ch. 4  \\
+		Usability Goal            & Usability Hieuristic                                    & Requirements from Ch. 4                                         \\
 		\toprule
 		Learnability              & Match between system and the real world\newline
 		Visibility of system status \newline
 		Consistency and standards & Using common higher education glossary \newline
 		Notifications Area (NR3) \newline
-		Adopt a popular design language                                                                                              \\
+		Adopt a popular design language                                                                                                                       \\
 		\midrule
-		Efficiency                & Flexibility and efficiency of use   & Flexibility in results types (FR8)                             \\
+		Efficiency                & Flexibility and efficiency of use                       & Flexibility in results types (FR8)                              \\
 		\midrule
-		Memorability              & Recognition rather than recall                          & Always Visible Navigation Menu (NR7)     \\
+		Memorability              & Recognition rather than recall                          & Always Visible Navigation Menu (NR7)                            \\
 		\midrule
-		Error Reduction        & Help users recognize, diagnose, and recover from errors & Error Messages on Transaction Failures \\
+		Error Reduction           & Help users recognize, diagnose, and recover from errors & Error Messages on Transaction Failures                          \\
 		\midrule
-		Satisfaction              & Aesthetic and minimalist design   & The system should be highly usable and visually appealing (NR6) \\                                                               \\
+		Satisfaction              & Aesthetic and minimalist design                         & The system should be highly usable and visually appealing (NR6) \\                                                               \\
 		\bottomrule
 	\end{tabularx}
 \end{table}
 
 To maximise learnability and user familiarity, the client applications will adopt a popular design language for their user interfaces.
-Material Design, a design system that combines theory, resources, and tools, is used by the most popular mobile operating system Android 
-and many web applications \citep{google2018material}. Resources such as free-to-use icon packs and tools such as well-maintained 
-user interface component libraries on various mobile and web development platforms will enable quick scaffolding of design compliant and 
+Material Design, a design system that combines theory, resources, and tools, is used by the most popular mobile operating system Android
+and many web applications \citep{google2018material}. Resources such as free-to-use icon packs and tools such as well-maintained
+user interface component libraries on various mobile and web development platforms will enable quick scaffolding of design compliant and
 highly usable applications.
 
 Figure \ref{fig:sitemaps} are the sitemap trees showing the contextual flow for users in the client applications:
@@ -475,6 +557,6 @@ Figure \ref{fig:sitemaps} are the sitemap trees showing the contextual flow for 
 	{Sitemap designs for the learner and teacher client applications with notes on the location of transaction ordering dialogues.} \label{fig:sitemaps}
 \end{figure}
 
-No low fidelity prototypes for the two demonstrator applications were produced due to the lack of research need, 
-since the usability design was driven by hieuristics and not a more user-centred approach. The next chapter will 
+No low fidelity prototypes for the two demonstrator applications were produced due to the lack of research need,
+since the usability design was driven by hieuristics and not a more user-centred approach. The next chapter will
 describe further how high fidelity, demonstration-ready web applications were built for this project.
