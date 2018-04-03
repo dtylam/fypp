@@ -26,7 +26,7 @@ use cases and model a blockchain network. The design tools offered take the form
 \end{itemize}
 
 See Figure \ref{fig:composer2fabric} for a visual explainer of how Hyperledger Composer
-helps designers and developers create these high level definitions.
+helps designers and developers create these high-level definitions.
 
 \begin{figure}[!ht]
 	\centering
@@ -136,7 +136,7 @@ All three types of participants inherit an abstract (cannot be created) class \t
 that all \textit{Users} must have would contain a one-way hash of their national identification number, which can be a
 driver's license number, social security number, etc. A hash is a form
 of cryptographical representation of data that is non-invertible. This allows the system to ensure that
-all writers in the system is known and unique, while protecting their privacy to the general public.
+all writers in the system are known and unique, while protecting their privacy to the general public.
 
 See Figure \ref{fig:participants} for the detailed entity properties of all participant types
 in a class diagram.
@@ -547,10 +547,10 @@ Here is a list of the notable limitations:
 To demonstrate the improvements a blockchain back-end and Smart Contracts can bring to an e-Learning platform, a
 Learner client application and a Teacher client application will be built at the implementation stage.
 
-While improving general usability is not one of the objectives of this project, poor usability and interface designs
-could adversely affect evaluation of the improvements that this project aims for.
+While improving usability in e-Learning is not one of the objectives of this project, poor usability and interface designs
+could adversely affect the evaluation of improvements that this project aims for.
 
-Therefore, several of \citet{nielsen199510}'s famous five usability design goals and ten usability design hieuristics
+Therefore, several of \citet{nielsen199510}'s famous five usability design goals and ten usability design heuristics
 were considered when developing the application prototypes. See Table \ref{table:ux_considerations}:
 
 \begin{table}[!ht]
@@ -558,7 +558,7 @@ were considered when developing the application prototypes. See Table \ref{table
 	\centering
 	\label{table:ux_considerations}
 	\begin{tabularx}{\textwidth}{lXX}
-		Usability Goal            & Usability Hieuristic                                    & Requirements from Ch. 4                                         \\
+		Usability Goal            & Usability Heuristic                                    & Requirements from Ch. 4                                         \\
 		\toprule
 		Learnability              & Match between system and the real world\newline
 		Visibility of system status \newline
@@ -583,15 +583,15 @@ and many web applications \citep{google2018material}. Resources such as free-to-
 user interface component libraries on various mobile and web development platforms will enable quick scaffolding of design compliant and
 highly usable applications.
 
-Figure \ref{fig:sitemaps} are the sitemap trees showing the contextual flow for users in the client applications:
+Figure \ref{fig:sitemaps} shows the sitemap trees showing the contextual flow for users in the client applications:
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=.6\textwidth]{sitemaps}
+	\includegraphics[width=.75\textwidth]{sitemaps}
 	\caption[Client Application Sitemaps]
 	{Sitemap designs for the learner and teacher client applications with notes on the location of transaction ordering dialogues.} \label{fig:sitemaps}
 \end{figure}
 
 No low fidelity prototypes for the two demonstrator applications were produced due to the lack of research need,
-since the usability design was driven by hieuristics and not a more user-centred approach. The next chapter will
-describe further how high fidelity, demonstration-ready web applications were built for this project.
+since the usability design was driven by heuristics and not a more user-centred approach. 
+The next chapter will describe further how high fidelity, demonstration-ready web applications were built for this project.
