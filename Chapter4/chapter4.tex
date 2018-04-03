@@ -13,8 +13,8 @@ data, and provides the list of formal user requirements.
 Collecting primary data from shareholders of higher education e-learning systems would be able to:
 \begin{itemize}
 	\setlength\itemsep{0em}	
-	\item reaffirm and further develop requirements obtained from literature
-	\item obtain further requirements from real world participants, their painpoints and goals
+	\item reaffirm and further develop requirements obtained from literature in Chapter 2
+	\item obtain further requirements from real-world participants, their pain points and goals
 \end{itemize}
 
 \subsection{Methodology}
@@ -52,10 +52,10 @@ two with teaching staff and three with student representatives. See table
 		in e-learning interactions, effectiveness and acceptance                                          \\\midrule
 		Student C   & a university course representative for 3 years, which involves collecting and
 		communicating student feedback and attending staff-student liaison meetings                       \\\midrule
-		Student D   & a university peer assisted learning leader for 2 years, helping out lower level
+		Student D   & a university peer-assisted learning leader for 2 years, helping out lower level
 		students with their academic work by facilitating peer discussions, and escalating common problems
 		to academic staff in debrief sessions                                                             \\\midrule
-		Student E   & a university course representative for 2 years and a peer assisted learning leader
+		Student E   & a university course representative for 2 years and a peer-assisted learning leader
 		for 1 year                                                                                        \\\bottomrule
 	\end{tabularx}
 \end{table}
@@ -131,7 +131,7 @@ Is there tension between students and teachers over assessments, and why?
 		\hline
 		\multicolumn{3}{|X|}{There is a concern that assessments are too
 			compartmentalised into their modules, not relevant to industry and not encouraging
-			hollistic critical thinking.}                                       \\
+			holistic critical thinking.}                                       \\
 		\hline
 	\end{tabularx}
 \end{table}
@@ -149,7 +149,7 @@ one participant.
 
 \subsubsection{On Curriculum Personalisation}
 
-Leading Question: What do you think are the current road blocks to offering more multi-disciplinary,
+Leading Question: What do you think are the current roadblocks to offering more multi-disciplinary,
 personalised, or even multi-institutional arrangements for higher education?
 
 \begin{table}[!ht]
@@ -195,6 +195,16 @@ personalised, or even multi-institutional arrangements for higher education?
 	\end{tabularx}
 \end{table}
 
+It was encouraging to see that three out of four participants described a clear demand 
+for more freedom in curriculum personalisation (PS7). Also confirming the need for 
+informed educational decisions as described by \citet{green2005futurelab}, participants 
+have asked for dedicated curriculum personalisation support (PS8).
+
+The present inflexible degree structures in markets such as the UK is an interesting 
+point raised by participant A (PS9). This is actually what Smart Contracts 
+can be very good at, automating manual, regulatory work. For this proof-of-concept 
+project, example administrative fields can be added to showcase such potential.
+
 \subsubsection{Other Higher Education Issues}
 
 Leading Question: What else needs improving in higher education in general?
@@ -204,8 +214,8 @@ Leading Question: What else needs improving in higher education in general?
 		\hline
 		PS11 & \textbf{More support, interaction and engagement needed} & D, E       \\
 		\hline
-		\multicolumn{3}{|X|}{Switching between the mindsets for different disciplines could be hard.
-			The number of credits for multi-disciplinary programs should not be higher.} \\
+		\multicolumn{3}{|X|}{Students have complained that institutions are not always 
+		good at supporting and engaging with all students.} \\
 		\hline
 	\end{tabularx}
 \end{table}
@@ -228,6 +238,9 @@ Leading Question: What else needs improving in higher education in general?
 	\end{tabularx}
 \end{table}
 
+Only the administrative bottleneck issue (PS12) is considered highly relevant to this project. 
+A blockchain backend would not be able to improve student engagement (PS11) or self-regulated learning skills (PS13).
+
 \subsubsection{Other e-Learning System Issues}
 
 Sample Questions: What other features would you like to see in a future e-Learning system for
@@ -236,9 +249,10 @@ higher education?
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		PS14 & \textbf{Fine grained access control for learning history needed to preserve privacy} & D, E \\
+		PS14 & \textbf{Fine-grained access control for learning history needed to preserve privacy} & D, E \\
 		\hline
-		\multicolumn{3}{|X|}{Students prefer to be as private as possible, and dislike data aggregation.}  \\
+		\multicolumn{3}{|X|}{Students prefer to be as private as possible, and dislike data aggregation, 
+		even by their institution}  \\
 		\hline
 	\end{tabularx}
 \end{table}
@@ -254,7 +268,7 @@ higher education?
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		PS16 & \textbf{Real world learning activities not captured in course management systems} & A               \\
+		PS16 & \textbf{Real-world learning activities not captured in course management systems} & A               \\
 		\hline
 		\multicolumn{3}{|X|}{For example, face-to-face contact time is not captured by most conventional systems.} \\
 		\hline
@@ -289,8 +303,24 @@ higher education?
 	\end{tabularx}
 \end{table}
 
-An affinity diagram is also produced to give a high level overview of all the problem statements.
-(See figure \ref{fig:ps-affinity}).
+Ease of use is a major theme in this group, with requests for mobile friendliness (PS15), 
+flexibility in record types (PS16, 17), and single sign-on (PS18). It will be important 
+to take these into account while designing our blockchain and client applications.
+
+A blockchain could also be the technology fit to improve access control (PS14) and 
+create trust (PS19). These two user concerns discovered has been added to the objectives 
+of the project.
+
+\subsubsection{Summary}
+
+Overall, the study has been useful in extending our knowledge on e-Learning issues.
+The convenience sampling has likely been a limitation, since all participants were 
+recruited from the same university, and the social circle of the interviewer.
+
+An affinity diagram is also produced to give a high-level overview of all the problem statements.
+(See Figure \ref{fig:ps-affinity} on the next page).
+
+\clearpage
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1.0\textwidth]{ps-affinity}
@@ -298,8 +328,6 @@ An affinity diagram is also produced to give a high level overview of all the pr
 	{Affinity diagram for problem statements devised from primary data}
 	\label{fig:ps-affinity}
 \end{figure}
-The convenience sampling has likely been a limitation, since all participants were 
-recruited from the social circle of the interviewer.
 
 \section{Formal Requirements}
 
@@ -350,9 +378,9 @@ and do not necessarily reflect the priorities of the stakeholders.
 		FR8                                                       & The system would provide multiple ways to define grade schema                     & PS17
 		                                                          & Could Have
 		\\\midrule
-		FR9                                                       & Teachers would be able to create a customised list of courses
-		for a student, customising programme outcomes and specifications
-		                                                          & Ch 2.1.2 (Personalisation), PS7, PS9                                              & Must Have
+		FR9                                                       & Teachers would be able to negotiate a customised list of courses for a student
+		within a fixed course credits budget, customising degree specifications
+		                                                          & Ch 2.1.2 (Personalisation), PS7, PS9, PS10                                              & Must Have
 		\\\midrule
 		FR10                                                      & The system should feature dedicated support channels between students and teachers
 		or other advisors
@@ -370,7 +398,7 @@ and do not necessarily reflect the priorities of the stakeholders.
 		FR14                                                      & The system would provide one login for content delivery, assessment and
 		record keeping                                            & PS18                                                                              & Should Have
 		\\\midrule
-		                                                          & \multicolumn{2}{c}{Requirements targetting PS6, PS10, PS13, PS16}                 & Won't Have
+		                                                          & \multicolumn{2}{c}{Requirements targetting PS6, PS13, PS16}                 & Won't Have
 		\\\bottomrule
 	\end{tabularx}
 \end{table}
