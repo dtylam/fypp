@@ -1,3 +1,10 @@
+## Notes to Self
+
+word count w/o appdx
+```
+texcount -inc Chapter1/chapter1.tex Chapter2/chapter2.tex Chapter3/chapter3.tex Chapter4/chapter4.tex Chapter5/chapter5.tex Chapter6/chapter6.tex Chapter7/chapter7.tex Chapter8/chapter8.tex
+```
+
 CUED PhD thesis template
 ========================
 
