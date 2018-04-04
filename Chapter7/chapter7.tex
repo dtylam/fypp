@@ -12,7 +12,7 @@ requirement-based testing and user evaluation.
 
 One way to determine product quality is to evaluate the extent to which each stated requirement
 has been fulfilled \citep{bach1999risk}. Since the requirements for this project addresses directly
-several of the problems found in literature and interviews with stakeholders, a high quality product
+several of the problems found in literature and interviews with stakeholders, a high-quality product
 that satisfies the requirements would make the project more of a success.
 
 This can be done with black box testing, with test cases that are traceable to one or more of
@@ -56,20 +56,20 @@ Remedial actions were carried out for the failed cases:
 			The applications work on all JavaScript enabled browsers across devices.
 		   }      \\
 		\hline
-		\multicolumn{2}{|c|}{Remedial Action} & \multicolumn{2}{X|}{During demonstrations, the responsive design of webpages were showcased on working pages.}                                                                                                  \\
+		\multicolumn{2}{|c|}{Remedial Action} & \multicolumn{2}{X|}{During demonstrations, the responsive design of webpages was showcased on working pages.}                                                                                                  \\
 		\hline
 	\end{tabularx}	
 \end{table}
 
-A limitation of these tests are that they are performed by the same person as the developer,
+A limitation of these tests was that they were performed by the same person as the developer,
 and could lead to biased results.
 For example, no test cases have been developed for non-functional requirements NR4 and NR5,
 because they describe criteria that cannot be objectively assessed by the developer.
 
 \section{User Evaluation}
 
-The aims of the project aims to deliver benefits to students and teachers.
-It is therefore important to evaluate what these real world stakeholders think about the project deliverables.
+The aims of the project aimed to deliver benefits to students and teachers.
+It is therefore important to evaluate what these real-world stakeholders think about the project deliverables.
 
 \subsection{Methodology}
 
@@ -100,7 +100,7 @@ See table \ref{table:participants-eval} for a more detailed description of these
 		Educator F  & lecturer in higher education for over 10 years                                      \\\midrule
 		Student C   & a university course representative for 3 years, which involves collecting and
 		communicating student feedback and attending staff-student liaison meetings                       \\\midrule
-		Student E   & a university course representative for 2 years and a peer assisted learning leader
+		Student E   & a university course representative for 2 years and a peer-assisted learning leader
 		for 1 year                                                                                        \\\bottomrule
 	\end{tabularx}
 \end{table}
@@ -120,7 +120,7 @@ where 1 is for Strongly disagree, 2 for Disagree, 3 for Neither agree nor disagr
 4 for Agree, and 5 for Strongly agree.
 
 \begin{table}[!ht]
-	\caption{Responses for structured questions in user evaluation}
+	\caption{Responses to structured questions in user evaluation}
 	\centering
 	\label{table:structuredresp_eval}
 	\begin{tabularx}{\textwidth}{|c|X|c|c|c|c|}
@@ -262,7 +262,7 @@ Participants have suggested several interesting features.
 Teachers disliked the lack of control over the final grade output, and would like 
 the ability to override the grade (FS3).
 Notably, assessment appeals (FS2) is an important area that a blockchain-based system 
-could be great at facilitating, but this unfortunately did not come up at the previous 
+could be great at facilitating, but this unfortunately did not come up in the previous 
 requirements gathering study.
 
 \subsubsection{On Curriculum Personalisation}
@@ -300,10 +300,15 @@ requirements gathering study.
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		FS5 & \textbf{The approval process should not be led by the Teacher as it reduces the final say of the student.} & E \\
+		FS5 & \textbf{The approval process reduces the final say of the student.} & E \\
 		\hline
-		% \multicolumn{3}{|X|}{} \\
-		% \hline
+		\multicolumn{3}{|X|}{
+			The approval of a curriculum is done by the teacher, which could produce a 
+			situation where a teacher refuses to approve a student's curriculum. 
+			It is suggested that students should have the final decision on course 
+			selection, which is how module selection is more popularly done.
+		} \\
+		\hline
 	\end{tabularx}
 \end{table}
 
@@ -312,7 +317,11 @@ with all participants noting that they liked the "My Curriculum" page in the
 learner application. The availability of support in the form of the direct message 
 chat box was also unanimously praised (OS7).
 
-
+An important suggestion was raised by Student E, that current systems give 
+students the final say over module choices, whereas the demonstrator system 
+gave teachers the final say. To correct this, a future iteration of 
+the design could separate the selection of modules (done by students), 
+and the editing of programme specifications (done by teacher) into two transactions.
 
 % Educator A raised the issue of "who issues the final degree award?",
 
@@ -354,6 +363,14 @@ chat box was also unanimously praised (OS7).
 	\end{tabularx}
 \end{table}
 
+No red flags were raised by the participants about the access control rules the system used.
+The access control UI in the learner application was received very positively.
+
+Interestingly, all of the participants thought that the added level of transparency 
+could increase trust in online education providers and credentials (Q8).
+This is very encouraging. A crowd-sourced/ community-policing ratings feature was 
+suggested (FS6) to further allow trust and reputation building on the system.
+
 Throughout the demonstrations held, a lot of time and effort has to be put in describing
 how the blockchain is set up, and explaining the benefits of storing submissions,
 running assessments, and negotiating personalised curricula on the blockchain.
@@ -365,8 +382,8 @@ primitive.
 
 The demonstrator system has been a moderate success. 15 out of 19 of the requirement-based test cases have been passed and
 user evaluation feedback has been positive overall.
-All of the participants interviewed said they would enrol into a platform like this in the future,
-praising its transparency, security and user experience.
+All of the participants interviewed said they would enrol into a platform like this in the future 
+(Appendix D.2.Q10), praising its transparency, security and user experience.
 
 Going back to the objectives of the design of the demonstrator system,
 Table \ref{table:eval_conclusion} summarises how well these objectives have been achieved.
@@ -374,15 +391,15 @@ Table \ref{table:eval_conclusion} summarises how well these objectives have been
 \begin{table}[!ht]
 	\caption{Conclusions drawn from evaluation}
 	\label{table:eval_conclusion}
-	\begin{tabularx}{\textwidth}{|>{\bfseries}X|X|}
+	\begin{tabularx}{\textwidth}{|>{\bfseries}l|X|}
 		\hline
 		Objective & Conclusion
 		\\\hline
-		Increase transparency in assessments &
+		Increase transparency in assessments & The system has the potential to do this, with quality human inputs.
 		\\\hline
-		Increase curriculum personalisation &
+		Facilitate curriculum personalisation & The system has been well designed to do this.
 		\\\hline	
-		Increase security, privacy and available access control &
+		Increase security and privacy & The system has more access control features, and more security and redundancy built-in than regular systems.
 		\\\hline
 	\end{tabularx}
 \end{table}
