@@ -263,6 +263,11 @@ for a fully-fledged real world system, but we will defer them to future work for
 
 This transaction is ordered by a student to add a submission for the assessment of a module unit. The submission files will be
 compressed and converted into base64 data strings and attached to the \textit{content} parameter.
+
+Every submission is stored on the blockchain network, providing extra data redundancy that ensures 
+the submission is secure and immutable. In the case of an automatic assessment, peers on the 
+blockchain network will each send the submission file and the test file pre-defined by the teacher 
+to an external marking API, independently confirming the automated marking result.
 % \begin{figure}[!ht]
 % 	\centering
 % 	\includegraphics[width=1.0\textwidth]{astx}
@@ -295,6 +300,9 @@ compressed and converted into base64 data strings and attached to the \textit{co
 The assessor submits markings on a marking criteria against grade descriptor grid. This is uploaded as the transaction
 parameter \textit{marks}, a one dimensional array where the index correlates to the marking criteria number and
 the value correlates to the grade number.
+
+The grades are calculated by Smart Contracts according to pre-defined weightings and rules. 
+Every peer will run the same chaincode and achieve a consensus over what the result is.
 % \begin{figure}[!ht]
 % 	\centering
 % 	\includegraphics[width=1.0\textwidth]{srtx}

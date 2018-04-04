@@ -6,80 +6,85 @@
 
 Coming to the end of the project, evaluation is needed to measure and draw conclusions
 on its effectiveness. The project will be evaluated in two ways:
-software testing and user evaluation.
+requirement-based testing and user evaluation.
 
 \section{Requirement-based Testing}
 
-One way to determine product quality is to evaluate the extent to which each stated requirement 
-has been fulfilled \citep{bach1999risk}. Since the requirements for this project addresses directly 
-several of the problems found in literature and interviews with stakeholders, a high quality product 
+One way to determine product quality is to evaluate the extent to which each stated requirement
+has been fulfilled \citep{bach1999risk}. Since the requirements for this project addresses directly
+several of the problems found in literature and interviews with stakeholders, a high quality product
 that satisfies the requirements would make the project more of a success.
 
-This can be done with black box testing, with test cases that are traceable to one or more of 
+This can be done with black box testing, with test cases that are traceable to one or more of
 the requirements as stated in Chapter 4.2.
+The full list of requirement-based test cases run are listed in Appendix E.
 
-The full list of test cases run are listed in Appendix E. The test results are overall positive. 
-Out of the 19 test cases developed, only 4 test cases were not completely passing.
-
-See Table \ref{fig:failed_tests} for the remedial actions were conducted for the failed tests.
+Overall, the results were positive.
+Out of the 19 requirement-based test cases developed, only 4 were not completely passing.
+They were all due to time limitations on implementation work.
+Remedial actions were carried out for the failed cases:
 
 \begin{table}[!ht]
-	\caption{Remedial actions for failed test cases}
-	\label{table:failed_tests}
+	% \caption{Remedial actions for failed requirements}
+	% \label{table:failed_tests}
 	\begin{tabularx}{\textwidth}{|c|c|X|c|}
 		\hline
-		Test                                                              & Req                     & Requirement Statement                                                                                                                                 & Status                  \\
+		Test                                  & Req                                                                                                                                          & Requirement Statement                                                 & Status                 \\
 		\hline
-		2                                                                 & FR2                     & \textbf{Teachers would be able to create and edit learning resources}                                                                                 & \cellcolor{pink}FAILED  \\
+		2                                     & FR2                                                                                                                                          & \textbf{Teachers would be able to create and edit learning resources} & \cellcolor{pink}FAILED \\
 		\hline
-		                                                                  &                         & \multicolumn{2}{X|}{The user interface and transaction for creating learning resources have been built,
-			but not for editing.}                                                                                                                                                                                                                                                         \\
-		\hline
-		3                                                                 & FR3                     & \textbf{Teachers would be able to create and edit assessments}                                                                                        & \cellcolor{pink}FAILED  \\
-		\hline
-		                                                                  &                         & \multicolumn{2}{X|}{The user interface and transaction for creating assessments have been built,
-			but not for editing.}                                                                                                                                                                                                                                                         \\
+		3                                     & FR3                                                                                                                                          & \textbf{Teachers would be able to create and edit assessments}        & \cellcolor{pink}FAILED \\
 		\hline
 		12                                                                & FR12                    & \textbf{The system would be able to generate certificates on
 		the blockchain when a course has been completed}                  & \cellcolor{pink}FAILED                                                                                                                                                                                    \\
-        \hline
-        &                         & \multicolumn{2}{X|}{This feature has not been completed due to time limitation}                                                                                                 \\
 		\hline
-		15 & NR1 & \textbf{The client applications would have the same functionalities
-        across devices and a responsive interface} & \cellcolor{pink}FAILED \\
+		\multicolumn{2}{|c|}{Explanations}     & \multicolumn{2}{X|}{Due to time limitation, features for editing existing courses and assessments, and features related to certificates have not been built.}                                                                                                                        \\
 		\hline
-           &      & \multicolumn{2}{X|}{The product is a web application that works on all 
-           JavaScript enabled browsers and has the same functionalities across devices.
-           A majority of pages have been optimised for smaller screens but not all.}      \\
-        \hline
+		\multicolumn{2}{|c|}{Remedial Action} & \multicolumn{2}{X|}{During demonstrations, participants are told these features are possible and will be made available in future work.}                                                                                                  \\
+		\hline
 	\end{tabularx}
 \end{table}
+\clearpage
+\begin{table}[!ht]	
+	\begin{tabularx}{\textwidth}{|c|c|X|c|}
+		\hline
+		15 & NR1 & \textbf{The client applications would have the same functionalities
+		across devices and a responsive interface} & \cellcolor{pink}FAILED \\
+		\hline
+		\multicolumn{2}{|c|}{Explanations} & \multicolumn{2}{X|}{
+			A majority of pages have been optimised for smaller screens \underline{but not all}. 
+			The applications work on all JavaScript enabled browsers across devices.
+		   }      \\
+		\hline
+		\multicolumn{2}{|c|}{Remedial Action} & \multicolumn{2}{X|}{During demonstrations, the responsive design of webpages were showcased on working pages.}                                                                                                  \\
+		\hline
+	\end{tabularx}	
+\end{table}
 
-A limitation of these tests are that they are performed by the same person as the developer, 
-and could lead to biased results. 
-For example, no test cases have been developed for non-functional requirements NR4 and NR5, 
+A limitation of these tests are that they are performed by the same person as the developer,
+and could lead to biased results.
+For example, no test cases have been developed for non-functional requirements NR4 and NR5,
 because they describe criteria that cannot be objectively assessed by the developer.
 
 \section{User Evaluation}
 
-The aims of the project aims to deliver benefits to students and teachers. 
+The aims of the project aims to deliver benefits to students and teachers.
 It is therefore important to evaluate what these real world stakeholders think about the project deliverables.
 
 \subsection{Methodology}
 
-A qualitative user evaluation study was used.
-[TODO]
-Method: qualitative
+Similar to the requirements gathering study in Chapter 4, a qualitative study was conducted
+again with semi-structured, face-to-face interviews (open-ended questions).
 
-Instrument: Why interviews? Likert Scale and semi-structured.
+An ethics submission was completed on BREO and approval was granted on 14th March.
+See Supporting Materials/Ethics/Evaluation/ for the approved
+participant information sheet, consent form and example questions documents.
 
-Sample: Who are they? Why? Convenience Sampling. Limitation: all CS department.
+The participants were gathered through direct email contact (convenience sampling).
+The criteria were the same as the requirements study: higher education teaching staff
+with 10+ years of experience, and students with academic liaison experience.
 
-An ethics submission was completed on BREO and approval granted on 14th March.
-See Appendix (TODO) for the approved participant information sheet, consent form and example questions.
-
-A total of four interviews were conducted in March 2018:
-two with teaching staff and two with student representatives.
+A total of four interviews were conducted in March 2018.
 Three of the participants (A, C, E) are return participants from the requirements gathering interviews in Chapter 4.
 See table \ref{table:participants-eval} for a more detailed description of these participants.
 
@@ -102,68 +107,73 @@ See table \ref{table:participants-eval} for a more detailed description of these
 
 \subsection{Interview Results and Analysis}
 
-To better draw conclusions on the aims and objectives of this project, a Likert-type scale is used
-for the first eight structured questions. This is to encourage participants to express an opinion about the guiding statements,
-not for quantitative analysis. See Table \ref{table:structuredresp_eval} for the response values for these first eight questions, 
-where 1 is for Strongly disagree, 2 for Disagree, 3 for Neither agree nor disagree, 4 for Agree and 5 for Strongly agree.
+To better draw conclusions on the aims and objectives of this project, 
+a Likert-type scale is used for the first eight questions, 
+which may look like structured questions, but participants were asked to give 
+open-ended "How and Why?" follow-up responses after selecting an option on the scale. 
+
+The inclusion of the scale was to encourage participants to express an agree/ disagree opinion 
+about the guiding statements, not for quantitative analysis. 
+See Table \ref{table:structuredresp_eval} for 
+the response values for these first eight questions,
+where 1 is for Strongly disagree, 2 for Disagree, 3 for Neither agree nor disagree, 
+4 for Agree, and 5 for Strongly agree.
 
 \begin{table}[!ht]
 	\caption{Responses for structured questions in user evaluation}
 	\centering
 	\label{table:structuredresp_eval}
-    \begin{tabularx}{\textwidth}{|c|X|c|c|c|c|}
-        \hline
-        & & \multicolumn{4}{c|}{Participants}\\
+	\begin{tabularx}{\textwidth}{|c|X|c|c|c|c|}
 		\hline
-		   & Statement                                                                                  & A                        & F                      & C                        & E                        \\
+		   &                                                                                            & \multicolumn{4}{c|}{Participants}                                                                                \\
 		\hline
-		Q1 & The features of the system communicate assessment expectations very well                   & \cellcolor{Dandelion}3   & \cellcolor{green}5     & \cellcolor{SpringGreen}4 & \cellcolor{SpringGreen}4 \\
+		   & Statement                                                                                  & A                                 & F                      & C                        & E                        \\
 		\hline
-		Q2 & The features of the system improve transparency in assessment procedures                   & \cellcolor{Dandelion}3   & \cellcolor{green}5     & \cellcolor{green}5       & \cellcolor{green}5       \\
+		Q1 & The features of the system communicate assessment expectations well                        & \cellcolor{Dandelion}3            & \cellcolor{green}5     & \cellcolor{SpringGreen}4 & \cellcolor{SpringGreen}4 \\
 		\hline
-		Q3 & The features of the system make curriculum personalisation convenient                      & \cellcolor{green}5       & \cellcolor{green}5     & \cellcolor{green}5       & \cellcolor{SpringGreen}4 \\
+		Q2 & The features of the system improve transparency in assessment procedures                   & \cellcolor{Dandelion}3            & \cellcolor{green}5     & \cellcolor{green}5       & \cellcolor{green}5       \\
 		\hline
-		Q4 & The system provides good (administrative/ pastoral) support for curriculum personalisation & \cellcolor{green}5       & \cellcolor{green}5     & \cellcolor{SpringGreen}4       & \cellcolor{Dandelion}3   \\
+		Q3 & The features of the system make curriculum personalisation convenient                      & \cellcolor{green}5                & \cellcolor{green}5     & \cellcolor{green}5       & \cellcolor{SpringGreen}4 \\
 		\hline
-		Q5 & The system can reduce tension and disagreements between educators and students             & \cellcolor{SpringGreen}4 & \cellcolor{Dandelion}3 & \cellcolor{Dandelion}3   & \cellcolor{SpringGreen}4 \\
+		Q4 & The system provides good (administrative/ pastoral) support for curriculum personalisation & \cellcolor{green}5                & \cellcolor{green}5     & \cellcolor{SpringGreen}4 & \cellcolor{Dandelion}3   \\
 		\hline
-		Q6 & The system makes educational history more transparent and trustworthy                      & \cellcolor{green}5       & \cellcolor{green}5     & \cellcolor{Dandelion}3   & \cellcolor{green}5       \\
+		Q5 & The system can reduce tension and disagreements between educators and students             & \cellcolor{SpringGreen}4          & \cellcolor{Dandelion}3 & \cellcolor{Dandelion}3   & \cellcolor{SpringGreen}4 \\
 		\hline
-		Q7 & The access control features of the system preserve student privacy                         & \cellcolor{SpringGreen}4 & \cellcolor{green}5     & \cellcolor{green}5       & \cellcolor{green}5       \\
+		Q6 & The system makes educational history more transparent and trustworthy                      & \cellcolor{green}5                & \cellcolor{green}5     & \cellcolor{Dandelion}3   & \cellcolor{green}5       \\
 		\hline
-		Q8 & The system increases trust in online education providers and credentials                   & \cellcolor{SpringGreen}4 & \cellcolor{green}5     & \cellcolor{SpringGreen}4 & \cellcolor{SpringGreen}4 \\
+		Q7 & The access control features of the system preserve student privacy                         & \cellcolor{SpringGreen}4          & \cellcolor{green}5     & \cellcolor{green}5       & \cellcolor{green}5       \\
+		\hline
+		Q8 & The system increases trust in online education providers and credentials                   & \cellcolor{SpringGreen}4          & \cellcolor{green}5     & \cellcolor{SpringGreen}4 & \cellcolor{SpringGreen}4 \\
 		\hline
 	\end{tabularx}
 \end{table}
 
 Overall, the participants have rated the demonstrator system positively.
-None of the participants have disagreed with the above statements about the demonstrator, 
+None of the participants have disagreed with the above statements about the demonstrator,
 which is an encouraging sign.
+The lowest rated statement is Q5, where most participants have stated that 
+they thought the system will help resolve conflicts and disagreements between 
+teachers and students, but they could not say with great confidence 
+that it will reduce the number of conflicts.
 
-Moving on, the rest of the raw data from interviews (transcripts) were contextually analysed and grouped thematically into 
+Moving on, the rest of the raw data from interviews (transcripts) were analysed and
+grouped using thematic analysis techniques into
 observational statements (OS) and functionality suggestions (FS).
-For the relevant transcript snippets for each evaluation question asked, please go to Appendix D.
 
-Here is a high level overview and discussion on what opinions have been expressed:
+These statements and suggestions were sorted into three affinity groups:
+1. assessments, 2. curriculum personalisation, and 3. privacy, security and trust.
+For the relevant transcript snippets for each evaluation question asked,
+please go to Appendix D.
+Here is a high-level discussion on the results:
 
 \subsubsection{On Assessments}
 
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		& Statement or Suggestion & Participant\\
+		    & Statement or Suggestion                                                                                                              & Participant \\
 		\hline
-		OS1 & \textbf{The system schema encourages communication of expectations, but the quality of communication depends on the course creators} & A                 \\
-		\hline
-		% \multicolumn{3}{|X|}{} \\
-		% \hline
-	\end{tabularx}
-\end{table}
-
-\begin{table}[!ht]
-	\begin{tabularx}{\textwidth}{|c|X|c|}
-		\hline
-		OS2 & \textbf{The assessment contract is a good reminder for students before submission} & E                 \\
+		OS1 & \textbf{The system schema encourages communication of expectations, but the quality of communication depends on the course creators} & A           \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -173,7 +183,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		OS3 & \textbf{The assessment contract could become a source of stress} & E                 \\
+		OS2 & \textbf{The assessment contract is a good reminder for students before submission} & E \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -183,7 +193,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		OS4 & \textbf{Assessment feedback is enhanced by the transparency of marking criteria and grade split down} & A, F, E                 \\
+		OS3 & \textbf{The assessment contract could become a source of stress} & E \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -193,7 +203,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		OS5 & \textbf{The system help resolve tension and disagreements, not necessarily reduce them} & A, F, E                 \\
+		OS4 & \textbf{Assessment feedback is enhanced by the transparency of marking criteria and grade split down} & A, F, E \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -203,7 +213,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		FS1 & \textbf{Links or further explanations for knowledge required} & F                 \\
+		OS5 & \textbf{The system help resolve tension and disagreements, not necessarily reduce them} & A, F, E \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -213,7 +223,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		FS2 & \textbf{Assessment appeals and special circumstances requests should be logged on the blockchain} & C                 \\
+		FS1 & \textbf{Links or further explanations for knowledge required} & F \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -223,12 +233,22 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		FS3 & \textbf{Teachers should be able to override calculated grades} & C                 \\
+		FS2 & \textbf{Assessment appeals and special circumstances requests should be logged on the blockchain} & C \\
+		\hline
+		% \multicolumn{3}{|X|}{} \\
+		% \hline
+	\end{tabularx}
+\end{table}
+
+\begin{table}[!ht]
+	\begin{tabularx}{\textwidth}{|c|X|c|}
+		\hline
+		FS3 & \textbf{Teachers should be able to override calculated grades} & C \\
 		\hline
 		\multicolumn{3}{|X|}{
-			A grade override functionality that require a written reason could provide 
+			A grade override functionality that require a written reason could provide
 			flexibility to teachers but still maintaining transparency to students.
-		} \\
+		}                                                                        \\
 		\hline
 	\end{tabularx}
 \end{table}
@@ -238,7 +258,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		OS6 & \textbf{The curriculum personalisation user interface was informative and easy to use} & A, E                 \\
+		OS6 & \textbf{The curriculum personalisation user interface was informative and easy to use} & A, E \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -248,7 +268,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		OS7 & \textbf{The direct messages with tutors and advisors is a great channel for administrative and pastoral support} & A, F, C, E                 \\
+		OS7 & \textbf{The direct messages with tutors and advisors is a great channel for administrative and pastoral support} & A, F, C, E \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -258,7 +278,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		FS4 & \textbf{The learner-staff chat records could be kept on the blockchain} & A\\
+		FS4 & \textbf{The learner-staff chat records could be kept on the blockchain} & A \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
@@ -268,34 +288,25 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		FS5 & \textbf{The approval process should not be led by the Teacher as it reduces the final say of the student.} & E\\
+		FS5 & \textbf{The approval process should not be led by the Teacher as it reduces the final say of the student.} & E \\
 		\hline
 		% \multicolumn{3}{|X|}{} \\
 		% \hline
 	\end{tabularx}
 \end{table}
 
-% \begin{table}[!ht]
-% 	\begin{tabularx}{\textwidth}{|c|X|c|}
-% 		\hline
-% 		FS4 & \textbf{Having a flavour of the system for MOOC platforms and a flavour of the system for Higher Education institutions.} & A, F\\
-% 		\hline
-% 		\multicolumn{3}{|X|}{
-% 			Educator A raised the issue of "who issues the award?"
-% 		} \\
-% 		\hline
-% 	\end{tabularx}
-% \end{table}
+Educator A raised the issue of "who issues the award?"
+
 \subsubsection{Privacy, Security and Trust}
 
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		OS8 & \textbf{Access Controls previews are useful} & A, F, C                 \\
+		OS8 & \textbf{Access Controls previews are useful} & A, F, C \\
 		\hline
 		\multicolumn{3}{|X|}{
 			This feature was highly praised for giving control directly in the hands of students.
-		} \\
+		}                                                            \\
 		\hline
 	\end{tabularx}
 \end{table}
@@ -303,7 +314,7 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		OS9 & \textbf{Secure storage of detailed records prevent future education history disputes} & A                 \\
+		OS9 & \textbf{Secure storage of detailed records prevent future education history disputes} & A \\
 		\hline
 		% \multicolumn{3}{|X|}{
 		% } \\
@@ -314,27 +325,34 @@ Here is a high level overview and discussion on what opinions have been expresse
 \begin{table}[!ht]
 	\begin{tabularx}{\textwidth}{|c|X|c|}
 		\hline
-		FS6 & \textbf{A crowdsourced reputation building model for course modules} & A  \\
+		FS6 & \textbf{A crowdsourced reputation building model for course modules} & A \\
 		\hline
 		\multicolumn{3}{|X|}{
 			A module rating system for students and other academic staff could build trust
 			in the quality of content and assessments.
-		} \\
+		}                                                                              \\
 		\hline
 	\end{tabularx}
 \end{table}
 
+Throughout the demonstrations held, a lot of time and effort has to be put in describing
+how the blockchain is set up, and explaining the benefits of storing submissions,
+running assessments, and negotiating personalised curricula on the blockchain.
+This shows that the user interfaces and instructions were not effective enough in relaying the
+benefits of these features, and that public awareness of blockchain benefits is still quite
+primitive.
+
 \section{Conclusion}
 
-The demonstrator system has been a moderate success. 15 out of 19 of the requirement-based test cases have been passed and 
+The demonstrator system has been a moderate success. 15 out of 19 of the requirement-based test cases have been passed and
 user evaluation feedback has been positive overall.
-All of the participants interviewed said they would enrol into a platform like this in the future, 
+All of the participants interviewed said they would enrol into a platform like this in the future,
 praising its transparency, security and user experience.
 
 Going back to the objectives of the project of what the demonstrator should be able to do by adopting a blockchain back-end:
 
 \begin{itemize}
-	\item improve transparency in assessments 
+	\item improve transparency in assessments
 	\item improve curriculum personalisation
 	\item improve security, privacy and access control
 \end{itemize}
