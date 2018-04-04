@@ -5,11 +5,10 @@
 \chapter{Design}
 \graphicspath{{Chapter5/Figs/Raster/}{Chapter5/Figs/Tex/}{Chapter5/Figs/}}
 
-Following the discussion in Chapter 2.3.1 and 2.5, the designs for this project
-will be created on top of Hyperledger Fabric, a public permissioned blockchain.
-It has become clear that a blockchain specific, high-fidelity prototyping tool is needed
+As concluded in Chapter 2, this project will be using the Hyperledger Fabric blockchain, 
+so the designs have to follow the specifications of this blockchain distribution.
+It was clear that a blockchain specific, high-fidelity prototyping tool is needed
 to create system designs such as data models and transactions.
-
 The design of the blockchain network and applications will aim to:
 \begin{itemize}
 	\setlength\itemsep{0em}	
@@ -194,7 +193,7 @@ The special design considerations included:
 	      assessment criteria, and give Smart Contracts the capabilities to enforce these criteria.
 	\item \underline{Administrative Work for Personalisation}: Primary data suggested that administrative and regulatory work required for
 	      curriculum personalisation could be daunting for institutions. The \textit{programmeOutcomes} field in the \textit{Curriculum} asset is one of
-	      the suggested regulatory steps for the UK market (see Ch4.X TODO). Making these administrative data available on the blockchain
+	      the suggested regulatory steps for the UK market (see PS9 in Chapter 4.1.2). Making these administrative data available on the blockchain
 	      could allow future Smart Contracts to automate approvals and other administrative steps. This has the potential to reduce
 	      bureaucracy by eliminating the middleman.
 	\item \underline{Content flexibility}: It is anticipated that many markets, institutions, teams and teachers
@@ -224,7 +223,7 @@ A matrix/ grid of assessment criteria against grade definitions, a common format
 is used to record grade breakdowns on the blockchain. The \textit{MarkingCriterion} and \textit{GradeDescriptors} fields are designed to
 fulfil this feature.
 
-\textit{AssessmentResult} stores the overall result of an assessment or course module, as an example of how flexible this can be (TODO link to requirement),
+\textit{AssessmentResult} stores the overall result of an assessment or course module, as an example of how flexible this can be,
 three example result formats are designed: \textit{PassFailResult}, \textit{GradeResult}, and \textit{ScoreResult}.
 
 \section{Smart Contracts: Transaction Logic and Events}

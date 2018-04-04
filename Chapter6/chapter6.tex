@@ -219,8 +219,8 @@ and transactions work is not required.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=1.0\textwidth]{postman}
-	\caption[Postman API Testing Example Screenshot]
-	{Postman API Testing Example Screenshot}
+	\caption[Postman API Testing example Screenshot]
+	{Postman API Testing example Screenshot}
 	\label{fig:postman}
 \end{figure}
 
@@ -282,7 +282,7 @@ This was nine courses modules, their module units and assessments. These data we
 the syllabuses of courses from several Massive Open Online Courses on EdX and Coursera offered by universities.
 
 A video demonstration showcasing the user journeys across both applications was created and 
-available on \href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}}. [TODO: video too long, speed up]
+available on \href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}}.
 
 An open source styling and component library, \href{https://vuematerial.io/}{Vue-material}, was used to 
 create Material Design compliant user interfaces. 
@@ -314,53 +314,71 @@ such as "Ongoing Courses" swaps out the previous page component for another. Com
 the YouTube embedding view is its own component, for example.
 
 Below are some annotated screenshots of the application (Figures \ref{fig:Learner_login} to 
-\ref{fig:Learner_AC}). They attempt to showcase how requirements are fulfilled. [annotations TODO]
+\ref{fig:Learner_AC}). They refer back to the requirements (FR and NR) in Chapter 4 where appropriate.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Learner_login}
-	\caption[Learner Application Login Page]
-	{Learner Application Login Page}
+	\includegraphics[width=1.05\textwidth]{Learner_login}
+	\caption[Learner Application Login page]
+	{Learner Application Login page}
 	\label{fig:Learner_login}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Learner_allcourses}
-	\caption[Learner Application Course Catalogue Page]
-	{Learner Application Course Catalogue Page}
+	\includegraphics[width=1.05\textwidth]{Learner_allcourses}
+	\caption[Learner Application Course Catalogue page]
+	{Learner Application Course Catalogue page}
 	\label{fig:Learner_allcourses}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Learner_customiser}
-	\caption[Learner Application My Curriculum Page]
-	{Learner Application My Curriculum Page}
+	\includegraphics[width=1.05\textwidth]{Learner_customiser}
+	\caption[Learner Application My Curriculum page]
+	{Learner Application My Curriculum page}
 	\label{fig:Learner_customiser}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Learner_cmdetails}
+	\includegraphics[width=1.05\textwidth]{Learner_cmdetails}
 	\caption[Learner Application Course Module Preview Dialogue]
-	{Learner Application Course Module Preview Dialogue}
+	{Learner Application course module preview dialogue, 
+	with details such as learning objectives, assessment procedures and goals (FR4)}
 	\label{fig:Learner_cmdetails}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Learner_ongoing1}
-	\caption[Learner Application Example Ongoing Module Page]
-	{Learner Application Example Ongoing Module Page}
+	\includegraphics[width=1.05\textwidth]{Learner_ongoing1}
+	\caption[Learner Application example Ongoing Module page]
+	{Learner Application example Ongoing Module page, where content for each module unit 
+	is embedded from external content delivery services (FR14)}
 	\label{fig:Learner_ongoing1}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Learner_AC}
-	\caption[Learner Application Access Control Page]
-	{Learner Application Access Control Page}
+	\includegraphics[width=1.05\textwidth]{Learner_ongoing2}
+	\caption[Learner Application example Assessment Contract page]
+	{Learner Application example Assessment Contract page (FR4, FR5)}
+	\label{fig:Learner_ongoing2}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.05\textwidth]{Learner_ongoing3}
+	\caption[Learner Application example Submission page]
+	{Learner Application example Submission page (FR11)}
+	\label{fig:Learner_ongoing3}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=1.05\textwidth]{Learner_AC}
+	\caption[Learner Application Access Control page]
+	{Learner Application Access Control page (FR13)}
 	\label{fig:Learner_AC}
 \end{figure}
 
@@ -373,29 +391,31 @@ The source code of this application is tracked and hosted at
 Only one iteration was completed by the end of the project, as this application was built after requirements gathering interviews.
 
 Below are some annotated screenshots of this application (Figures \ref{fig:Teacher_createcourse} to 
-\ref{fig:Teacher_marking}). [annotations TODO]
+\ref{fig:Teacher_marking}). Again, requirements (FR and NR) from Chapter 4 are linked here where appropriate.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Teacher_createcourse}
-	\caption[Teacher Application My Courses Page]
-	{Teacher Application My Courses Page}
+	\includegraphics[width=1.05\textwidth]{Teacher_createcourse}
+	\caption[Teacher Application My Courses page]
+	{Teacher Application My Courses page, uploaded course data (.json files) will be 
+	checked to ensure adherence to blockchain schema (FR2, FR3, FR4)}
 	\label{fig:Teacher_createcourse}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Teacher_approvecurr}
-	\caption[Teacher Application Curriculum Requests Page]
-	{Teacher Application Curriculum Requests Page}
+	\includegraphics[width=1.05\textwidth]{Teacher_approvecurr}
+	\caption[Teacher Application Curriculum Requests page]
+	{Teacher Application Curriculum Requests page (FR9)}
 	\label{fig:Teacher_approvecurr}
 \end{figure}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{Teacher_marking}
-	\caption[Teacher Application Marking Requests Page]
-	{Teacher Application Marking Requests Page}
+	\includegraphics[width=1.05\textwidth]{Teacher_marking}
+	\caption[Teacher Application Marking Requests page]
+	{Teacher Application Marking Requests page, 
+	where teacher grade on a grid of marking criteria against grade descriptors (FR5)}
 	\label{fig:Teacher_marking}
 \end{figure}
 
