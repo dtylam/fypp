@@ -10,6 +10,14 @@ will be created on top of Hyperledger Fabric, a public permissioned blockchain.
 It has become clear that a blockchain specific, high-fidelity prototyping tool is needed
 to create system designs such as data models and transactions.
 
+The design of the blockchain network and applications will aim to:
+\begin{itemize}
+	\setlength\itemsep{0em}	
+	\item increase transparency in assessments,
+	\item facilitate the negotiation of personalised curricula, and
+	\item improve access control, privacy and security of learner records.
+\end{itemize}
+
 \section{Design Tool}
 
 Hyperledger Composer is an open source development toolset and framework that aims to
@@ -274,7 +282,7 @@ to an external marking API, independently confirming the automated marking resul
 % 	\caption[AddSubmission Transaction flowchart]
 % 	{Flowchart representation of the Smart Contract for the AddSubmission Transaction (Tx)} \label{fig:astx}
 % \end{figure}
-
+\clearpage
 \begin{algorithm}
 	\begin{algorithmic}[0]
 		\Function{AddSubmission}{Learner learner, ModuleUnit unit, String content, String comments}
@@ -344,7 +352,6 @@ It could also require multiple signatures for a certificate.
 % 	\caption[GenCertificate Transaction flowchart]
 % 	{Flowchart representation of the Smart Contract for the GenCertificate Transaction (Tx)} \label{fig:gctx}
 % \end{figure}
-\clearpage
 \begin{algorithm}
 	\begin{algorithmic}[0]
 		\Function{GenCertificate}{Teacher signatory, String[] subIds, String currId \textit{nullable}, String certId \textit{nullable}}

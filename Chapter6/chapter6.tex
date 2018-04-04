@@ -38,7 +38,7 @@ development environment and recommends using a text editor. Visual Studio Code, 
 by Microsoft was chosen as it has a dedicated official syntax checking and beautifying plugin for Hyperledger Composer.
 
 \underline{Community Support}: Hyperledger Composer and Hyperledger Fabric have active communities on Stack Overflow,
-a popular online community forums for developers to discuss coding problems. Throughout the duration of the project,
+a popular online community forum for developers to discuss coding problems. Throughout the duration of the project,
 it has been a source of solutions to common problems faced and solved by many other users. Towards the end of the project,
 answer contributions were also made.
 
@@ -78,7 +78,7 @@ These main software packages are described further below.
 
 \subsection{Client Applications}
 
-The client applications for learners and teachers has to be highly dynamic (non-static) web applications,
+The client applications for learners and teachers have to be highly dynamic (non-static) web applications,
 with the JavaScript scripting language facilitating most of the user interactions.
 
 Vue.js is a JavaScript-based framework for developing web interfaces. Vue.js was chosen over other
@@ -94,9 +94,9 @@ A container is a lightweight, stand-alone package of a piece of software that in
 needed to run it from code and tools to system settings.
 
 Docker can emulate multiple servers and run them separately on one development machine.
-This provides the peers network needed to host the distributed ledger required for the
-Hyperledger Fabric blockchain. A minimum of three docker containers are required to start a
-Fabric blockchain: the Central Authority server, a minimum of one peer server, and a Couchdb server,
+This provides the peers that are needed to host the distributed ledger. 
+A minimum of three docker containers are required to start a
+Fabric blockchain: the Central Authority server, a minimum of one peer server, and a CouchDB server,
 which is a database that stores the state of the blockchain in a queryable form.
 
 See the full list of pre-requisites and dependencies in in Appendix B.2.
@@ -111,7 +111,7 @@ on Heroku, a Node.js capable cloud platform with a free tier. See the full list 
 
 \section{Blockchain Network Development}
 
-Beginning here, progress descriptions and evidences of implementation work will be presented.
+Beginning here, progress descriptions and evidence of implementation work will be presented.
 
 \subsection{Command Line Interface}
 Using Docker, setup images of Hyperledger Fabric were downloaded, the basic three servers were set up
@@ -148,7 +148,7 @@ Three bash shell scripts were written:
 		      {Screenshot of the load\_participant.sh script in action in a command line interface}
 		      \label{fig:load_participantsh}
 	      \end{figure}
-	\item \textit{destroy.sh}: at the end of every development session the blockchain is completely
+	\item \textit{destroy.sh}: at the end of every development session, the blockchain is completely
 	      erased and removed. This is because unwanted data entries or transactions may have occurred, and
 	      the blockchain schema can only be changed with a hard fork/ restart.
 	      See Figure \ref{fig:destroysh} for a screenshot of the script running.
@@ -168,7 +168,7 @@ Three branches (significant iterations) were created for this component, below i
 	\setlength\itemsep{0em}
 	\item \textit{moocon-alpha} branch: this is an archived repository of design work done with version 0.15.x of
 	      Hyperledger Composer, the project upgraded to version 0.16 in December, which contained breaking changes.
-	      The 0.16 upgrade was recommended by the Hyperledger developers because it is a long term support
+	      The 0.16 upgrade was recommended by the Hyperledger developers because it is a long-term support
 	      release that is feature complete and stable, and adds the useful .card file authentication protocol.
 	\item \textit{master} branch: this is the original working branch on Hyperledger Composer 0.16, a bulk of
 	      design and development work was done, and changes to the schema and transactions were made based on
@@ -228,7 +228,7 @@ and transactions work is not required.
 The first iteration of the Blockchain Network has no automatic marking Smart Contract features.
 This is due to a limitation found during development of the original design. The original design
 of the Automatic Assessment Smart Contract would have the Smart Contract run a custom block of chaincode
-created by a Teacher for each assessment (See left hand side of Figure \ref{fig:automarkinglim}).
+created by a Teacher for each assessment (See left-hand side of Figure \ref{fig:automarkinglim}).
 
 However, the Hyperledger Composer framework does not allow chaincode to run code foreign to its main packages and vanilla JavaScript.
 This is due to the transpilation and deployment of Hyperledger Composer chaincode to the Hyperledger Fabric blockchain,
@@ -239,18 +239,18 @@ created and uploaded to the blockchain by Teacher participants.
 	\centering
 	\includegraphics[width=0.9\textwidth]{automarkinglim}
 	\caption[AutoAssessment Smart Contract Design Change]
-	{Flowchart of original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
+	{Flowchart of the original design (left) and the technically informed design (right) of how the Automatic Assessment Smart Contract should run}
 	\label{fig:automarkinglim}
 \end{figure}
 
 Understanding this limitation and after studying documentations further, a technically informed design was created
-(See right hand side of Figure \ref{fig:automarkinglim}). he Hyperledger Composer framework allows chaincode
-to communicate with external APIs through a built-in method \texttt{post(url,data)} where \texttt{url} is
+(See right-hand side of Figure \ref{fig:automarkinglim}). he Hyperledger Composer framework allows chaincode
+to communicate with external APIs through a built-in method \texttt{post(url, data)} where \texttt{url} is
 the endpoint address of the desired API and \texttt{data} is a blockchain asset or concept serialised into JSON format.
 
 This limitation and subsequent redesign has actually inspired the microservices architectural approach covered in the previous section 6.1.
 
-To use the \texttt{post(url,data)} functionality effectively, an extra asset \textit{AutoAssessRequest} was added to the blockchain schema.
+To use the \texttt{post(url, data)} functionality effectively, an extra asset \textit{AutoAssessRequest} was added to the blockchain schema.
 \textit{AutoAssessRequest} would contain the submission content file, the test file on the blockchain for this assessment, the test type of
 this assessment (eg. software testing, AI testing, etc), and an API response field. This packages all the information the external
 Automated Marking Services will need, and keep the request and response records permanently on the blockchain.
@@ -267,7 +267,7 @@ Even though this is just a simple equivalence test, it proves the blockchain's a
 and more sophisticated assessment APIs could be called or routed to.
 
 It is essential that this testing service is available on the world-wide web, because the peers are contained in Docker
-containers where the normal workstation \texttt{localhost} address is not easily reachable. Therefore, the heroku Node.js 
+containers where the normal workstation \texttt{localhost} address is not easily reachable. Therefore, the Heroku Node.js 
 hosting service is used and this example automated marking service is available at 
 \href{https://moocon-js-marking.herokuapp.com/}{\underline{moocon-js-marking.herokuapp.com/}}.
 
@@ -397,9 +397,9 @@ Below are some annotated screenshots of this application (Figures \ref{fig:Teach
 \end{figure}
 
 \clearpage
-\section{Test Driven Development}
+\section{Test-Driven Development}
 
-At the early stages of this project, an attempt at test driven development was made. 
+At the early stages of this project, an attempt at test-driven development was made. 
 Support for unit testing is built-in for Hyperledger Composer with popular JavaScript testing frameworks Mocha and Chai.
 Unit tests were written before writing the code for transactions.
 
@@ -407,7 +407,7 @@ With the Hyperledger Composer 0.16 upgrade, the test scripts stopped working as
 the method for connecting to the blockchain network has changed. This complication 
 rendered the tests written useless, and attempts were made to port the tests over 
 to work in the updated framework but were not immediately successful. In the interest of 
-time, test driven development was abandoned.
+time, test-driven development was abandoned.
 
 At the time of abandoning these efforts, three unit tests were written targeting transactions, 
 and two were passing. One asserts that a learner can subscribe to a course, 
@@ -426,7 +426,7 @@ The frameworks used have some notable limitations:
 Some Events are only targeted at a particular individual but all of the peers will receive it.
 For example, only the proposing \textit{Learner} and their personal tutor \textit{Teacher} should 
 be receiving the notification that a curriculum has been proposed. Currently, all peers across the 
-blockchain receives this notification, but they are blocked at the client application level.
+blockchain receive these notifications, they are only hidden at the client application level.
 
 This is a limitation of Hyperledger Composer, which does not provide ways to limit the scope of an \textit{Event}.
 It would cause privacy issues for a real-world system, as any actor on the blockchain could potentially 
@@ -436,7 +436,7 @@ listen to these \textit{Events} and attempt to create a partial view of user his
 
 Built with the simple Vue.js framework which does not have built-in caching capabilities 
 (that is included in a separate VueX framework), when the page is reloaded the login session 
-is automatically ended. This could frustrate real world users but is accepted as a limitation 
+is automatically ended. This could frustrate real-world users but is accepted as a limitation 
 for this demonstrator.
 
 \subsection{Outstanding Issues}
@@ -445,14 +445,14 @@ With a finite amount of time dedicated to development, a number of issues remain
 \vspace{0.25cm}\\
 \textbf{Issue 1: Notification icon in client applications are not changing when new notifications arrive.}
 
-The JavaScript function that receive Websocket messages (the web standard channel where new 
+The JavaScript function that receives Websocket messages (the web standard channel where new 
 blockchain Events are broadcasted) was written in vanilla JavaScript outside of the Vue.js 
 framework. The Vue.js conditional block that controls the notification icon is not responsive.
 \vspace{0.25cm}\\
 \textbf{Issue 2: Main menu in learner application freezes after adding a new Viva booking submission.}
 
 This is a Heisenbug which appears only sometimes when a full live demo flow is performed. 
-For a proof-of-concept demonstrator, stability of the application is not the most important factor 
+For a proof-of-concept demonstrator, the stability of the application is not the most important factor 
 and priority was not given to solving this issue.
 
 \subsection{Outstanding Features}
@@ -470,14 +470,12 @@ Most of these features were not prioritised as "Must Have" previously in Chapter
 
 \section*{Summary}
 
-A working blockchain network, a client application for learners and another for teachers 
+A working blockchain network, a client application for learners, and another for teachers 
 were successfully built. 
 
-A demonstration script was created as the implementation phase came to an end to allow 
+A demonstration workflow was created as the implementation phase came to an end to allow 
 time for user evaluation. The previously mentioned video at 
 \href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}} 
 was recorded following the same steps as the user evaluation demonstration.
-
-[TODO: should there be a flowchart here of the demonstration script?]
 
 The following chapter will discuss evaluation further.
