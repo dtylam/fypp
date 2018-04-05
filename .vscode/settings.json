@@ -4,5 +4,6 @@
 		"blockchain",
 		"chaincode",
 		"pseudocode"
-	]
+	],
+	"latex-workshop.message.update.show": false
 }

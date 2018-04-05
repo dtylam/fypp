@@ -8,13 +8,9 @@
 \section{Scope}
 
 The aim of this project focuses on improving assessments and curriculum personalisation, and does not require 
-coverage of all elements in the Learning Technology Systems Architecture (LTSA, Chapter 2.2.1). 
+coverage of all elements in the Learning Technology Systems Architecture (LTSA, Chapter 2.1.3). 
 See Figure \ref{fig:ltsa-covered} for which parts of LTSA this project will attempt to cover, and 
 Table \ref{table:ltsa-bcu} for the mappings from LTSA elements to the blockchain design objects in this project.
-
-Components such as delivery and the storage of learning resources will be out of the scope of this project. 
-A blockchain is also not the ideal storage service for multimedia data such as learning content and delivery activities 
-due to the inherent high latency in consensus. Security and redundancy of these data is also unnecessary. 
 
 \begin{figure}[!ht] 
     \centering    
@@ -24,6 +20,10 @@ due to the inherent high latency in consensus. Security and redundancy of these 
         with components covered by this project highlighted in cyan stripes} 
     \label{fig:ltsa-covered}
 \end{figure}
+
+Components such as delivery and the storage of learning resources will be out of the scope of this project. 
+A blockchain is also not the ideal storage service for multimedia data such as learning content and delivery activities 
+due to the inherent high latency in consensus. Security and redundancy of these data is also unnecessary. 
 
 \begin{table}[!h] 
     \caption{Mappings between LTSA elements and the BlockChain objects in this project}
@@ -87,9 +87,9 @@ applied to software project management in the 1990s. Experiments have shown that
 Two kanbans were used to manage the project processes: a Kanban for implementation and 
 a Kanban for research and writing. The implementation Kanban used
 a loose adaptation of the development phase Kanban from \citet[p.25]{middleton2012lean}, 
-without ideation, user acceptance testing and release stages.
+without unnecessary stages such as ideation, user acceptance testing and release.
 See Table \ref{table:kanban-implementation} and \ref{table:kanban-research} for what the Kanban categories adopted are:
-\\
+
 \begin{table}[!ht] 
     \caption{Implementation Kanban used for the project}
     \centering
@@ -115,12 +115,12 @@ See Table \ref{table:kanban-implementation} and \ref{table:kanban-research} for 
     \end{tabular}
 \end{table}
 
-The Kanbans were kept on the online collaborative Kanban platform Trello. This is due to 
+The Kanbans were kept on the online Kanban platform Trello. This is due to 
 the good extensibility of Trello, with plugins allowing the attachment of links and documents 
 from many other platforms.
 
 Weekly meetings were held by the supervisor, which helped monitor progress and encouraged 
-one-week sprints on a particular feature (Trello card).
+one-week sprints on a particular feature/ Trello card.
 
 \section{Agile Software Development}
 
@@ -134,9 +134,9 @@ There are two main agile software development principles that this project has c
 
 Some clear limitations exist, for example, \citet{beck2001agile}'s Agile Manifesto asks for 
 daily collaboration between customer and developers, but contact with stakeholders 
-for this project has only happen twice at the requirements elicitation 
-phase and the evaluation phase. \citet{beck2001agile} also asks for teamwork and 
-interactions over processes and tools, but this project is an individual endeavour.
+for this project has only happen twice at the requirements gathering 
+phase and the evaluation phase. \citet{beck2001agile} also asks for "teamwork and 
+interactions over processes and tools", but this project is an individual endeavour.
 
 At the end of the implementation phase of this project, two main iterations were completed: 
 the first iteration was based on requirements just from background research and literature, 

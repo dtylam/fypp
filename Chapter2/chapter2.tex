@@ -32,7 +32,7 @@ in a more general purpose, pedagogically neutral manner to a blockchain.
 Assessment is arguably the most important process in the business of education as it "drives what
 is learnt and taught" and "converts learning into credentials". \citep[p.160]{campbell2010digital}
 
-\citet{brown1999assessment} summarises examples of popular sentiments learners held about both
+\citet[p.62-65]{brown1999assessment} summarises examples of popular sentiments learners held about both
 continuous assessments and traditional exams, such as:
 
 \begin{enumerate}
@@ -40,8 +40,7 @@ continuous assessments and traditional exams, such as:
 	\item Assessment tasks do not increase students' want to learn, only their need to learn, promoting unhappiness;
 	\item Invalid and unreliable marking due to speed or fatigue of assessors, plagiarism and unwanted collaborations, etc.;
 	\item Sub-optimal levels of feedback after many types of assessments;
-	\item Students feel forced into surface learning.\\
-	      \citep[p.62-65]{brown1999assessment}
+	\item Students feel forced into surface learning.
 \end{enumerate}
 
 The importance of assessments, coupled with popular unhappiness and mistrust amongst learners towards
@@ -49,8 +48,8 @@ them, increases the tension between the teacher (or educational provider) and th
 
 \citet{suhre2013determinants} looked into motivation to study in a higher education setting by collecting data
 from 168 first-year university students for six months. The study found three main factors that motivated academic
-progress: intrinsic abilities, personal motivations such as a need to achieve or fear of failure, and transparency in
-exams and assessments.
+progress: intrinsic abilities, personal motivations (such as a need to achieve or fear of failure), 
+and transparency in exams and assessments.
 
 Transparency here refers to both the clarity of assessment goals and the procedures for assessing these goals.
 It should be clear to learners what knowledge is required for a sufficient level of mastery \citep{suhre2013determinants}.
@@ -63,7 +62,7 @@ The difference this makes was significant:
 	\item Academic pressure is substantially influenced by the perceived transparency of assessments.
 \end{itemize}
 
-The earlier [p.100]\citet{bryan2006innovative} research echoed the same argument, that students realise their full potential
+The earlier \citet[p.100]{bryan2006innovative} research echoed the same findings, that students realise their full potential
 when they understand the assessment task, marking criteria and expected standards.
 
 An improvement in the transparency of goals, procedures, knowledge required of assessments 
@@ -115,9 +114,9 @@ Systems Architecture (LTSA) standard was published (See Figure \ref{fig:LTSA}) a
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{ltsa2003}
+	\includegraphics[width=0.9\textwidth]{ltsa2003}
 	\caption[Learning Technology Systems Architecture]
-	{Learning Technology Systems Architecture, IEEE Standard \citep[p.9]{ieee2003ltsa}}
+	{Learning Technology Systems Architecture \citep[p.9]{ieee2003ltsa}}
 	\label{fig:LTSA}
 \end{figure}
 
@@ -180,12 +179,12 @@ provide extra security.
 
 \section{Security and Privacy}
 
-The security of e-learning systems has also been a concern. For example, \citet{el2003privacy} noted that “while many
+The security of e-learning systems has also been a concern. For example, \citet{el2003privacy} wrote that “while many
 advances have been made in the mechanics of providing online instruction, the needs for privacy and security have to-date
 been largely ignored. At best they have been accommodated in an ad-hoc, patchwork fashion.”
 
 The consequences of cybersecurity breaches have also become more and more expensive. For example, when the General Data
-Protection Regulation (GDPR) comes into effect across Europe in May 2018, the maximum fine for poor practices and data
+Protection Regulation (GDPR) comes into effect across EU states in May 2018, the maximum fine for poor practices and data
 breaches will be £17 million or 4\% of global turnover \citep{ico2017gdpr}.
 
 The scale and severity of historical breaches of internet services has been worrying. Most notably in the e-learning
@@ -193,7 +192,7 @@ industry, the education platform Edmodo was hacked and 77M account details were 
 web, endangering students, teachers and parents who are account holders \citep{opsecmonkey2017edmodo}.
 
 The sizable threat and consequences make a "security by design" and "privacy by design" approach for future 
-systems very important. A secure data storage such as blockchains could add massive value to e-Learning systems.
+systems very important. A secure data storage such as blockchain could add massive value to e-Learning systems.
 % The Information Commissioner's Office also encourages a "privacy by design approach" and 
 % https://www.ipc.on.ca/resource/privacy-by-design/
 
@@ -205,7 +204,7 @@ advertising and identity management \citep{forbes2017industries}.
 
 The blockchain data structure is a timestamped list of blocks, which stores data about transactions
 that occur within the blockchain network. It only allows the insertion of transactions, not the update
-or deletion of existing transactions. Its ability to prevent tampering is known as "immutability". \citep[p.182]{xu2016blockchain}
+or deletion of existing transactions. This ability to prevent tampering is known as "immutability". \citep[p.182]{xu2016blockchain}
 
 Blockchains can be classified into two types: one being a permissionless (public) blockchain which anyone can
 use and no central authority exist to allow or ban peers; the other a permissioned blockchain (can be public or private)
@@ -218,15 +217,15 @@ summarises the main differences in these two types of blockchain.
 	{Comparison of permissioned and permissionless blockchains, modified from \citet[p.3]{wust2017you}}
 	\centering
 	\label{table:permvsless}
-	\begin{tabularx}{\textwidth}{>{\bfseries}lXX}
+	\begin{tabularx}{\textwidth}{>{\bfseries}l>{\hsize=.9\hsize}X>{\hsize=1.1\hsize}X}
 		Properties    & Permissioned blockchains                                                                           & Permissionless blockchains                     \\
 		\toprule
 		Speed         & Low throughput and slow latency                                                                    & high throughput and medium latency             \\\midrule
 		Peers         & High number of both readers and writers                                                            & High number of readers, small group of writers \\\midrule
-		Consensus     & Proof of work or proof of stake by miners                                                          & BFT protocols such as PBFT                     \\\midrule
+		Consensus     & Proof of work or proof of stake by miners                                                          & Practical Byzantine Fault Tolerance (PBFT) protocols, tolerating malicious peers and trusting the majority consensus   \\\midrule
 		Central                                                                                                                                                             \\Authority & No & Yes\\\midrule
 		Privacy       & Can be achieved using cryptographic techniques but typically comes at the cost of lower efficiency &
-		Reading rights can be restricted by central authority, readers and writers can also run separated parallel blockchains that are interconnected.                     \\\midrule
+		Reading rights can be restricted by central authority, readers and writers can also run separated parallel blockchains that are interconnected                     \\\midrule
 		Verifiability & \multicolumn{2}{c}{Observers can verify the state of the blockchain}                                                                                \\\midrule
 		Redundancy    & \multicolumn{2}{c}{High, provided through replication across the peers}
 		\\\bottomrule
@@ -234,14 +233,13 @@ summarises the main differences in these two types of blockchain.
 \end{table}
 
 Using blockchains as a data storage gives the system a very high degree of integrity. The public verifiability,
-redundancy (in Table \ref{table:permvsless}) and immutability of the blockchain makes it very difficult to
-corrupt or lose the data stored.
+redundancy and immutability of the blockchain makes it very difficult to corrupt or lose the data stored.
 
 \subsection{Decision Framework for Blockchain Solutions}
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{blockchain_need}
+	\includegraphics[width=1.05\textwidth]{blockchain_need}
 	\caption["Do you need a blockchain?" flowchart]
 	{"Do you need a blockchain?" flowchart \citep[p.3]{wust2017you}}
 	\label{fig:blockchain_need}
@@ -257,8 +255,7 @@ hand with the decision flowchart steps:
 	      involved in an e-learning blockchain that demands write assess into records.
 	\item \textbf{Can you use an always online Trusted Third Party (TTP)?} \citet[p.2]{wust2017you} described two options of
 	      using a TTP: delegate write operations completely to the TTP if it is always online so that it verifies all state
-	      transitions, or use the TTP as a certificate authority in the setting of a permissioned blockchain if the TTP is usually
-	      offline.\\
+	      transitions, or use a not always online TTP as a certificate authority in the setting of a permissioned blockchain.\\
 	      In the e-learning context, a TTP could be the e-learning platform provider. However, the delegation of write operations
 	      to the platform goes against modern principles of autonomy and independence for higher education institutions.
 	      Most governmental education ministries audit and regulate higher education without writing student
@@ -270,7 +267,7 @@ hand with the decision flowchart steps:
 	      for-profit sector. In a future open e-learning market, it could also be possible for anyone to start offering education
 	      services. We cannot assume that all writers are trusted.
 	\item \textbf{Is public verifiability required?} Yes. One of the objectives of this project is to boost trust in e-learning
-	      credentials by increasing public verifiability of education journeys, increasing public accountability especially for
+	      credentials by increasing public verifiability of education journeys, increasing public accountability especially to
 	      stakeholders such as employers and postgraduate studies providers.
 \end{enumerate}
 
@@ -379,7 +376,7 @@ with legal prose, making it a great tool for highly regulated environments. The 
 a cryptocurrency is not intended or supported. \citep{valenta2017comparison}
 
 Education is not a highly regulated environment in most countries and this unique selling point of
-Corda is not immediately attractive to this project.
+Corda is not attractive to this project.
 
 \section{Existing Efforts in Blockchain for Education}
 
@@ -388,7 +385,7 @@ Corda is not immediately attractive to this project.
 % proposing that “learning Smart Contracts could automatically confirm the completion of learning modules through standardized 
 % online tests”. Appropriate configurations in permissions and visibility can also provide improved security and privacy to e-Learning.
 
-Several blockchain-based projects for education exists. Here we look at three that has attracted plenty of media attention:
+Several blockchain-based projects for education exist. Here we look at three that has attracted plenty of media attention:
 Blockcerts, Sony Global Education (GED) Blockchain, and the OpenLearn Blockchain. See Table \ref{table:existingprojects} for a quick comparison.
 
 \begin{table}[!ht]
@@ -403,10 +400,10 @@ Blockcerts, Sony Global Education (GED) Blockchain, and the OpenLearn Blockchain
 		Blockcerts \newline by MIT Media Lab             & Bitcoin             & Education providers can store a batch of certificates by paying for a bitcoin transaction,
 		storing data in the OP\_RETURN transaction field on the global bitcoin blockchain.                                                                         \\
 		\hline
-		Sony GED \newline Blockchain                     & Hyperledger \newline Project & Developers at education institutions can use their application program interface (API) to
+		Sony GED \newline Blockchain                     & Hyperledger \newline Fabric & Developers at education institutions can use their application program interface (API) to
 		securely store learning history data and certificates, integrating with third party e-Learning systems.                                                    \\
 		\hline
-		OpenLearn \newline Blockchain \newline by Open University & Ethereum            & An experimental plugin for Moodle, a popular course management system, is provided. \newline 
+		OpenLearn \newline Blockchain \newline by Open University & Ethereum            & An experimental plugin for Moodle, a popular course management system, has been developed. \newline 
 		Achievement badges can be stored on the Ethereum blockchain. Students can register for courses and receive badges in a "Student Learning Passport".\\
 		\hline
 	\end{tabularx}
@@ -474,7 +471,7 @@ lower cost of entrance in terms of technological know-how and investment.
 \subsection*{Summary}
 
 Combining the recommendation for a public permissioned blockchain from the framework provided
-by \citet{wust2017you} (See Section 2.1.1), and the brief analysis above, Hyperledger Fabric
+by \citet{wust2017you} (See Section 2.3), and the brief analysis above, Hyperledger Fabric
 stands out as the best platform which could allow for a lot of future work. Backed by the
 Linux Foundation, Hyperledger projects have extensive documentations and a large,
 active community.
