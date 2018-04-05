@@ -13,7 +13,7 @@ These choices and their rationale are detailed below:
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{platform_stats}
+	\includegraphics[width=1.05\textwidth]{platform_stats}
 	\caption[Development Tools and Usage Statistics]
 	{A visual overview of the tools used and their usage statistics (Last Updated: 26th Mar 2018))}
 	\label{fig:platform_stats}
@@ -21,7 +21,7 @@ These choices and their rationale are detailed below:
 
 \underline{Operating System}: The developer's guide for both Hyperledger Composer and Hyperledger Fabric
 recommends using Ubuntu or Mac OS as the host operating system for development.
-Ubuntu is selected for being the free and open source option. The development personal computer, which was originally
+Ubuntu was selected for being the free, open source option. The development personal computer, which was originally
 a Windows machine, was set up to dual boot with the latest Ubuntu release.
 
 \underline{Version Control}: A version control system or software keeps track of source code modifications,
@@ -35,7 +35,7 @@ project management service that offers free private repositories to verified stu
 
 \underline{Code Editor}: The Hyperledger Composer framework does not require a dedicated integrated
 development environment and recommends using a text editor. Visual Studio Code, an open source text editor developed
-by Microsoft was chosen as it has a dedicated official syntax checking and beautifying plugin for Hyperledger Composer.
+by Microsoft was chosen as it has an official syntax checking and beautifying plugin for Hyperledger Composer.
 
 \underline{Community Support}: Hyperledger Composer and Hyperledger Fabric have active communities on Stack Overflow,
 a popular online community forum for developers to discuss coding problems. Throughout the duration of the project,
@@ -44,7 +44,7 @@ answer contributions were also made.
 
 Several other tools were also used, for example, as previously mentioned in Chapter 3, Trello was used to manage
 feature prioritisation for the agile development process. The use of Docker containers, Node.js and npm 
-will be explained in due course below.
+will be explained in due course.
 
 \section{Architecture and Tech Stack}
 
@@ -78,13 +78,15 @@ These main software packages are described further below.
 
 \subsection{Client Applications}
 
-The client applications for learners and teachers have to be highly dynamic (non-static) web applications,
+One way to develop applications that work across multiple platforms and devices (NR1) is to build a web application.
+The client applications for learners and teachers will have to be highly dynamic (non-static) web applications,
 with the JavaScript scripting language facilitating most of the user interactions.
 
 Vue.js is a JavaScript-based framework for developing web interfaces. Vue.js was chosen over other
 popular frameworks such as React.js and Angular.js because it is focused on the view layer and is much
-simpler and faster to learn. The Node.js JavaScript runtime is used to run the Vue.js applications. The npm package manager
-is used to install and manage the packages used. See more details such as version numbers in Appendix B.1.
+simpler, and faster to learn. The Node.js JavaScript runtime was used to run the Vue.js applications. 
+The npm package manager was used to install and manage the packages used. 
+See more package details such as version numbers in Appendix B.1.
 
 \subsection{Blockchain Network}
 
@@ -112,23 +114,23 @@ on Heroku, a Node.js capable cloud platform with a free tier. See the full list 
 \section{Blockchain Network Development}
 
 Beginning here, progress descriptions and evidence of implementation work will be presented. 
-Github repository links are provided. Alternately a copy of the code is in Supporting Materials/Implementation/.
+Github repository links are provided, alternatively a copy of the code is in Supporting Materials/Implementation/.
 
 \subsection{Command Line Interface}
 Using Docker, setup images of Hyperledger Fabric were downloaded, the basic three servers were set up
 and a certificate for the central authority administrator was generated. This allows Hyperledger Composer
 to later authenticate as the blockchain administrator and import custom network definitions.
 
-The Hyperledger Composer notations from the design phase where packaged into
+The Hyperledger Composer notations from the design phase were packaged into
 a business network archive (.bna) file, and deployed to the Hyperledger Fabric blockchain.
 
 Three bash shell scripts were written:
 \begin{enumerate}
 	\setlength\itemsep{0em}
-	\item \textit{start.sh}: this script starts Hyperledger Fabric, generate the minimum number of peers,
-	      and connects as the blockchain administrator. It then creates the .bna file with Hyperledger Composer
-	      and deploys it to the Fabric blockchain.
-	      See Figure \ref{fig:startsh} for a screenshot of the script running.
+	\item \textit{start.sh}: this script starts Hyperledger Fabric, generates the minimum number of peers,
+	      and connects as the blockchain administrator. It then creates the .bna file (Hyperledger Composer definitions)
+	      and deploys it to Fabric.
+	      Figure \ref{fig:startsh} is a screenshot of the script running.
 	      \begin{figure}[!ht]
 		      \centering
 		      \includegraphics[width=0.85\textwidth]{startsh}
@@ -169,8 +171,8 @@ Three branches (significant iterations) were created for this component, below i
 	\setlength\itemsep{0em}
 	\item \textit{moocon-alpha} branch: this is an archived repository of design work done with version 0.15.x of
 	      Hyperledger Composer, the project upgraded to version 0.16 in December, which contained breaking changes.
-	      The 0.16 upgrade was recommended by the Hyperledger developers because it is a long-term support
-	      release that is feature complete and stable, and adds the useful .card file authentication protocol.
+	      The 0.16 upgrade was recommended by the Hyperledger developers because it was a long-term support
+	      release that was feature complete and stable, and added the useful .card file authentication protocol.
 	\item \textit{master} branch: this is the original working branch on Hyperledger Composer 0.16, a bulk of
 	      design and development work was done, and changes to the schema and transactions were made based on
 	      literature review and background research.
@@ -181,14 +183,14 @@ Three branches (significant iterations) were created for this component, below i
 \subsection{Application Program Interface}
 
 A readily available script connects the deployed blockchain to Loopback, an open source Node.js RESTful
-Application Program Interface (API) framework. The command used is:
+Application Program Interface (API) framework. The command used was:
 
 \begin{verbatim}
 	composer-rest-server --card admin@moocon-beta --namespaces always 
 	--websockets true --port 3000 --authentication true --multiuser true
 \end{verbatim}
 
-This hosts a production-ready API at \texttt{localhost:3000}, connected to the
+This hosted a production-ready API at \texttt{localhost:3000}, connected to the
 server of the central authority administrator.
 Figure \ref{fig:Loopback_explorer} shows the API explorer view generated by Loopback at \texttt{localhost:3000/explorer}.
 
@@ -200,20 +202,20 @@ Figure \ref{fig:Loopback_explorer} shows the API explorer view generated by Loop
 	\label{fig:Loopback_explorer}
 \end{figure}
 
-Limitations exist for how multiple participants can use this same API. The API is authenticated as
-one peer at one time. It uses a construct called \texttt{wallet} to store .card files and
+Limitations existed for how multiple participants can use this same API. The API has to be authenticated as
+one peer at one time. It uses a construct called \texttt{wallet} to store .card files from participants and
 switches between them to create a "multiuser" API. So to switch between users in the
 client applications, a request must be made to \texttt{localhost:3000/wallet/\{cardFileName\}/setDefault}.
-This limitation is accepted for the demonstrator system, as it does not impact core requirements.
+This limitation was accepted for the demonstrator system, as it did not impact core requirements.
 
-Postman, a popular API testing platform, is used to run tests against the API 
+Postman, a popular API testing platform, was used to run tests against the API 
 before and during the development of the client applications. 
-This confirms that the required API functionalities work well and 
-prevents unexpected responses when building the client applications.
+This confirmed that the required API functionalities work well and 
+prevented unexpected responses when building the client applications.
 
 These tests were a form of grey-box testing. Knowledge about the API endpoints 
-and parameters is required, but knowledge about how the Blockchain Network schema
-and transactions work is not required. 
+and parameters was required, but knowledge about how the Blockchain Network schema
+and transactions work was not required. 
 
 \clearpage
 \begin{figure}[!ht]
@@ -226,14 +228,14 @@ and transactions work is not required.
 
 \section{Automatic Marking Service Development}
 
-The first iteration of the Blockchain Network has no automatic marking Smart Contract features.
-This is due to a limitation found during development of the original design. The original design
-of the Automatic Assessment Smart Contract would have the Smart Contract run a custom block of chaincode
+The first iteration of the Blockchain Network had no automatic marking Smart Contract features.
+This was due to a limitation found during development of the original design. The original design
+of the Automatic Assessment Smart Contract would run a custom block of chaincode
 created by a Teacher for each assessment (See left-hand side of Figure \ref{fig:automarkinglim}).
 
-However, the Hyperledger Composer framework does not allow chaincode to run code foreign to its main packages and vanilla JavaScript.
+However, the Hyperledger Composer framework did not allow chaincode to run code foreign to its main packages and vanilla JavaScript.
 This is due to the transpilation and deployment of Hyperledger Composer chaincode to the Hyperledger Fabric blockchain,
-a process which ordinary developers have no convenient controls over. It will not be able to accept new snippets of code,
+a process which ordinary developers have no convenient controls over. It was not able to accept new snippets of code,
 created and uploaded to the blockchain by Teacher participants.
 
 \begin{figure}[!ht]
@@ -245,7 +247,7 @@ created and uploaded to the blockchain by Teacher participants.
 \end{figure}
 
 Understanding this limitation and after studying documentations further, a technically informed design was created
-(See right-hand side of Figure \ref{fig:automarkinglim}). he Hyperledger Composer framework allows chaincode
+(See right-hand side of Figure \ref{fig:automarkinglim}). The Hyperledger Composer framework allows chaincode
 to communicate with external APIs through a built-in method \texttt{post(url, data)} where \texttt{url} is
 the endpoint address of the desired API and \texttt{data} is a blockchain asset or concept serialised into JSON format.
 
@@ -253,8 +255,8 @@ This limitation and subsequent redesign has actually inspired the microservices 
 
 To use the \texttt{post(url, data)} functionality effectively, an extra asset \textit{AutoAssessRequest} was added to the blockchain schema.
 \textit{AutoAssessRequest} would contain the submission content file, the test file on the blockchain for this assessment, the test type of
-this assessment (eg. software testing, AI testing, etc), and an API response field. This packages all the information the external
-Automated Marking Services will need, and keep the request and response records permanently on the blockchain.
+this assessment (eg. software testing, AI testing, etc), and an API response field. \textit{AutoAssessRequest} packages all the information the external
+Automated Marking Services will need, and keeps the request and response records permanently on the blockchain.
 
 To build an example automated marking service, a string equivalence test was created on a simple Express.js application server.
 Here is the simple code snippet used:
@@ -264,12 +266,12 @@ if (req.body.testFile === req.body.content) {
 } else { res.json(false); } 
 \end{verbatim}
 
-Even though this is just a simple equivalence test, it proves the blockchain's ability to conduct automated assessments, 
+Even though this was just a simple equivalence test, it proved the blockchain's ability to conduct automated assessments, 
 and more sophisticated assessment APIs could be called or routed to.
 
-It is essential that this testing service is available on the world-wide web, because the peers are contained in Docker
-containers where the normal workstation \texttt{localhost} address is not easily reachable. Therefore, the Heroku Node.js 
-hosting service is used and this example automated marking service is available at 
+It was essential that this testing service was available on the world-wide web, because the peers were contained in Docker
+containers, where the normal workstation \texttt{localhost} address would not be easily reachable. Therefore, the Heroku Node.js 
+hosting service was used and this example automated marking service is available at 
 \href{https://moocon-js-marking.herokuapp.com/}{\underline{moocon-js-marking.herokuapp.com/}}.
 
 The source code of this component is also tracked and hosted at 
@@ -280,18 +282,19 @@ The source code of this component is also tracked and hosted at
 Before developing the client applications, some example data was created and imported into the network. 
 This was nine courses modules, their module units and assessments. These data were created by loosely following 
 the syllabuses of courses from several Massive Open Online Courses on EdX and Coursera offered by universities.
+You can see this data at \href{https://github.com/dtylam/moocon-beta/tree/bcu/curl}{\underline{github.com/dtylam/moocon-beta/.../curl}}.
 
 A video demonstration showcasing the user journeys across both applications was created and 
 available on \href{https://youtu.be/FUMBn6wPG5M}{\underline{youtube.com/FUMBn6wPG5M}}.
 
 An open source styling and component library, \href{https://vuematerial.io/}{Vue-material}, was used to 
 create Material Design compliant user interfaces. 
-Mozilla Firefox, a popular open-source browser, is used to debug the application.
+Mozilla Firefox, a popular open-source browser, was used to debug the application.
 Notes on the development process are further detailed below.
 
 \subsection{Learner Application}
 
-The source code of this application is tracked and hosted at 
+The source code of this application was tracked and hosted at 
 \href{https://github.com/dtylam/moocon-learner-client}{\underline{github.com/dtylam/moocon-learner-client}}.
 Two branches (significant iterations) were created for this component, below in chronological order:
 \begin{enumerate}
@@ -307,11 +310,11 @@ styling (CSS) and scripting (JavaScript) are in different files and folders.
 
 JavaScript-based web applications, on the other hand, encourage organisation according to functional components. 
 In Vue.js for example, components (.vue) files are used to write HTML, CSS and JavaScript in one file \citep{vue2017components}, 
-which creates a component in the web application. It is afterwards packaged to be production-ready with build tools.
+which creates a component in the web application. .vue files are afterwards packaged to be production-ready webpages with build tools.
 
-For example, the entire web application only uses one main \texttt{index.html} page. Each main menu button 
-such as "Ongoing Courses" swaps out the previous page component for another. Components can also be nested, 
-the YouTube embedding view is its own component, for example.
+For example, the entire web application only used one main \texttt{index.html} page. Each main menu button 
+such as "Ongoing Courses" swapped out the previous page component for another. Components can also be nested, 
+the YouTube embedding view was its own component inside a page component, for example.
 
 Below are some annotated screenshots of the application (Figures \ref{fig:Learner_login} to 
 \ref{fig:Learner_AC}). They refer back to the requirements (FR and NR) in Chapter 4 where appropriate.
@@ -320,7 +323,7 @@ Below are some annotated screenshots of the application (Figures \ref{fig:Learne
 	\centering
 	\includegraphics[width=1.05\textwidth]{Learner_login}
 	\caption[Learner Application Login page]
-	{Learner Application Login page}
+	{Learner Application Login page (FR14)}
 	\label{fig:Learner_login}
 \end{figure}
 
@@ -386,7 +389,7 @@ Below are some annotated screenshots of the application (Figures \ref{fig:Learne
 \subsection{Teacher Application}
 
 The Teacher application was created as a fork of the Learner application. 
-The source code of this application is tracked and hosted at 
+The source code of this application was tracked and hosted at 
 \href{https://github.com/dtylam/moocon-teacher-client}{\underline{github.com/dtylam/moocon-teacher-client}}.
 Only one iteration was completed by the end of the project, as this application was built after requirements gathering interviews.
 
@@ -397,7 +400,7 @@ Below are some annotated screenshots of this application (Figures \ref{fig:Teach
 	\centering
 	\includegraphics[width=1.05\textwidth]{Teacher_createcourse}
 	\caption[Teacher Application My Courses page]
-	{Teacher Application My Courses page, uploaded course data (.json files) will be 
+	{Teacher Application My Courses page, uploaded course module data (.json files) would be 
 	checked to ensure adherence to blockchain schema (FR2, FR3, FR4)}
 	\label{fig:Teacher_createcourse}
 \end{figure}
@@ -422,13 +425,13 @@ Below are some annotated screenshots of this application (Figures \ref{fig:Teach
 \clearpage
 \section{Test-Driven Development}
 
-At the early stages of this project, an attempt at test-driven development was made. 
 Support for unit testing is built-in for Hyperledger Composer with popular JavaScript testing frameworks Mocha and Chai.
+At the early stages of this project, an attempt at test-driven development was made. 
 Unit tests were written before writing the code for transactions.
 
 With the Hyperledger Composer 0.16 upgrade, the test scripts stopped working as 
 the method for connecting to the blockchain network has changed. This complication 
-rendered the tests written useless, and attempts were made to port the tests over 
+rendered the previously written tests useless. Attempts were made to port the tests over 
 to work in the updated framework but were not immediately successful. In the interest of 
 time, test-driven development was abandoned.
 
@@ -446,22 +449,23 @@ The frameworks used have some notable limitations:
 \vspace{0.25cm}\\
 \textbf{Limitation 1: Blockchain Events were broadcasted network-wide without access control filters.}
 
-Some Events are only targeted at a particular individual but all of the peers will receive it.
+Some Events were only targeted at a particular individual but all of the peers will receive it.
 For example, only the proposing \textit{Learner} and their personal tutor \textit{Teacher} should 
 be receiving the notification that a curriculum has been proposed. Currently, all peers across the 
 blockchain receive these notifications, they are only hidden at the client application level.
 
-This is a limitation of Hyperledger Composer, which does not provide ways to limit the scope of an \textit{Event}.
+This is a limitation of Hyperledger Composer, which does not provide ways to limit the scope of an Event.
 It would cause privacy issues for a real-world system, as any actor on the blockchain could potentially 
-listen to these \textit{Events} and attempt to create a partial view of user histories.
+listen to these Events and attempt to create a partial view of user histories.
 \vspace{0.25cm}\\
 \textbf{Limitation 2: Client applications login sessions do not persist.}
 
-Built with the simple Vue.js framework which does not have built-in caching capabilities 
-(that is included in a separate VueX framework), when the page is reloaded the login session 
-is automatically ended. This could frustrate real-world users but is accepted as a limitation 
+Built with the simple Vue.js framework, the applications did not have caching capabilities 
+(that is included in a separate VueX framework). When pages are reloaded the login session 
+would automatically end. This could frustrate real-world users but was accepted as a limitation 
 for this demonstrator.
 
+\clearpage
 \subsection{Outstanding Issues}
 
 With a finite amount of time dedicated to development, a number of issues remain:
@@ -469,20 +473,20 @@ With a finite amount of time dedicated to development, a number of issues remain
 \textbf{Issue 1: Notification icon in client applications are not changing when new notifications arrive.}
 
 The JavaScript function that receives Websocket messages (the web standard channel where new 
-blockchain Events are broadcasted) was written in vanilla JavaScript outside of the Vue.js 
-framework. The Vue.js conditional block that controls the notification icon is not responsive.
+blockchain Events are broadcasted) was written in vanilla JavaScript, outside of the Vue.js 
+framework. The Vue.js conditional block that controls the notification icon did not respond to new messages.
 \vspace{0.25cm}\\
 \textbf{Issue 2: Main menu in learner application freezes after adding a new Viva booking submission.}
 
-This is a Heisenbug which appears only sometimes when a full live demo flow is performed. 
-For a proof-of-concept demonstrator, the stability of the application is not the most important factor 
+This is a Heisenbug which appeared only sometimes when a full demonstration flow was performed. 
+For a proof-of-concept demonstrator, the stability of the application was not the most important factor 
 and priority was not given to solving this issue.
 
 \subsection{Outstanding Features}
 
 Several features were not built in time for the demonstrator system evaluation.
 Most of these features were not prioritised as "Must Have" previously in Chapter 4.2, 
-aside from certificate generation features.
+aside from the certificate generation features.
 
 \begin{itemize}
 	\setlength\itemsep{0em}	

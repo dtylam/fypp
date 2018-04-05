@@ -5,17 +5,18 @@
 \chapter{Design}
 \graphicspath{{Chapter5/Figs/Raster/}{Chapter5/Figs/Tex/}{Chapter5/Figs/}}
 
-As concluded in Chapter 2, this project will be using the Hyperledger Fabric blockchain, 
-so the designs have to follow the specifications of this blockchain distribution.
-It was clear that a blockchain specific, high-fidelity prototyping tool is needed
-to create system designs such as data models and transactions.
-The design of the blockchain network and applications will aim to:
+Aligned with the aims of the project, the design of the blockchain network and applications will aim to:
 \begin{itemize}
 	\setlength\itemsep{0em}	
 	\item increase transparency in assessments,
 	\item facilitate the negotiation of personalised curricula, and
 	\item increase privacy and security of learner records.
 \end{itemize}
+
+As concluded in Chapter 2, this project will be using the Hyperledger Fabric blockchain, 
+so the designs have to follow the specifications of this blockchain distribution.
+It was also clear that a blockchain specific, high-fidelity prototyping tool is needed
+to create system designs such as data models and transactions.
 
 \section{Design Tool}
 
@@ -37,7 +38,7 @@ helps designers and developers create these high-level definitions.
 
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.0\textwidth]{composer2fabric}
+	\includegraphics[width=0.95\textwidth]{composer2fabric}
 	\caption[Hyperledger Composer]
 	{Components in the Hyperledger Composer framework and how it deploys to
 		Hyperledger Fabric \citep{cuicapuza2017composer}}
@@ -46,13 +47,12 @@ helps designers and developers create these high-level definitions.
 % https://medium.com/@RichardCuica/hyperledgers-fabric-composer-simplifying-business-networks-on-blockchain-94313b979671
 
 A significant advantage of using Hyperledger Composer is its ability to package these
-prototype definitions and deploy it to Hyperledger Fabric, our target blockchain platform.
+prototyped definitions and deploy it to Hyperledger Fabric, our target blockchain platform.
 This will speed up the implementation of the proposed demonstrator applications
 in the next stage.
 
 Throughout the design process, the Hyperledger Composer notations are converted or drawn into UML sequence
-diagrams, class diagrams and flowcharts. PlantUML, an open source language-to-diagram drawing tool,
-and TikZ, a LaTeX package that creates graphic elements, were used.
+diagrams, class diagrams and flowcharts. PlantUML, an open source language-to-diagram drawing tool was used.
 
 The discussion below may regularly refer back to the functional requirements (FR) and
 non-functional requirements (NR) defined in the previous Chapter 4.
@@ -60,23 +60,23 @@ non-functional requirements (NR) defined in the previous Chapter 4.
 \section{Transaction Sequences}
 
 A transaction is the only activity that a peer can perform to alter the state of a blockchain.
-Designing the sequences of transactions necessary to fulfil the desired user journeys will
+Designing the sequences of transactions for the demonstration user journeys will
 be able to provide a good overview of the work ahead. It will also shine a light on
 what data objects and properties must be defined. Two overarching use cases are considered:
 assessment and curriculum personalisation.
 
 \subsection{Assessment Use Case}
 
-These four transactions are required to complete the assessment use case (see Figure \ref{fig:assessmentloop}):
-
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.65\textwidth]{assessmentloop}
+	\includegraphics[width=0.675\textwidth]{assessmentloop}
 	\caption[Assessment Use Case]
 	{A UML sequence diagram denoting the assets, transactions and events between
 		Learner and Teacher participants on the blockchain for the assessment use case}
 	\label{fig:assessmentloop}
 \end{figure}
+
+These four transactions are required to complete the assessment use case (see Figure \ref{fig:assessmentloop}):
 
 \begin{itemize}
 	\setlength\itemsep{0em}
@@ -92,20 +92,6 @@ These four transactions are required to complete the assessment use case (see Fi
 
 \subsection{Curriculum Personalisation Use Case}
 
-Similarly, we looked at the transactions required to build a minimum viable product
-that facilitates curriculum personalisation. A curriculum here is simply a list of course
-modules attached to a learner and a teacher (a personal tutor for the learner).
-
-\begin{itemize}
-	\setlength\itemsep{0em}
-	\item ProposeCurriculum: a transaction ordered by a learner or a teacher to propose
-	      a new curriculum, or to proposed edits to an existing curriculum on the blockchain.
-	\item ApproveCurriculum: a transaction ordered by a teacher to enrol a learner to
-	      the course modules in the learner's curriculum.
-\end{itemize}
-
-See Figure \ref{fig:personalisationloop} for where these two transactions occur in a sequence diagram.
-
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=0.7\textwidth]{personalisationloop}
@@ -115,10 +101,23 @@ See Figure \ref{fig:personalisationloop} for where these two transactions occur 
 	\label{fig:personalisationloop}
 \end{figure}
 
+Similarly, we looked at the transactions required to build a minimum viable product
+that facilitates curriculum personalisation. A curriculum here is simply a list of course
+modules attached to a learner and a teacher (a personal tutor for the learner).
+
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item ProposeCurriculum: a transaction ordered by a learner or a teacher to propose
+	      a new curriculum, or to proposed edits to an existing curriculum on the blockchain.
+	\item ApproveCurriculum: a transaction ordered by a teacher to enrol a learner to
+		  the course modules in the learner's curriculum. 
+		  A teacher cannot change the list of modules with this transaction, that is reserved for ProposeCurriculum.
+\end{itemize}
+
+See Figure \ref{fig:personalisationloop} for where these two transactions occur in a sequence diagram.
+
 % automatic formative assessments Annette's student
-
 % schema --> reviewer
-
 \section{Data Models}
 
 Building a blockchain network requires a network-wide schema of what records are allowed to be created, updated and read.
@@ -156,10 +155,10 @@ in a class diagram.
 	\label{fig:participants}
 \end{figure}
 
-A notable design consideration is the mechanism for allowing tiered access control of
+A notable design consideration was the mechanism for allowing tiered access control of
 learner information. The \textit{acLevels} and \textit{priviledgedReaderIds} fields in \textit{Learner}
 store access control settings for two tiers of \textit{Readers}, normal and privileged.
-This will be covered in more detail in an upcoming section.
+This will be covered in more detail in the upcoming section 5.5.
 
 \subsection{Assets}
 
@@ -174,31 +173,32 @@ Assets are "tangible or intangible goods, services, or property, and are stored 
 \end{figure}
 
 See Figure \ref{fig:assets} for the detailed entity properties and relationships of these assets in a class diagram.
-The asset definitions are modelled carefully according to literature and user requirements.
-The special design considerations included:
+The asset definitions were modelled carefully according to literature and user requirements.
+These special design considerations were included:
 
 \begin{itemize}
 	\setlength\itemsep{0em}
-	\item \underline{Types of assessments}: A review of e-Learning and course management systems showed that online assessments could be
-	      grouped in four categories: self assessment, computer assessment, tutor assessment, and peer assessment
+	\item \underline{Types of assessments}: Online assessments could be grouped in four categories: 
+		  self assessment, computer assessment, tutor assessment, and peer assessment
 	      \citep[p.68]{paulsen2004online}. In this initial design, two of these types are considered: \textit{AutoAssessment} (computer
 	      assessment), and \textit{AssessorAssessment} (tutor assessment). They are daughter classes of the abstract \textit{Assessment}.
-	\item \underline{Transparency of assessment goals}: the model contains mandatory fields to improve transparency in assessments, as identified by
+	\item \underline{Transparency of assessment goals}: the design contains mandatory fields to improve transparency in assessments, as identified by
 	      \citet{suhre2013determinants}'s research reviewed in Chapter 2.1.1. This includes the \textit{knowledgeRequired} field
-	      in \textit{Assessment} and \textit{learningObjectives} in \textit{CourseModule}, which encourage teachers to provide
-	      clarity over assessment goals.
-	\item \underline{Transparency of assessment procedures}: \textit{Assessment} assets are on the blockchain and visible to all participants,
+	      in \textit{Assessment} and \textit{learningObjectives} in \textit{CourseModule}, which encourages teachers to provide
+		  clarity over assessment goals. \\\\
+	\item \underline{Transparency of assessment procedures}: \textit{Assessment} assets will be on the blockchain and visible to all participants,
 	      improving transparency of procedures.
 	      They include the \textit{gradeDescriptors} and \textit{criteria} fields that which encourage teachers to provide clarity of
 	      assessment criteria, and give Smart Contracts the capabilities to enforce these criteria.
 	\item \underline{Administrative Work for Personalisation}: Primary data suggested that administrative and regulatory work required for
-	      curriculum personalisation could be daunting for institutions. The \textit{programmeOutcomes} field in the \textit{Curriculum} asset is one of
-	      the suggested regulatory steps for the UK market (see PS9 in Chapter 4.1.2). Making these administrative data available on the blockchain
+		  curriculum personalisation could be daunting for institutions (Chapter 4.1.2.PS7). 
+		  The \textit{programmeOutcomes} field in the \textit{Curriculum} asset was one of
+	      the suggested regulatory steps for the UK market (Chapter 4.1.2.PS9). Making these administrative data available on the blockchain
 	      could allow future Smart Contracts to automate approvals and other administrative steps. This has the potential to reduce
 	      bureaucracy by eliminating the middleman.
-	\item \underline{Content flexibility}: It is anticipated that many markets, institutions, teams and teachers
+	\item \underline{Content flexibility}: It was anticipated that many markets, institutions, teams and teachers
 	      will have their own requirements, formats and templates for what their e-Learning content should look like. To cater to
-	      this need for content and layout flexibility the blockchain will accept markdown syntax as input in fields such as
+	      this need for content and layout flexibility the blockchain accepts markdown syntax as input in fields such as
 	      \textit{detailsMd} in \textit{Assessment}, \textit{materialMd} in \textit{ModuleUnit} and \textit{fineprintMd} in \textit{Certificate}.
 	      Markdown is a popular text-to-HTML conversion tool for web writers \citep{gruber2004markdown}, with many internet forums and
 	      services releasing their own standards.
@@ -206,7 +206,7 @@ The special design considerations included:
 
 \subsection{Concepts}
 
-Concepts are abstract classes that are not assets or participants. They are used to define custom properties contained by an asset or participant.
+Concepts are abstract classes that are not assets or participants. They are used to define custom properties contained by an asset or participant \citep{official2018composer}.
 
 For this project: five of these Concepts were designed. These are related to modelling the assessment results, grade descriptors and criteria.
 See figure \ref{fig:concepts} for their detailed entity properties.
@@ -220,7 +220,7 @@ See figure \ref{fig:concepts} for their detailed entity properties.
 \end{figure}
 
 A matrix/ grid of assessment criteria against grade definitions, a common format used in schools \citep[p.102]{bryan2006innovative},
-is used to record grade breakdowns on the blockchain. The \textit{MarkingCriterion} and \textit{GradeDescriptors} fields are designed to
+was used to record grade breakdowns on the blockchain. The \textit{MarkingCriterion} and \textit{GradeDescriptors} fields were designed to
 fulfil this feature.
 
 \textit{AssessmentResult} stores the overall result of an assessment or course module, as an example of how flexible this can be,
@@ -229,10 +229,10 @@ three example result formats are designed: \textit{PassFailResult}, \textit{Grad
 \section{Smart Contracts: Transaction Logic and Events}
 
 We have previously discussed the nature of Smart Contracts in Chapter 2.3.2. They are autonomous, self-sufficient and
-decentralised code that runs on a blockchain.
+decentralised programmes that runs on a blockchain.
 
 In Hyperledger Composer, Smart Contracts are called chaincode.
-They are run synchronously with a transaction order and a final output is required, to either accept the transaction, or reject it.
+They run synchronously with a transaction order and a final output is required, to either accept the transaction, or reject it.
 Smart Contract chaincode can emit network-wide Events. These Events could be consumed by participants or applications.
 
 The discussion below describes the six transactions previously planned in Figure \ref{fig:assessmentloop} and \ref{fig:personalisationloop}.
@@ -241,7 +241,7 @@ The Smart Contract chaincode triggered by the transactions are explained in pseu
 \subsection{The CreateModule Transaction}
 
 The transaction for creating a course module was kept simple, as this project is more interested in the assessment experience than the
-content creation experience. A \textit{CourseModule} asset is uploaded with all of its \textit{ModuleUnits} and \textit{Assessments}.
+content creation experience. A \textit{CourseModule} asset has to be uploaded with all of its \textit{ModuleUnits} and \textit{Assessments}.
 % \begin{figure}[!ht]
 % 	\centering
 % 	\includegraphics[width=1.0\textwidth]{cmtx}
@@ -264,12 +264,12 @@ content creation experience. A \textit{CourseModule} asset is uploaded with all 
 \end{algorithm}
 
 Transactions that allow content editing and course archiving (making courses unavailable to new students) will have to be designed
-for a fully-fledged real world system, but we will defer them to future work for this project.
+for a fully-fledged real world system, but they were deferred to future work for this project.
 
 \subsection{The AddSubmission Transaction}
 
-This transaction is ordered by a student to add a submission for the assessment of a module unit. The submission files will be
-compressed and converted into base64 data strings and attached to the \textit{content} parameter.
+This transaction would be ordered by a student to add a submission for the assessment of a module unit. 
+The submission files will be compressed, converted into base64 data strings, and attached to the \textit{content} parameter.
 
 Every submission is stored on the blockchain network, providing extra data redundancy that ensures 
 the submission is secure and immutable. In the case of an automatic assessment, peers on the 
@@ -285,15 +285,15 @@ to an external marking API, independently confirming the automated marking resul
 \begin{algorithm}
 	\begin{algorithmic}[0]
 		\Function{AddSubmission}{Learner learner, ModuleUnit unit, String content, String comments}
-		\State assign a Teacher to the submission
+		\State Assign a Teacher to the submission
 		\If{unit.assessment.type is AutoAssessment}
 		\State Get unit.assessment.testFile
 		\State Post testFile and content to Marking API \Comment{content is the Submission file in base64}
 		\State Await return from Marking API
 		\State Add returned result to Submission object
-		\State Emit ResultAvailable Event (Submission submission, String unitId, String details)
+		\State Emit ResultAvailable Event (String submissionId, String unitId, String details)
 		\ElsIf{unit.assessment.type is AssessorAssessment}
-		\State Emit SubmissionUploaded Event (Submission submission, String unitId, String teacherId)
+		\State Emit SubmissionUploaded Event (String submissionId, String unitId, String teacherId)
 		\EndIf
 		\State Add Submission object to blockchain
 		\State Add relationship between Submission object and the Learner
@@ -304,11 +304,11 @@ to an external marking API, independently confirming the automated marking resul
 
 \subsection{The SubmitResult Transaction}
 
-The assessor submits markings on a marking criteria against grade descriptor grid. This is uploaded as the transaction
+Teachers would submit markings on a marking criteria against grade descriptor grid. This would be uploaded as the transaction
 parameter \textit{marks}, a one dimensional array where the index correlates to the marking criteria number and
 the value correlates to the grade number.
 
-The grades are calculated by Smart Contracts according to pre-defined weightings and rules. 
+The grades would be calculated by Smart Contracts according to pre-defined weightings and rules. 
 Every peer will run the same chaincode and achieve a consensus over what the result is.
 % \begin{figure}[!ht]
 % 	\centering
@@ -330,10 +330,10 @@ Every peer will run the same chaincode and achieve a consensus over what the res
 		\EndIf
 		\State Calculate result based on grade descriptors and marking criteria
 		\State Update the Submission object on the blockchain with result
-		\State Emit ResultAvailable Event (Submission submission, String unitId, String details)
+		\State Emit ResultAvailable Event (String submissionId, String unitId, String details)
 		\If{assessment.terminal is true}
 		\If{the overall result of the module is a pass}
-		\State Emit CourseModuleCompleted Event (Teacher teacherAssigned, Submission submission, String modId)
+		\State Emit CourseModuleCompleted Event (Teacher teacherAssigned, String submissionId, String modId)
 		\EndIf
 		\EndIf
 		\State \textbf{return} Transaction Accepted
@@ -343,7 +343,7 @@ Every peer will run the same chaincode and achieve a consensus over what the res
 
 \subsection{The GenCertificate Transaction}
 
-This transaction is designed to allow and encourage manual diligence over course completion evidences before issuing a certificate.
+This transaction was designed to allow and encourage manual diligence over course completion evidences before issuing a certificate.
 It could also require multiple signatures for a certificate.
 % \begin{figure}[!ht]
 % 	\centering
@@ -425,11 +425,11 @@ It could also require multiple signatures for a certificate.
 \end{algorithm}
 
 \section{Access Control}
-The design of access control on the blockchain network is based on the Access Control Language of Hyperledger Composer.
-It allows for the creation of access control rules that are conditional upon: the type of participant or asset,
+The design of access control on the blockchain network was based on the Access Control Language of Hyperledger Composer.
+The language allows for the creation of access control rules that are conditional upon: the type of participant or asset,
 the use of a specific transaction, and the values of properties of the participant or asset.
 
-This means the mode of access control for the blockchain is both role-based and attribute-based.
+This means the mode of access control for the blockchain is both role-based and attribute-based (transaction and condition).
 Figure \ref{fig:ac_model} is a generic representation of what an access control rule deployed to the Hyperledger Fabric blockchain is composed of,
 drawn based on the style proposed by \citet{poniszewska2005representation} for extended role-based access controls.\\
 
@@ -458,19 +458,21 @@ a permission permutation model inspired by UNIX file permissions.
 		\hline
 		                     & 0 & 1          & 2          & 3          & 4          & 5          & 6          & 7          \\
 		\hline
-		Certificates         &   & \checkmark &            & \checkmark &            & \checkmark &            & \checkmark \\
+		Certificates (1)         &   & \checkmark &            & \checkmark &            & \checkmark &            & \checkmark \\
 		\hline
-		Submissions          &   &            & \checkmark & \checkmark &            &            & \checkmark & \checkmark \\
+		Submissions (2)          &   &            & \checkmark & \checkmark &            &            & \checkmark & \checkmark \\
 		\hline
-		Learner, Curriculums &   &            &            &            & \checkmark & \checkmark & \checkmark & \checkmark \\
+		Learner, Curriculums (4) &   &            &            &            & \checkmark & \checkmark & \checkmark & \checkmark \\
 		\hline
 	\end{tabular}
 \end{table}
 
-So an \textit{acLevels} value of \texttt{[1, 3]} would mean all \textit{readers} can read your \textit{Certificates},
-while \textit{readers} included in \textit{priviledgedReaderIds} can read your \textit{Certificates} and \textit{Submissions}.
+So an \textit{acLevels} value of \texttt{[1, 3]} would mean all \textit{Readers} can read your \textit{Certificates},
+while \textit{Readers} included in \textit{priviledgedReaderIds} can read your \textit{Certificates} and \textit{Submissions}.
 
 Table \ref{table:ac_rules} lists all of the access control rules designed for the blockchain of this project.
+Note that a DELETE operation does not really delete records on the blockchain, it simply marks an asset in a registry as "deleted". 
+Transactions records on the blockchain are immutable and cannot be deleted.
 
 \begin{landscape}
 	\begin{table}[!ht]
@@ -561,14 +563,15 @@ Here is a list of the notable limitations:
 To demonstrate the improvements a blockchain back-end and Smart Contracts can bring to an e-Learning platform, a
 Learner client application and a Teacher client application will be built at the implementation stage.
 
-While improving usability in e-Learning is not one of the objectives of this project, poor usability and interface designs
-could adversely affect the evaluation of improvements that this project aims for.
+While improving usability in e-Learning was not one of the objectives of this project, poor usability and interface designs
+could adversely affect the evaluation of improvements that this project aimed for.
 
-Therefore, several of \citet{nielsen199510}'s famous five usability design goals and ten usability design heuristics
+Therefore, \citet{nielsen199510}'s famous five usability design goals and ten usability design heuristics
 were considered when developing the application prototypes. See Table \ref{table:ux_considerations}:
 
 \begin{table}[!ht]
-	\caption{Usability considerations for client applications}
+	\caption[Usability considerations for client applications]
+	{Usability considerations for client applications in the \citet{nielsen199510} framework}
 	\centering
 	\label{table:ux_considerations}
 	\begin{tabularx}{\textwidth}{lXX}
@@ -576,15 +579,15 @@ were considered when developing the application prototypes. See Table \ref{table
 		\toprule
 		Learnability              & Match between system and the real world\newline
 		Visibility of system status \newline
-		Consistency and standards & Using common higher education glossary \newline
+		Consistency and standards & Use common higher education glossary \newline
 		Notifications Area (NR3) \newline
-		Adopt a popular design language                                                                                                                       \\
+		Adopt a popular design language (NR6)                                                                                                                      \\
 		\midrule
 		Efficiency                & Flexibility and efficiency of use                       & Flexibility in results types (FR8)                              \\
 		\midrule
 		Memorability              & Recognition rather than recall                          & Always Visible Navigation Menu (NR7)                            \\
 		\midrule
-		Error Reduction           & Help users recognize, diagnose, and recover from errors & Error Messages on Transaction Failures                          \\
+		Error Reduction           & Help users recognize, diagnose, and recover from errors & Error Messages on Transaction Failures (NR2)                         \\
 		\midrule
 		Satisfaction              & Aesthetic and minimalist design                         & The system should be highly usable and visually appealing (NR6) \\                                                               \\
 		\bottomrule
